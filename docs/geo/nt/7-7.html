@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7.7 Central Limit Theorem</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #2d3748, #4a5568);
+            color: #f7fafc;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(52, 58, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron">
+            7.7 Central Limit Theorem
+        </h1>
+
+        <!-- Big Picture Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Big Picture</h2>
+            <p class="text-xl text-cyan-300">
+                The **Central Limit Theorem (CLT)** states that as you take more and more samples from a random variable, the distribution of the means of the samples will approximate a normal distribution, regardless of the shape of the original population distribution. This theorem is crucial in statistics because it enables us to make inferences about population parameters, such as the mean, from sample data.
+                <br><br>
+                As the number of samples increases, the sample means form a distribution that becomes increasingly bell-shaped, making it easier to apply normal distribution techniques for hypothesis testing and confidence intervals.
+            </p>
+        </div>
+
+        <!-- Key Terms Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+            <ul class="space-y-3 text-left text-xl text-blue-300">
+                <li><strong>Distribution:</strong> The description of all the possible values a random variable can take and the likelihood of each value.</li>
+                <li><strong>Sampling Distribution:</strong> The probability distribution of a statistic (e.g., sample mean) computed from multiple samples.</li>
+                <li><strong>Sample Mean:</strong> The average of the data points in a sample.</li>
+                <li><strong>Population Mean:</strong> The average of all the data points in the entire population.</li>
+                <li><strong>Central Limit Theorem:</strong> A statistical theory stating that the distribution of the sample means approaches a normal distribution as the sample size increases, regardless of the population's distribution.</li>
+            </ul>
+        </div>
+
+        <!-- Important Info Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Important Info</h2>
+            <p class="text-xl text-cyan-300">
+                The **Central Limit Theorem** applies when the sample size is sufficiently large (typically n ≥ 30) and is used to approximate the sampling distribution of the sample mean. Even if the population distribution is not normal, the sample means will be approximately normally distributed.
+                <br><br>
+                The **mean of the sample means** equals the **population mean**:
+                <pre class="bg-gray-700 text-white p-4 mt-4 rounded">
+Mean of Sample Means = μ (Population Mean)
+                </pre>
+                The **standard deviation of the sample means** (also called the **standard error**) is calculated as:
+                <pre class="bg-gray-700 text-white p-4 mt-4 rounded">
+Standard Deviation of Sample Means = σ / √n
+                </pre>
+                Where:
+                - **σ** is the population standard deviation.
+                - **n** is the sample size.
+            </p>
+        </div>
+
+        <!-- Example Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Example</h2>
+            <p class="text-xl text-cyan-300">
+                Suppose you have a population of students with a mean height of 160 cm and a population standard deviation of 10 cm. If you take random samples of 40 students, the **mean of sample means** will be:
+                <pre class="bg-gray-700 text-white p-4 mt-4 rounded">
+Mean of Sample Means = μ = 160 cm
+                </pre>
+                The **standard deviation of the sample means** will be:
+                <pre class="bg-gray-700 text-white p-4 mt-4 rounded">
+Standard Deviation of Sample Means = σ / √n = 10 / √40 ≈ 1.58 cm
+                </pre>
+                As you take more samples, the distribution of sample means will approach a normal distribution centered around 160 cm, with a standard deviation of about 1.58 cm.
+            </p>
+        </div>
+
+        <!-- Application of CLT Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Application of CLT</h2>
+            <p class="text-xl text-cyan-300">
+                The **Central Limit Theorem** is widely used in statistical analysis, especially in cases where the population distribution is unknown or not normal. By taking large enough samples (n ≥ 30), statisticians can assume that the sample means will follow a normal distribution. This allows for the application of normal distribution techniques to calculate confidence intervals and perform hypothesis tests.
+                <br><br>
+                For instance, if you want to estimate the average height of students in a large school, you can take random samples, calculate the sample means, and apply the CLT to approximate the population mean.
+            </p>
+        </div>
+
+        <!-- Conclusion Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+            <h2 class="text-3xl mb-4 text-green-400">Conclusion</h2>
+            <p class="text-xl text-cyan-300">
+                The **Central Limit Theorem** is one of the most important results in statistics because it allows us to make valid inferences about a population based on sample data. Even if the population is not normally distributed, the distribution of sample means will become normal as the sample size increases. This principle underpins many statistical methods, including hypothesis testing, confidence intervals, and regression analysis.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
