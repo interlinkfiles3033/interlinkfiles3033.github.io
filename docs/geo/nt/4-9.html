@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4.9 Coefficient of Variance</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #0a192f, #112240);
+            color: #e6f1ff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(17, 34, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron" data-tooltip="Coefficient of Variance">
+            4.9 Coefficient of Variance
+        </h1>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Big Picture -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Big Picture</h2>
+                <p class="text-xl text-cyan-300">
+                    The coefficient of variance (CV) is used to compare the relative variability of data sets, especially when the means differ significantly. It is the ratio of the standard deviation to the mean, often expressed as a percentage. A higher CV indicates more variability relative to the mean, while a lower CV suggests less variability.
+                </p>
+            </div>
+
+            <!-- Key Terms -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+                <ul class="space-y-3 text-left text-xl text-blue-300">
+                    <li><strong>Coefficient of Variance (CV):</strong> A normalized measure of the dispersion of a probability distribution. It is calculated as the ratio of the standard deviation to the mean.</li>
+                    <li><strong>Variance (𝝈²):</strong> The mean of the squared deviations from the mean. Formula: (x₁ - x̄)² + (x₂ - x̄)² + ... / n.</li>
+                    <li><strong>Standard Deviation:</strong> The square root of the variance, it measures the spread of a data set.</li>
+                    <li><strong>ANOVA:</strong> The Analysis of Variance, a statistical method used to determine if there are any statistically significant differences between the means of two or more independent groups.</li>
+                    <li><strong>Population:</strong> The entire group of interest from which a sample is drawn.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-8 grid md:grid-cols-2 gap-8">
+            <!-- Coefficient of Variance Formula -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Formula for Coefficient of Variance</h2>
+                <p class="text-xl text-cyan-300">
+                    The coefficient of variance (CV) is calculated using the following formula:
+                </p>
+                <pre class="text-lg text-cyan-200">
+CV = (σ / μ) × 100
+                </pre>
+                <p class="text-xl text-cyan-300">
+                    Where:
+                    <ul class="list-disc list-inside text-cyan-200">
+                        <li><strong>σ:</strong> Standard deviation of the data set.</li>
+                        <li><strong>μ:</strong> Mean of the data set.</li>
+                        <li><strong>CV:</strong> Coefficient of variance, expressed as a percentage.</li>
+                    </ul>
+                </p>
+            </div>
+
+            <!-- Example Calculation -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Example: Calculate Coefficient of Variance</h2>
+                <p class="text-xl text-cyan-300">
+                    Consider the following data set: <strong>{10, 12, 14, 16, 18}</strong>
+                </p>
+                <p class="text-xl text-cyan-300">
+                    <strong>Step 1:</strong> Find the mean (μ):
+                </p>
+                <pre class="text-lg text-cyan-200">
+μ = (10 + 12 + 14 + 16 + 18) / 5 = 70 / 5 = 14
+                </pre>
+                <p class="text-xl text-cyan-300">
+                    <strong>Step 2:</strong> Find the standard deviation (σ):
+                </p>
+                <pre class="text-lg text-cyan-200">
+σ = √[( (10 - 14)² + (12 - 14)² + (14 - 14)² + (16 - 14)² + (18 - 14)² ) / 5]
+   = √[(16 + 4 + 0 + 4 + 16) / 5]
+   = √[40 / 5]
+   = √8
+   = 2.83
+                </pre>
+                <p class="text-xl text-cyan-300">
+                    <strong>Step 3:</strong> Calculate the coefficient of variance (CV):
+                </p>
+                <pre class="text-lg text-cyan-200">
+CV = (2.83 / 14) × 100 = 20.21%
+                </pre>
+                <p class="text-xl text-cyan-300">
+                    Therefore, the coefficient of variance for this data set is approximately <strong>20.21%</strong>.
+                </p>
+            </div>
+        </div>
+
+        <div class="mt-8 bg-gray-800 p-6 rounded-lg formula-box fade-in">
+            <h2 class="text-3xl mb-4 text-green-400">Key Takeaways</h2>
+            <p class="text-xl text-cyan-300">
+                The coefficient of variance is a useful metric for comparing the relative variability between different data sets, especially when their means are not equal. A higher CV indicates greater dispersion relative to the mean, while a lower CV suggests more consistency. It is often used in fields such as finance and research to assess risk or variability.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add some subtle hover effects (these can stay as they are)
+        document.querySelectorAll('.formula-box').forEach(box => {
+            box.addEventListener('mouseenter', () => {
+                box.style.transform = 'scale(1.02)';
+            });
+            box.addEventListener('mouseleave', () => {
+                box.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
