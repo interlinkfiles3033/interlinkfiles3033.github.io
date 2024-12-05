@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4.5 Mode Probability, Stat</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #0a192f, #112240);
+            color: #e6f1ff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(17, 34, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron" data-tooltip="Mode Probability, Stat">
+            4.5 Mode Probability, Stat
+        </h1>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Summary Statement -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Summary Statement of Topic</h2>
+                <p class="text-xl text-cyan-300">
+                    The mode helps identify the most frequently occurring number in a data set. A data set can be unimodal (one mode), bimodal (two modes), trimodal (three modes), or multimodal (more than three modes). Understanding the mode is useful for analyzing distributions where certain values appear with higher frequency.
+                </p>
+            </div>
+
+            <!-- Key Terms -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+                <ul class="space-y-3 text-left text-xl text-blue-300">
+                    <li><strong>Data:</strong> Information that has been collected to represent real-life situations, usually in number form.</li>
+                    <li><strong>Measure of Central Tendency:</strong> A central or typical value of a data set; includes the mean, median, and mode.</li>
+                    <li><strong>Extremes:</strong> The minimum and maximum values in a dataset.</li>
+                    <li><strong>Unimodal:</strong> Only one value occurs most often.</li>
+                    <li><strong>Bimodal:</strong> Two values occur more frequently than other numbers in a data set.</li>
+                    <li><strong>Trimodal:</strong> Three modes in the data set.</li>
+                    <li><strong>Multimodal:</strong> More than two modes in the data set.</li>
+                    <li><strong>Histogram:</strong> A bar chart that describes a frequency distribution.</li>
+                    <li><strong>Distribution:</strong> A description of the possible values of a random variable and their occurrences.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-8 grid md:grid-cols-2 gap-8">
+            <!-- Example of Mode Calculation -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Example of Mode Calculation</h2>
+                <p class="text-xl text-cyan-300">
+                    Consider the following data set:  
+                    {93, 91, 95, 92, 92, 93, 95, 94, 97, 93, 86, 92, 94, 89, 92, 91, 92, 93, 94, 100}
+                </p>
+                <p class="text-xl text-cyan-300">
+                    When we order the data set, we get:
+                </p>
+                <p class="text-lg text-cyan-200 mb-4">
+                    Ordered Data: {86, 89, 91, 91, 92, 92, 92, 92, 92, 93, 93, 93, 93, 94, 94, 94, 95, 95, 97, 100}
+                </p>
+                <p class="text-xl text-cyan-300">
+                    The value that appears most frequently is 92, which occurs 5 times.
+                </p>
+                <p class="text-xl text-cyan-300">
+                    Therefore, the mode of this data set is <strong>92</strong>.
+                </p>
+            </div>
+
+            <!-- Example of Bimodal Data -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Example of Bimodal Data</h2>
+                <p class="text-xl text-cyan-300">
+                    Consider the following data set:  
+                    {1, 2, 3, 3, 4, 5, 6, 6, 7, 7, 8, 9, 10}.
+                </p>
+                <p class="text-xl text-cyan-300">
+                    When we order the data set, we get:
+                </p>
+                <p class="text-lg text-cyan-200 mb-4">
+                    Ordered Data: {1, 2, 3, 3, 4, 5, 6, 6, 7, 7, 8, 9, 10}
+                </p>
+                <p class="text-xl text-cyan-300">
+                    The numbers 3, 6, and 7 each appear twice, making this a <strong>bimodal</strong> data set with two modes: <strong>3 and 6</strong>.
+                </p>
+            </div>
+        </div>
+
+        <div class="mt-8 bg-gray-800 p-6 rounded-lg formula-box fade-in">
+            <h2 class="text-3xl mb-4 text-green-400">Important Notes</h2>
+            <p class="text-xl text-cyan-300">
+                The mode can be unimodal, bimodal, trimodal, or multimodal. In the case of a bimodal or multimodal distribution, the data has more than one value that occurs with the highest frequency. Understanding the mode is important for analyzing the frequency of events in a given dataset.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add some subtle hover effects (these can stay as they are)
+        document.querySelectorAll('.formula-box').forEach(box => {
+            box.addEventListener('mouseenter', () => {
+                box.style.transform = 'scale(1.02)';
+            });
+            box.addEventListener('mouseleave', () => {
+                box.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
