@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8.1 The Three Dimensions</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #2d3748, #4a5568);
+            color: #f7fafc;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(52, 58, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron">
+            8.1 The Three Dimensions
+        </h1>
+
+        <!-- Big Picture Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Big Picture</h2>
+            <p class="text-xl text-cyan-300">
+                Solid objects in geometry exist in **three dimensions**, which include **length**, **width**, and **height** (or depth). These three dimensions help us understand the size, shape, and spatial relationships of objects in 3D space.
+                <br><br>
+                Three-dimensional figures are those that extend in three directions, unlike two-dimensional shapes that only extend in length and width. Understanding these basic dimensions is essential in geometry, especially when analyzing solid objects like cubes, spheres, and pyramids.
+            </p>
+        </div>
+
+        <!-- Key Terms Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+            <ul class="space-y-3 text-left text-xl text-blue-300">
+                <li><strong>Three Dimensional:</strong> A figure that has **length**, **width**, and **height** or depth.</li>
+                <li><strong>Dimensions:</strong> The measurements that define the size and shape of a figure, typically including **length**, **width**, and **height** for 3D objects.</li>
+                <li><strong>Line:</strong> A straight, one-dimensional figure made up of infinitely many points extending forever in opposite directions.</li>
+                <li><strong>Line Segment:</strong> A finite portion of a line, with two endpoints.</li>
+                <li><strong>Point:</strong> A location in space that has no size or shape. Often identified as a coordinate.</li>
+                <li><strong>Plane:</strong> A flat, two-dimensional surface extending infinitely in all directions.</li>
+                <li><strong>Collinear Points:</strong> Points that lie on the same straight line.</li>
+                <li><strong>Non-collinear Points:</strong> Points that do not lie on the same straight line.</li>
+                <li><strong>Triangle:</strong> A polygon with three sides and three angles.</li>
+                <li><strong>Perpendicular:</strong> Two lines that intersect at a right angle (90 degrees).</li>
+                <li><strong>Space:</strong> The set of all points in three dimensions.</li>
+                <li><strong>Edge:</strong> A line segment where two faces of a solid figure intersect.</li>
+            </ul>
+        </div>
+
+        <!-- Important Info Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Important Info</h2>
+            <p class="text-xl text-cyan-300">
+                Understanding the three dimensions is critical when analyzing **solid objects** in geometry. These objects have length, width, and height/depth, making them distinct from two-dimensional shapes, which only have length and width.
+                <br><br>
+                In 3D geometry, points, lines, and planes form the basic building blocks for more complex figures. **Edges**, where faces of solid objects meet, play a crucial role in determining the shape and structure of solid figures like cubes, pyramids, and spheres.
+            </p>
+        </div>
+
+        <!-- Example Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Example</h2>
+            <p class="text-xl text-cyan-300">
+                Consider a **rectangular prism** (a 3D box). The **dimensions** of the prism would include the **length**, **width**, and **height** of the box.
+                <br><br>
+                If a rectangular prism has:
+                - **Length** = 5 cm
+                - **Width** = 3 cm
+                - **Height** = 2 cm
+                <br>
+                These three dimensions define the shape and size of the object. You can calculate the **volume** of the prism as:
+                <pre class="bg-gray-700 text-white p-4 mt-4 rounded">
+Volume = Length × Width × Height
+       = 5 cm × 3 cm × 2 cm
+       = 30 cm³
+                </pre>
+                This demonstrates how three dimensions work together to define the characteristics of a solid figure.
+            </p>
+        </div>
+
+        <!-- Conclusion Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+            <h2 class="text-3xl mb-4 text-green-400">Conclusion</h2>
+            <p class="text-xl text-cyan-300">
+                **Three-dimensional geometry** is essential for understanding the world around us. Solid objects, whether simple shapes like cubes or complex ones like pyramids, rely on **length**, **width**, and **height** to define their size and structure. By understanding these dimensions, we can calculate key properties like **volume**, **surface area**, and more, which are crucial in fields like architecture, engineering, and physics.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
