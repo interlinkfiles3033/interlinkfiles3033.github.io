@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5.2 Mutually Exclusive and Independent Events</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #0a192f, #112240);
+            color: #e6f1ff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(17, 34, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron" data-tooltip="Mutually Exclusive and Independent Events">
+            5.2 Mutually Exclusive and Independent Events
+        </h1>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Big Picture -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Big Picture</h2>
+                <p class="text-xl text-cyan-300">
+                    In probability theory, it's important to distinguish between two types of events: mutually exclusive and independent. Mutually exclusive events cannot happen at the same time, meaning if one event occurs, the other cannot. On the other hand, independent events have no effect on each other— the occurrence of one event does not influence the probability of the other.
+                </p>
+            </div>
+
+            <!-- Key Terms -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+                <ul class="space-y-3 text-left text-xl text-blue-300">
+                    <li><strong>Probability:</strong> The likelihood of an event occurring, expressed as a fraction, decimal, or percentage.</li>
+                    <li><strong>Outcomes:</strong> Possible results of a probability experiment.</li>
+                    <li><strong>Venn Diagram:</strong> A diagram showing the relationships between sets using overlapping circles.</li>
+                    <li><strong>Disjoint Events / Mutually Exclusive:</strong> Events that cannot happen simultaneously.</li>
+                    <li><strong>Intersection:</strong> The common outcomes between sets, often represented by the word "and".</li>
+                    <li><strong>Overlapping Events:</strong> Events that share one or more outcomes.</li>
+                    <li><strong>Event:</strong> A set of one or more outcomes of a probability experiment.</li>
+                    <li><strong>Sample Space:</strong> The set of all possible outcomes of an experiment.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-8 grid md:grid-cols-2 gap-8">
+            <!-- Mutually Exclusive Events Example -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Mutually Exclusive Events Example</h2>
+                <p class="text-xl text-cyan-300">
+                    Consider a simple die roll experiment. The events "rolling an odd number" and "rolling an even number" are mutually exclusive because they cannot happen at the same time. If you roll a 3 (odd), you cannot roll a 2 (even), and vice versa.
+                </p>
+                <p class="text-xl text-cyan-300 mt-4">
+                    The probability of rolling an odd number (Event A) is: P(A) = 3/6 = 0.5
+                </p>
+                <p class="text-xl text-cyan-300 mt-4">
+                    The probability of rolling an even number (Event B) is: P(B) = 3/6 = 0.5
+                </p>
+                <p class="text-xl text-cyan-300 mt-4">
+                    Since these events cannot happen together, their intersection is empty, i.e., P(A ∩ B) = 0.
+                </p>
+            </div>
+
+            <!-- Independent Events Example -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Independent Events Example</h2>
+                <p class="text-xl text-cyan-300">
+                    Consider the event of tossing a coin and rolling a die. These two events are independent because the outcome of the coin toss does not affect the outcome of the die roll.
+                </p>
+                <p class="text-xl text-cyan-300 mt-4">
+                    The probability of getting heads on the coin toss (Event A) is: P(A) = 1/2 = 0.5
+                </p>
+                <p class="text-xl text-cyan-300 mt-4">
+                    The probability of rolling a 4 on the die (Event B) is: P(B) = 1/6 ≈ 0.167
+                </p>
+                <p class="text-xl text-cyan-300 mt-4">
+                    Since these events are independent, the probability of both events happening together is the product of their individual probabilities: P(A ∩ B) = P(A) × P(B) = 0.5 × 1/6 ≈ 0.083.
+                </p>
+            </div>
+        </div>
+
+        <div class="mt-8 bg-gray-800 p-6 rounded-lg formula-box fade-in">
+            <h2 class="text-3xl mb-4 text-green-400">Key Takeaways</h2>
+            <p class="text-xl text-cyan-300">
+                - **Mutually Exclusive Events**: These events cannot happen at the same time. The probability of both events occurring is zero.
+                <br>
+                - **Independent Events**: The occurrence of one event does not affect the probability of the other. The probability of both events happening is the product of their individual probabilities.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add some subtle hover effects (these can stay as they are)
+        document.querySelectorAll('.formula-box').forEach(box => {
+            box.addEventListener('mouseenter', () => {
+                box.style.transform = 'scale(1.02)';
+            });
+            box.addEventListener('mouseleave', () => {
+                box.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
