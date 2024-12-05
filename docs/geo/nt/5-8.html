@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5.8 Permutations and Combinations</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #2d3748, #4a5568);
+            color: #f7fafc;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(52, 58, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron">
+            5.8 Permutations and Combinations
+        </h1>
+
+        <!-- Big Picture Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Big Picture</h2>
+            <p class="text-xl text-cyan-300">
+                Permutations and combinations are methods used to count the number of ways we can arrange or select objects from a set. 
+                The key difference between the two is that in permutations, the order of the objects matters, while in combinations, 
+                the order does not matter. These concepts are essential in probability and statistics for determining possible outcomes and arrangements.
+            </p>
+        </div>
+
+        <!-- Key Terms Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+            <ul class="space-y-3 text-left text-xl text-blue-300">
+                <li><strong>Probability:</strong> The chance that an event will happen, written as a fraction, decimal, or percent.</li>
+                <li><strong>Event:</strong> A set of one or more possible outcomes in a probability experiment.</li>
+                <li><strong>Outcomes:</strong> Possible end results of an experiment.</li>
+                <li><strong>Sample Space:</strong> The set of all possible outcomes of an experiment.</li>
+                <li><strong>Fundamental Counting Principle:</strong> If an event can be chosen in p ways and another independent event in q ways, the total number of arrangements is p × q.</li>
+                <li><strong>Independent Events:</strong> Events where the occurrence of one does not impact the occurrence of the other.</li>
+                <li><strong>Permutation:</strong> An arrangement of objects where the order is important.</li>
+                <li><strong>Factorial (n!):</strong> The product of all positive integers up to n (e.g., 5! = 5 × 4 × 3 × 2 × 1).</li>
+                <li><strong>Combination:</strong> A selection of items where the order does not matter.</li>
+            </ul>
+        </div>
+
+        <!-- Important Formulas Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Important Formulas</h2>
+            <p class="text-xl text-cyan-300">
+                - **Permutation Formula**: The number of ways to arrange r objects from a set of n objects is:
+            </p>
+            <p class="text-3xl mt-4 text-yellow-300">
+                P(n, r) = n! / (n - r)!
+            </p>
+            <p class="text-xl text-cyan-300 mt-4">
+                Where:
+                <ul class="list-disc pl-6">
+                    <li>n is the total number of objects,</li>
+                    <li>r is the number of objects to be arranged,</li>
+                    <li>n! is the factorial of n.</li>
+                </ul>
+            </p>
+            <p class="text-xl text-cyan-300 mt-6">
+                - **Combination Formula**: The number of ways to choose r objects from a set of n objects is:
+            </p>
+            <p class="text-3xl mt-4 text-yellow-300">
+                C(n, r) = n! / [r! (n - r)!]
+            </p>
+            <p class="text-xl text-cyan-300 mt-4">
+                Where:
+                <ul class="list-disc pl-6">
+                    <li>n is the total number of objects,</li>
+                    <li>r is the number of objects to be selected,</li>
+                    <li>r! is the factorial of r, and</li>
+                    <li>n! is the factorial of n.</li>
+                </ul>
+            </p>
+        </div>
+
+        <!-- Example Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Example: Arranging Books on a Shelf</h2>
+            <p class="text-xl text-cyan-300">
+                Suppose you have 5 different books and you want to arrange 3 of them on a shelf. Since the order of the books matters in this case, 
+                we use the permutation formula.
+            </p>
+            <p class="text-2xl mt-4 text-yellow-300">
+                Using the permutation formula: P(n, r) = n! / (n - r)!
+            </p>
+            <p class="text-xl text-cyan-300 mt-6">
+                In this example, n = 5 (total number of books), and r = 3 (the number of books to arrange).
+            </p>
+            <p class="text-xl text-cyan-300 mt-6">
+                P(5, 3) = 5! / (5 - 3)! = 5! / 2! = (5 × 4 × 3 × 2 × 1) / (2 × 1) = 60
+            </p>
+            <p class="text-xl text-cyan-300 mt-4">
+                So, there are 60 different ways to arrange 3 books out of 5.
+            </p>
+        </div>
+
+        <!-- Conclusion Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+            <h2 class="text-3xl mb-4 text-green-400">Conclusion</h2>
+            <p class="text-xl text-cyan-300">
+                Permutations and combinations are fundamental techniques used in probability and statistics to count arrangements and selections of objects. 
+                By understanding these methods, you can determine how many possible outcomes or arrangements exist in various real-world situations, 
+                such as arranging items, selecting teams, or organizing events.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
