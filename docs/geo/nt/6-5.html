@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6.5 Probability Density Function</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #2d3748, #4a5568);
+            color: #f7fafc;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(52, 58, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+        .image-container {
+            max-width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .histogram {
+            width: 100%;
+            max-height: 300px;
+            margin-bottom: 16px;
+        }
+
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron">
+            6.5 Probability Density Function
+        </h1>
+
+        <!-- Big Picture Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Big Picture</h2>
+            <p class="text-xl text-cyan-300">
+                A **Probability Density Function (PDF)** represents the distribution of a continuous random variable. It provides a way to calculate the probability of a continuous variable falling within a particular range. The total area under the curve of the probability density function is always 1, indicating that some outcome must occur. Unlike discrete distributions where we calculate the probability of individual outcomes, a continuous distribution considers intervals and areas under the curve.
+            </p>
+        </div>
+
+        <!-- Key Terms Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+            <ul class="space-y-3 text-left text-xl text-blue-300">
+                <li><strong>Random:</strong> When every element in a population has an equal chance of being selected.</li>
+                <li><strong>Bins:</strong> Groups of data plotted on the x-axis of a histogram.</li>
+                <li><strong>Continuous Variables:</strong> Variables that take on any value within a given range.</li>
+                <li><strong>Probability Density:</strong> A function that describes the likelihood of a continuous random variable to take a particular value.</li>
+                <li><strong>Normal Curve:</strong> A bell-shaped curve representing a normal distribution, which is a common continuous distribution.</li>
+                <li><strong>Range:</strong> The difference between the largest and smallest values in a data set.</li>
+                <li><strong>Standard Deviation:</strong> A measure of the spread of a data set; higher values indicate more spread.</li>
+                <li><strong>Uniform Distribution:</strong> A distribution where every outcome in the data set is equally likely.</li>
+            </ul>
+        </div>
+
+        <!-- Summary Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Summary</h2>
+            <p class="text-xl text-cyan-300">
+                In a **Probability Density Function (PDF)**, the probability of a specific value for a continuous random variable is represented by the area under the curve of the graph. Since the data is continuous, the probability of obtaining any single value is essentially zero. Instead, we calculate the probability of the variable falling within a specific range by integrating the PDF over that range. The total area under the curve is always equal to 1, representing the certainty that one of the possible outcomes will occur.
+            </p>
+        </div>
+
+        <!-- Example Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Example: Normal Distribution</h2>
+            <p class="text-xl text-cyan-300">
+                The **Normal Distribution** is one of the most important probability distributions in statistics. It is symmetric and often used to model continuous variables such as test scores, heights, or weights. For a normal distribution, the probability density function follows the shape of a bell curve, with the highest probability at the mean value, and symmetrically decreasing as values move further away from the mean.
+            </p>
+
+            <div class="image-container">
+                <img src="https://via.placeholder.com/600x300/4C9B91/FFFFFF?text=Normal+Distribution+Curve" alt="Normal Distribution Curve" class="histogram mx-auto">
+            </div>
+
+            <p class="text-xl text-cyan-300 mt-6">
+                The area under the curve between any two points represents the probability that the variable will fall between those values. For example, the area between 1 and 2 standard deviations from the mean in a normal distribution accounts for approximately 68% of the total probability.
+            </p>
+        </div>
+
+        <!-- Conclusion Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+            <h2 class="text-3xl mb-4 text-green-400">Conclusion</h2>
+            <p class="text-xl text-cyan-300">
+                Probability Density Functions are an essential tool for analyzing continuous random variables. By understanding how to interpret the area under the curve, we can compute probabilities and understand the distribution of a variable in more depth. The concept of the total area under the curve always being equal to 1 is a fundamental characteristic of probability density functions and helps in modeling a wide variety of real-world phenomena.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
