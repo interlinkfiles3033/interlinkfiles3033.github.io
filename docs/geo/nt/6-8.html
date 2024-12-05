@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6.8 Random Variable Variance</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #2d3748, #4a5568);
+            color: #f7fafc;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(52, 58, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron">
+            6.8 Random Variable Variance
+        </h1>
+
+        <!-- Big Picture Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Big Picture</h2>
+            <p class="text-xl text-cyan-300">
+                **Variance** measures how much the values in a data set deviate from the **mean**. It gives a sense of how spread out the data points are. A high variance indicates that the data points are widely spread, while a low variance means that they are close to the mean.
+                <br><br>
+                The formula for variance is:
+                <span class="font-bold text-white">σ² = Σ (xᵢ - μ)² / N</span>
+                where:
+                - \(xᵢ\) represents each individual data point,
+                - \(μ\) is the mean of the data set,
+                - \(N\) is the number of data points.
+            </p>
+        </div>
+
+        <!-- Key Terms Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+            <ul class="space-y-3 text-left text-xl text-blue-300">
+                <li><strong>Variable:</strong> A symbol representing a changing or unknown quantity. Common variables are \(a\), \(b\), \(x\), \(y\), etc.</li>
+                <li><strong>Arithmetic Mean:</strong> The average of a data set, calculated as the sum of all values divided by the number of values.</li>
+                <li><strong>Variance (σ²):</strong> The average of the squared differences from the mean, representing how spread out the data points are.</li>
+                <li><strong>Standard Deviation:</strong> The square root of the variance, providing a measure of spread that is in the same units as the data.</li>
+                <li><strong>Expected Value:</strong> The long-term average or mean of a random variable in probability theory.</li>
+                <li><strong>Data Set:</strong> A collection of observations or values of a variable.</li>
+            </ul>
+        </div>
+
+        <!-- Summary Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Summary</h2>
+            <p class="text-xl text-cyan-300">
+                The **variance** of a data set is calculated by taking the mean of the squared differences from the mean. This measure gives an idea of the spread or dispersion of the data.
+                <br><br>
+                The **formula for variance** is:
+                <span class="font-bold text-white">σ² = Σ (xᵢ - μ)² / N</span>
+                - Where **μ** is the mean of the data set, 
+                - **xᵢ** represents each individual data point, 
+                - **N** is the number of data points in the data set.
+            </p>
+        </div>
+
+        <!-- Example Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Example: Data Set</h2>
+            <p class="text-xl text-cyan-300">
+                Suppose we have the data set: {2, 4, 6, 8, 10}.
+                <br><br>
+                First, calculate the mean (\(μ\)):
+                <pre class="bg-gray-700 text-white p-4 mt-4 rounded">
+μ = (2 + 4 + 6 + 8 + 10) / 5
+μ = 30 / 5
+μ = 6
+                </pre>
+                Next, calculate the squared differences from the mean:
+                <pre class="bg-gray-700 text-white p-4 mt-4 rounded">
+(2 - 6)² = 16
+(4 - 6)² = 4
+(6 - 6)² = 0
+(8 - 6)² = 4
+(10 - 6)² = 16
+                </pre>
+                Finally, calculate the variance:
+                <pre class="bg-gray-700 text-white p-4 mt-4 rounded">
+σ² = (16 + 4 + 0 + 4 + 16) / 5
+σ² = 40 / 5
+σ² = 8
+                </pre>
+                So, the variance of this data set is **8**.
+            </p>
+        </div>
+
+        <!-- Conclusion Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+            <h2 class="text-3xl mb-4 text-green-400">Conclusion</h2>
+            <p class="text-xl text-cyan-300">
+                The **variance** is a crucial concept in statistics, providing a quantitative measure of the spread of data. A higher variance means more spread out data, while a lower variance indicates that data points are closer to the mean. Understanding variance allows us to make more informed decisions and better interpret the variability in our data.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
