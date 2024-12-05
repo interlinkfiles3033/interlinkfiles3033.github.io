@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7.2 The Empirical Rule</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #2d3748, #4a5568);
+            color: #f7fafc;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(52, 58, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron">
+            7.2 The Empirical Rule
+        </h1>
+
+        <!-- Big Picture Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Big Picture</h2>
+            <p class="text-xl text-cyan-300">
+                The **Empirical Rule** is a key concept used to estimate the probability of occurrence of data points within certain ranges in a **normal distribution**. It allows us to quickly determine the proportion of data within 1, 2, or 3 standard deviations from the mean.
+                <br><br>
+                For a **normal distribution**, the **Empirical Rule** states that:
+                - **68%** of the data falls within **1 standard deviation** from the mean
+                - **95%** of the data falls within **2 standard deviations**
+                - **99.7%** of the data falls within **3 standard deviations**
+            </p>
+        </div>
+
+        <!-- Key Terms Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+            <ul class="space-y-3 text-left text-xl text-blue-300">
+                <li><strong>Standard Deviation:</strong> A measure of spread in a data set, showing how much the values deviate from the mean.</li>
+                <li><strong>Probability:</strong> The chance that something will happen, usually expressed as a fraction, decimal, or percentage.</li>
+                <li><strong>Bell Curve:</strong> A symmetrical curve that represents a normal distribution, with most values clustering around the mean.</li>
+            </ul>
+        </div>
+
+        <!-- Important Info Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Important Info</h2>
+            <p class="text-xl text-cyan-300">
+                The **Empirical Rule** helps us make quick estimations about data in a **normal distribution**:
+                <br><br>
+                - **68%** of data falls between **-1 standard deviation (-1σ)** and **+1 standard deviation (+1σ)**
+                - **95%** of data falls between **-2 standard deviations (-2σ)** and **+2 standard deviations (+2σ)**
+                - **99.7%** of data falls between **-3 standard deviations (-3σ)** and **+3 standard deviations (+3σ)**
+            </p>
+        </div>
+
+        <!-- Example Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Example</h2>
+            <p class="text-xl text-cyan-300">
+                Suppose we have a **normal distribution** where the mean height of adult women is **64 inches** and the standard deviation is **3 inches**. 
+                <br><br>
+                Using the **Empirical Rule**, we can estimate:
+                <br><br>
+                - **68%** of women have a height between **61 inches** and **67 inches** (±1σ)
+                <pre class="bg-gray-700 text-white p-4 mt-4 rounded">
+64 - 3 = 61 inches
+64 + 3 = 67 inches
+                </pre>
+                - **95%** of women have a height between **58 inches** and **70 inches** (±2σ)
+                <pre class="bg-gray-700 text-white p-4 mt-4 rounded">
+64 - 6 = 58 inches
+64 + 6 = 70 inches
+                </pre>
+                - **99.7%** of women have a height between **55 inches** and **73 inches** (±3σ)
+                <pre class="bg-gray-700 text-white p-4 mt-4 rounded">
+64 - 9 = 55 inches
+64 + 9 = 73 inches
+                </pre>
+            </p>
+        </div>
+
+        <!-- Conclusion Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+            <h2 class="text-3xl mb-4 text-green-400">Conclusion</h2>
+            <p class="text-xl text-cyan-300">
+                The **Empirical Rule** provides a fast and useful way to estimate how much of a dataset falls within certain ranges of the mean. For a **normal distribution**, it helps us quickly understand the spread of data and make informed decisions based on probabilities.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
