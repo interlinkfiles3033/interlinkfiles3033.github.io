@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3.4 Cluster Sampling</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #0a192f, #112240);
+            color: #e6f1ff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(17, 34, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron" data-tooltip="Cluster Sampling">
+            3.4 Cluster Sampling
+        </h1>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Summary Statement -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Summary Statement of Topic</h2>
+                <p class="text-xl text-cyan-300">
+                    Helps to achieve a representative sample when the population is too big for you to choose a sample individually, so you choose in clusters.
+                </p>
+            </div>
+
+            <!-- Key Terms -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+                <ul class="space-y-3 text-left text-xl text-blue-300">
+                    <li><strong>Population:</strong> The entire group of interest from which the sample is drawn</li>
+                    <li><strong>Simple Random Sample:</strong> The process of assigning a number to each member of the population, and then using a random number generator to pick the samples</li>
+                    <li><strong>Representative Sample:</strong> A smaller number of members of a population whose responses to events model those of the entire population</li>
+                    <li><strong>Random:</strong> Everyone or everything in a population has an equal chance of being selected, the selection can be said to occur at random</li>
+                    <li><strong>Clusters:</strong> A naturally occurring subgroup of a population</li>
+                    <li><strong>Data:</strong> Information that has been collected to represent real life situations, usually in number form</li>
+                    <li><strong>Sample:</strong> A specified part of a population, intended to represent the population as a whole</li>
+                    <li><strong>Poll:</strong> Question members in a group regarding a specific topic</li>
+                    <li><strong>Survey:</strong> A data collection method used to gather information from individuals</li>
+                    <li><strong>Bias:</strong> A desire to achieve a specific result from a particular study, regardless of the data</li>
+                    <li><strong>Estimate:</strong> An approximate answer that is reasonable or makes sense given the problem</li>
+                    <li><strong>Arithmetic Mean:</strong> Also called the Average; Arithmetic Mean = x1 + x2 + ... + n</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-8 grid md:grid-cols-2 gap-8">
+            <!-- Example of Cluster Sampling -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Example of Cluster Sampling</h2>
+                <p class="text-xl text-cyan-300">
+                    <strong>Population:</strong> Carnegie High School<br>
+                    <strong>Information Required:</strong> Favorite Color<br>
+                    <strong>Steps:</strong><br>
+                    1. Have the grades as different groups (clusters).<br>
+                    2. Randomly choose 2 classes from each grade.<br>
+                    3. Randomly choose 2 class periods from each class.<br>
+                    4. Ask the students in each class their favorite color.<br><br>
+                    This way, instead of surveying the entire school, you focus on representative clusters to gather the information.
+                </p>
+            </div>
+
+            <!-- Additional Notes -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Additional Notes</h2>
+                <p class="text-xl text-cyan-300">
+                    Cluster sampling can save time and resources when dealing with a large population. The key is to ensure that the clusters are representative of the entire population.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add some subtle hover effects (these can stay as they are)
+        document.querySelectorAll('.formula-box').forEach(box => {
+            box.addEventListener('mouseenter', () => {
+                box.style.transform = 'scale(1.02)';
+            });
+            box.addEventListener('mouseleave', () => {
+                box.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
