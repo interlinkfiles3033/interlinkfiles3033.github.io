@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5.6 Probability of Unions</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #2d3748, #4a5568);
+            color: #f7fafc;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(52, 58, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron">
+            5.6 Probability of Unions
+        </h1>
+
+        <!-- Big Picture Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Big Picture</h2>
+            <p class="text-xl text-cyan-300">
+                The probability of unions helps us understand the likelihood of either one or more events happening in a probability experiment. The union of two sets is the set of outcomes that belong to either one or both of the events. This concept is useful in many everyday situations where we are interested in the occurrence of one or more events.
+            </p>
+        </div>
+
+        <!-- Key Terms Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+            <ul class="space-y-3 text-left text-xl text-blue-300">
+                <li><strong>Event:</strong> A set of one or more possible outcomes in a probability experiment.</li>
+                <li><strong>Outcomes:</strong> The possible end results of an experiment.</li>
+                <li><strong>Union (⋃):</strong> The combination of two or more sets into one larger set, which contains all the elements from both sets.</li>
+                <li><strong>Probability:</strong> The chance that an event will occur, expressed as a fraction, decimal, or percentage.</li>
+                <li><strong>Intersection:</strong> The common outcomes between two events; often represented by the word "and."</li>
+                <li><strong>Venn Diagram:</strong> A diagram that visually represents the relationships between different sets, including unions and intersections.</li>
+            </ul>
+        </div>
+
+        <!-- Important Formula Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Important Formula</h2>
+            <p class="text-xl text-cyan-300">
+                The probability of the union of two events A and B, denoted as P(A ∪ B), is given by the formula:
+            </p>
+            <p class="text-3xl mt-4 text-yellow-300">
+                P(A ∪ B) = P(A) + P(B) - P(A ∩ B)
+            </p>
+            <p class="text-xl text-cyan-300 mt-4">
+                Where:
+                <ul class="list-disc pl-6">
+                    <li>P(A) is the probability of event A occurring</li>
+                    <li>P(B) is the probability of event B occurring</li>
+                    <li>P(A ∩ B) is the probability of both A and B occurring (the intersection of A and B)</li>
+                </ul>
+            </p>
+        </div>
+
+        <!-- Example Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Example: Drawing Cards from a Deck</h2>
+            <p class="text-xl text-cyan-300">
+                Let's say we are drawing one card from a deck of 52 cards. We want to know the probability of drawing either a heart or a spade. 
+                Let event A be drawing a heart, and event B be drawing a spade. The probability of event A (P(A)) is 13/52 (since there are 13 hearts in a deck), 
+                and the probability of event B (P(B)) is also 13/52. Since there is no overlap between hearts and spades, the intersection of A and B (P(A ∩ B)) is 0.
+            </p>
+            <p class="text-xl text-cyan-300 mt-6">
+                Using the formula for the union of two events:
+            </p>
+            <p class="text-2xl mt-4 text-yellow-300">
+                P(A ∪ B) = P(A) + P(B) - P(A ∩ B)
+            </p>
+            <p class="text-xl text-cyan-300 mt-4">
+                P(A ∪ B) = 13/52 + 13/52 - 0 = 26/52 = 1/2
+            </p>
+            <p class="text-xl text-cyan-300 mt-4">
+                So, the probability of drawing either a heart or a spade is 1/2, or 50%.
+            </p>
+        </div>
+
+        <!-- Conclusion Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+            <h2 class="text-3xl mb-4 text-green-400">Conclusion</h2>
+            <p class="text-xl text-cyan-300">
+                Understanding the probability of unions is an essential concept in probability theory. It allows us to calculate the likelihood of one or more events occurring together, which can be applied in various everyday situations, such as drawing cards, rolling dice, or predicting outcomes in experiments.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
