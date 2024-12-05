@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6.2 Understanding Continuous Random Variables</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #2d3748, #4a5568);
+            color: #f7fafc;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(52, 58, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron">
+            6.2 Understanding Continuous Random Variables
+        </h1>
+
+        <!-- Big Picture Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Big Picture</h2>
+            <p class="text-xl text-cyan-300">
+                Continuous random variables are those that can take any value within a given range or interval. Unlike discrete random variables, which only take specific values, continuous random variables can take on an infinite number of possible values. These values are often measured and are associated with things like time, height, or temperature, where there is no inherent limitation to the number of possible outcomes in the range.
+            </p>
+        </div>
+
+        <!-- Key Terms Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+            <ul class="space-y-3 text-left text-xl text-blue-300">
+                <li><strong>Continuous Random Variable:</strong> A random variable that can take any value within a given interval, often representing measurements.</li>
+                <li><strong>Experiment:</strong> The process of taking a measurement or making an observation.</li>
+                <li><strong>Random Variables:</strong> Quantities that take on different values depending on chance or probability.</li>
+                <li><strong>Outcomes:</strong> The possible end results of a probability experiment.</li>
+                <li><strong>Fair Die:</strong> A die with an equal chance of landing on any of its sides (used in discrete random variables).</li>
+                <li><strong>Value:</strong> The specific number or outcome that a random variable can take on.</li>
+            </ul>
+        </div>
+
+        <!-- Summary Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Summary</h2>
+            <p class="text-xl text-cyan-300">
+                Continuous random variables are fundamental in probability theory, particularly when dealing with measurements that have a continuous range. For example, the time it takes for a chemical reaction to occur or the weight of a person can be represented by continuous random variables. Understanding the properties and distributions of these variables is essential for many fields, including statistics, physics, and economics.
+            </p>
+        </div>
+
+        <!-- Example Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Example: Height Measurement</h2>
+            <p class="text-xl text-cyan-300">
+                Consider the random variable \( X \) representing the height of students in a class. Since height can take on any value within a certain range (e.g., between 150 cm and 200 cm), this is an example of a continuous random variable.
+            </p>
+            <p class="text-xl text-cyan-300 mt-6">
+                The probability distribution of continuous random variables is represented using a **probability density function (PDF)**, which shows the likelihood of the variable falling within certain intervals. The area under the curve of a PDF between two points gives the probability that the random variable will fall within that range.
+            </p>
+            <p class="text-xl text-cyan-300 mt-6">
+                For example, if the heights of students are normally distributed, we can calculate the probability of a student having a height between 160 cm and 170 cm by finding the area under the curve between those two values. 
+            </p>
+            <p class="text-xl text-cyan-300 mt-6">
+                The probability of getting a height between 160 cm and 170 cm is represented as:
+            </p>
+            <div class="text-center mt-6">
+                <p class="text-3xl text-yellow-300">
+                    P(160 ≤ X ≤ 170) = Area under the PDF curve between 160 and 170.
+                </p>
+            </div>
+            <p class="text-xl text-cyan-300 mt-6">
+                This is an example of how continuous random variables are used in practice. In real-world scenarios, we can calculate probabilities over intervals, but individual values themselves (like exactly 165.5 cm) have zero probability, because the variable is continuous.
+            </p>
+        </div>
+
+        <!-- Conclusion Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+            <h2 class="text-3xl mb-4 text-green-400">Conclusion</h2>
+            <p class="text-xl text-cyan-300">
+                Continuous random variables are essential for modeling and understanding situations where outcomes are measured rather than counted. They are widely used in fields that involve real-world measurements, from physics to economics. The key difference from discrete random variables is that they can take any value within a specified range, making them infinitely divisible and suitable for continuous distributions.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
