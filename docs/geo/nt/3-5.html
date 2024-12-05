@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3.5 Non-Probability Sampling</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #0a192f, #112240);
+            color: #e6f1ff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(17, 34, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron" data-tooltip="Non-Probability Sampling">
+            3.5 Non-Probability Sampling
+        </h1>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Summary Statement -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Summary Statement of Topic</h2>
+                <p class="text-xl text-cyan-300">
+                    Sampling methods that usually tend to have some bias, like volunteer sampling and judgemental sampling, to gather information that best fits your need.
+                </p>
+            </div>
+
+            <!-- Key Terms -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+                <ul class="space-y-3 text-left text-xl text-blue-300">
+                    <li><strong>Sample:</strong> A specified part of a population, intended to represent the population as a whole.</li>
+                    <li><strong>Random:</strong> Everyone or everything in a population has an equal chance of being selected, the selection can be said to occur at random.</li>
+                    <li><strong>Convenience Sampling:</strong> Refers to the process of choosing a sample based on members who are easily accessible.</li>
+                    <li><strong>Quota Sampling:</strong> Sampling is done until a specific number of subjects for various subpopulations have been selected.</li>
+                    <li><strong>Random Sample:</strong> A subset of a population for which each member of the population has an equal chance of being chosen.</li>
+                    <li><strong>Population:</strong> The entire group of interest from which the sample is drawn.</li>
+                    <li><strong>Range:</strong> The difference between the smallest value and the greatest value in the data set.</li>
+                    <li><strong>Data:</strong> Information that has been collected to represent real life situations, usually in number form.</li>
+                    <li><strong>Random Sampling:</strong> Involves choosing representatives by rolling a die, for instance.</li>
+                    <li><strong>Survey:</strong> A data collection method used to gather information about individuals' opinions, beliefs, or habits.</li>
+                    <li><strong>Sample Size:</strong> The number of individuals, or objects, that are surveyed or tested in the study.</li>
+                    <li><strong>Response Rate:</strong> The percentage of total attempts made at data collection divided by the number of successful responses.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-8 grid md:grid-cols-2 gap-8">
+            <!-- Examples of Non-Probability Sampling -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Examples of Non-Probability Sampling</h2>
+                <ul class="space-y-3 text-left text-xl text-cyan-300">
+                    <li><strong>Convenience Sampling:</strong> Choosing samples based on easy or convenient access. (e.g., surveying people at a nearby coffee shop).</li>
+                    <li><strong>Volunteer (or Snowball) Sampling:</strong> Asking for volunteers or for recommendations from other samples. (e.g., "Please fill out this survey if you are interested").</li>
+                    <li><strong>Judgement Sampling:</strong> Deliberately choosing samples based on a desired characteristic. (e.g., selecting experts in a specific field for a survey).</li>
+                    <li><strong>Quota Sampling:</strong> Choosing samples to fill a specific quota of each subpopulation. (e.g., ensuring equal representation of men and women in the sample).</li>
+                </ul>
+            </div>
+
+            <!-- Additional Notes -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Additional Notes</h2>
+                <p class="text-xl text-cyan-300">
+                    Non-Probability sampling methods are commonly used when researchers have limited access to the population, or when precise, random sampling is not feasible. However, these methods are more likely to produce biased results compared to probability sampling methods.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add some subtle hover effects (these can stay as they are)
+        document.querySelectorAll('.formula-box').forEach(box => {
+            box.addEventListener('mouseenter', () => {
+                box.style.transform = 'scale(1.02)';
+            });
+            box.addEventListener('mouseleave', () => {
+                box.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
