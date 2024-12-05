@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8.2 Angles - Definition, Types, Interactives and Examples</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #2d3748, #4a5568);
+            color: #f7fafc;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(52, 58, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron">
+            8.2 Angles - Definition, Types, Interactives and Examples
+        </h1>
+
+        <!-- Big Picture Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Big Picture</h2>
+            <p class="text-xl text-cyan-300">
+                An **angle** is formed when two rays meet at their endpoints, creating a geometric figure. The **point of intersection** where the two rays meet is called the **vertex** of the angle. Depending on the situation, an angle is often represented with the angle symbol (∠) followed by its vertex.
+                <br><br>
+                Understanding angles is essential for working with geometric shapes, measuring rotations, and solving problems related to **intersection points**, **parallel lines**, and **perpendicular lines**.
+            </p>
+        </div>
+
+        <!-- Key Terms Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+            <ul class="space-y-3 text-left text-xl text-blue-300">
+                <li><strong>Line:</strong> A straight, one-dimensional figure made up of infinitely many points extending forever in both directions.</li>
+                <li><strong>Endpoint:</strong> A point at one end of a line segment or ray.</li>
+                <li><strong>Ray:</strong> A part of a line that has one endpoint and continues indefinitely in one direction.</li>
+                <li><strong>Angle:</strong> A geometric figure formed by two rays meeting at a single point (vertex).</li>
+                <li><strong>Vertex:</strong> The point where two rays meet to form an angle.</li>
+                <li><strong>Measure:</strong> The process of determining how far apart two geometric objects are (e.g., using a protractor for angles).</li>
+                <li><strong>Protractor:</strong> A tool used to measure an angle in degrees.</li>
+                <li><strong>Right Angle:</strong> An angle that measures 90 degrees.</li>
+                <li><strong>Square:</strong> A parallelogram with four right angles and four congruent sides.</li>
+                <li><strong>Rotation:</strong> A transformation that turns a figure around a fixed point by a specified angle.</li>
+                <li><strong>Circle:</strong> The set of all points equidistant from a given point, called the center.</li>
+                <li><strong>Straight Angle:</strong> An angle measuring exactly 180 degrees, forming a straight line.</li>
+                <li><strong>Adjacent Angles:</strong> Two angles that share a common side and vertex.</li>
+                <li><strong>Vertical Angles:</strong> A pair of opposite angles formed by two intersecting lines.</li>
+                <li><strong>Intersecting Lines:</strong> Lines that cross or meet at a common point.</li>
+                <li><strong>Perpendicular Lines:</strong> Two lines that intersect to form a right angle (90 degrees). The product of their slopes is -1.</li>
+            </ul>
+        </div>
+
+        <!-- Important Info Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Important Info</h2>
+            <p class="text-xl text-cyan-300">
+                In geometry, angles are fundamental for describing shapes, lines, and various transformations. The main types of angles include:
+                <br><br>
+                - **Right Angle (90°)**: A perfect right angle.
+                - **Acute Angle (less than 90°)**: An angle smaller than 90 degrees.
+                - **Obtuse Angle (greater than 90°)**: An angle larger than 90 but less than 180 degrees.
+                - **Straight Angle (180°)**: A straight line.
+                - **Reflex Angle (greater than 180°)**: An angle larger than 180 degrees but smaller than 360 degrees.
+                <br><br>
+                Angles are created by two rays, but they are classified based on their measure. **Vertical angles** are always equal, and **adjacent angles** share a side and vertex, making them important in angle relationships.
+            </p>
+        </div>
+
+        <!-- Example Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Example</h2>
+            <p class="text-xl text-cyan-300">
+                Let's consider two lines intersecting, creating two pairs of **vertical angles**.
+                <br><br>
+                When two lines intersect at a point, they create **vertical angles**. These angles are opposite each other and are always congruent. For example:
+                <pre class="bg-gray-700 text-white p-4 mt-4 rounded">
+Vertical Angle 1 = 120°
+Vertical Angle 2 = 120°
+                </pre>
+                This demonstrates that the two vertical angles are equal, regardless of the angles created by the intersection.
+                <br><br>
+                **Adjacent angles** are angles that share a common side and vertex. For example:
+                <pre class="bg-gray-700 text-white p-4 mt-4 rounded">
+Adjacent Angle 1 = 45°
+Adjacent Angle 2 = 45°
+                </pre>
+                These two angles are adjacent, as they share a common side and vertex.
+            </p>
+        </div>
+
+        <!-- Interactive Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Interactive Example</h2>
+            <p class="text-xl text-cyan-300">
+                Use a **protractor** to measure the angles formed by the intersection of two lines:
+                <ul class="list-disc ml-8 text-xl text-blue-300">
+                    <li>Place the protractor on the **vertex** of the intersection.</li>
+                    <li>Align the base of the protractor with one of the rays.</li>
+                    <li>Measure the angle between the two rays in degrees.</li>
+                </ul>
+                <br>
+                **Note:** The sum of the angles formed by two intersecting lines is always 360°, as they form a full circle.
+            </p>
+        </div>
+
+        <!-- Conclusion Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+            <h2 class="text-3xl mb-4 text-green-400">Conclusion</h2>
+            <p class="text-xl text-cyan-300">
+                Angles are essential in geometry for describing the relationships between lines, shapes, and transformations. By understanding **types of angles** such as right, acute, obtuse, and straight angles, as well as concepts like **vertical** and **adjacent angles**, you can solve geometric problems involving intersections, rotations, and reflections. Using tools like the **protractor** allows you to measure angles accurately, aiding in a wide range of geometric applications.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
