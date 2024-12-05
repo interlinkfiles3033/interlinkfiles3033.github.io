@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5.5 Everyday Examples of Independence and Probability</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #0a192f, #112240);
+            color: #e6f1ff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(17, 34, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron">
+            5.5 Everyday Examples of Independence and Probability
+        </h1>
+
+        <!-- Big Picture Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Big Picture</h2>
+            <p class="text-xl text-cyan-300">
+                Understanding conditional probability helps us apply probability theory to everyday situations. In real life, we often encounter events that depend on the outcome of previous events. Conditional probability gives us a way to calculate the likelihood of an event happening given that another related event has already occurred.
+            </p>
+        </div>
+
+        <!-- Key Terms Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+            <ul class="space-y-3 text-left text-xl text-blue-300">
+                <li><strong>Conditional Probability:</strong> The probability of an event occurring given that another related event has already occurred.</li>
+                <li><strong>Probability:</strong> The chance that something will happen, which can be expressed as a fraction, decimal, or percentage.</li>
+                <li><strong>Independent Events:</strong> Two events are independent if the occurrence of one event does not affect the probability of the other.</li>
+                <li><strong>Dependent Events:</strong> Events where the outcome of one event influences the outcome of another event.</li>
+            </ul>
+        </div>
+
+        <!-- Everyday Example Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Example: Drawing Cards from a Deck</h2>
+            <p class="text-xl text-cyan-300">
+                Imagine you're drawing two cards from a standard deck of 52 cards. The first card is drawn, and it's a red card (hearts or diamonds). What is the probability that the second card you draw is also a red card, given that the first card was red?
+            </p>
+
+            <div class="mt-6">
+                <p class="text-xl text-cyan-300">
+                    The probability of drawing a red card on the first draw is 26/52, since there are 26 red cards in the deck. After drawing the first red card, there are now 25 red cards left and only 51 cards total. So, the conditional probability of drawing a red card on the second draw is:
+                </p>
+                <p class="text-2xl mt-4 text-yellow-300">
+                    P(Second Red | First Red) = 25/51
+                </p>
+            </div>
+            <p class="mt-4 text-xl text-cyan-300">
+                This is an example of dependent events because the outcome of the first event (drawing a red card) affects the probability of the second event (drawing a red card again).
+            </p>
+        </div>
+
+        <!-- Conclusion Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+            <h2 class="text-3xl mb-4 text-green-400">Conclusion</h2>
+            <p class="text-xl text-cyan-300">
+                Everyday situations, like drawing cards from a deck or making predictions based on prior outcomes, can often be modeled using conditional probability. By understanding how one event affects the likelihood of another, we can make more informed decisions. Conditional probability is a powerful tool that helps us navigate uncertainty in daily life.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
