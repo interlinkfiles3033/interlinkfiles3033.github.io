@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7.6 The Mean of Means</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #2d3748, #4a5568);
+            color: #f7fafc;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(52, 58, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron">
+            7.6 The Mean of Means
+        </h1>
+
+        <!-- Big Picture Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Big Picture</h2>
+            <p class="text-xl text-cyan-300">
+                The **Mean of Means** refers to the average of the means of several samples taken from the same population. It provides a way to estimate the overall population mean using sample data. This concept is fundamental in statistical inference because it shows that, regardless of sample size, the mean of sample means will approach the population mean as the number of samples increases.
+                <br><br>
+                It also helps in understanding the behavior of sample means in various distributions, particularly in hypothesis testing and the creation of confidence intervals.
+            </p>
+        </div>
+
+        <!-- Key Terms Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+            <ul class="space-y-3 text-left text-xl text-blue-300">
+                <li><strong>Units:</strong> The individuals or objects in a population from which a sample is drawn.</li>
+                <li><strong>Population:</strong> The entire group of interest from which a sample is selected.</li>
+                <li><strong>Sample Mean:</strong> The mean calculated from a subset (sample) of the population.</li>
+                <li><strong>Mean of Means:</strong> The average of the means of multiple samples taken from the same population.</li>
+                <li><strong>Sampling Distribution:</strong> A probability distribution of a statistic (e.g., sample mean) computed for each sample.</li>
+                <li><strong>Standard Deviation of Sample Means:</strong> A measure of how much the sample means vary from the true population mean.</li>
+            </ul>
+        </div>
+
+        <!-- Important Info Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Important Info</h2>
+            <p class="text-xl text-cyan-300">
+                The **Mean of Means** formula is used to find the expected value of the sample means. It helps estimate the population mean by averaging the means of several samples.
+                <br><br>
+                The **Standard Deviation of Sample Means** is given by the formula:
+                <pre class="bg-gray-700 text-white p-4 mt-4 rounded">
+Standard Deviation of Sample Means = σ / √n
+                </pre>
+                Where:
+                <ul class="list-disc pl-8 text-lg text-blue-300">
+                    <li>**σ** is the population standard deviation.</li>
+                    <li>**n** is the sample size.</li>
+                </ul>
+                The standard deviation of the sample means decreases as the sample size increases, making the sample mean a more accurate estimate of the population mean.
+            </p>
+        </div>
+
+        <!-- Example Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Example</h2>
+            <p class="text-xl text-cyan-300">
+                Suppose you are analyzing the average height of students at a school. The population standard deviation (**σ**) is 10 cm. You take several samples, each with a size of **n = 25** students. You want to find the standard deviation of the sample means.
+                <br><br>
+                Using the formula for the **Standard Deviation of Sample Means**:
+                <pre class="bg-gray-700 text-white p-4 mt-4 rounded">
+Standard Deviation of Sample Means = σ / √n
+Standard Deviation of Sample Means = 10 / √25
+Standard Deviation of Sample Means = 10 / 5
+Standard Deviation of Sample Means = 2
+                </pre>
+                Therefore, the standard deviation of the sample means is **2 cm**.
+            </p>
+        </div>
+
+        <!-- Application of Mean of Means Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Application of Mean of Means</h2>
+            <p class="text-xl text-cyan-300">
+                The **Mean of Means** can be used to estimate the population mean by calculating the mean of multiple sample means. As you take more samples, the mean of the sample means will converge to the true population mean. This is useful for drawing conclusions about the population based on sample data.
+                <br><br>
+                For instance, if you take several random samples of size 30 from a population, and calculate the mean of each sample, the average of those sample means will give you an estimate of the population mean.
+            </p>
+        </div>
+
+        <!-- Conclusion Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+            <h2 class="text-3xl mb-4 text-green-400">Conclusion</h2>
+            <p class="text-xl text-cyan-300">
+                The **Mean of Means** is an important concept for estimating the population mean using sample data. By understanding the **Standard Deviation of Sample Means**, statisticians can assess how reliable their sample means are as estimates of the population mean. The larger the sample size, the more accurate the sample mean becomes.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
