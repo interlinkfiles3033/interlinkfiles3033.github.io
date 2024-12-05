@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7.5 Z-Scores III</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #2d3748, #4a5568);
+            color: #f7fafc;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(52, 58, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron">
+            7.5 Z-Scores III
+        </h1>
+
+        <!-- Big Picture Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Big Picture</h2>
+            <p class="text-xl text-cyan-300">
+                **Z-scores** are used to describe the relative position of a data point within a normal distribution by measuring how many standard deviations the point is from the mean. Z-scores are important for comparing different data sets and analyzing the likelihood of occurrences in those sets.
+                <br><br>
+                The use of Z-scores is prevalent in statistics, especially in hypothesis testing, probability calculations, and standardization of scores from different distributions.
+            </p>
+        </div>
+
+        <!-- Key Terms Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+            <ul class="space-y-3 text-left text-xl text-blue-300">
+                <li><strong>Z-score:</strong> The number of standard deviations a data point is from the mean. Formula: Z = (X - μ) / σ</li>
+                <li><strong>Distribution:</strong> A description of the values that a random variable can take and their corresponding probabilities.</li>
+                <li><strong>Standard Deviation:</strong> A measure of the spread or dispersion of a data set.</li>
+                <li><strong>Random:</strong> When every individual or element has an equal chance of being selected from the population.</li>
+                <li><strong>Estimate:</strong> An approximation of a value, which is often used when exact calculations are difficult.</li>
+            </ul>
+        </div>
+
+        <!-- Important Info Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Important Info</h2>
+            <p class="text-xl text-cyan-300">
+                The **Z-score formula** allows us to calculate how many standard deviations a particular data point (X) is away from the mean (μ) of a dataset, using the standard deviation (σ):
+                <br><br>
+                <pre class="bg-gray-700 text-white p-4 mt-4 rounded">
+Z = (X - μ) / σ
+                </pre>
+                Where:
+                <ul class="list-disc pl-8 text-lg text-blue-300">
+                    <li>**X** is the value you are calculating the Z-score for</li>
+                    <li>**μ** is the mean of the data set</li>
+                    <li>**σ** is the standard deviation of the data set</li>
+                </ul>
+            </p>
+        </div>
+
+        <!-- Example Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Example</h2>
+            <p class="text-xl text-cyan-300">
+                Suppose you are analyzing the heights of a group of people, and you know that the average height (mean, μ) is **170 cm**, with a standard deviation (σ) of **10 cm**. You want to calculate the Z-score for someone who is **180 cm** tall.
+                <br><br>
+                Using the **Z-score formula**:
+                <pre class="bg-gray-700 text-white p-4 mt-4 rounded">
+Z = (X - μ) / σ
+Z = (180 - 170) / 10
+Z = 10 / 10
+Z = 1
+                </pre>
+                The Z-score is **1**, which means that the height of 180 cm is **1 standard deviation above** the mean height.
+            </p>
+        </div>
+
+        <!-- Application of Z-Scores Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Application of Z-Scores</h2>
+            <p class="text-xl text-cyan-300">
+                Z-scores can be used to compare data points from different distributions. By transforming values into Z-scores, you standardize them, making it possible to compare data from different scales.
+                <br><br>
+                For instance, a Z-score of **2** corresponds to a value that is **2 standard deviations above** the mean. You can use **Z-tables** to find the probability associated with a particular Z-score. For example, a Z-score of 2 corresponds to approximately **97.72%** of the data being less than this value in a standard normal distribution.
+            </p>
+        </div>
+
+        <!-- Conclusion Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+            <h2 class="text-3xl mb-4 text-green-400">Conclusion</h2>
+            <p class="text-xl text-cyan-300">
+                Z-scores are an essential statistical tool that help to quantify how far away a data point is from the mean in terms of standard deviations. By calculating the Z-score, you can understand the relative standing of a value within a distribution and make informed decisions based on this information.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
