@@ -85,33 +85,24 @@
         </div>
 
         <div class="mt-8 grid md:grid-cols-2 gap-8">
-            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in" onclick="toggleDetails(this)">
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
                 <h3 class="text-2xl mb-4 text-purple-400">Dice Roll Example</h3>
-                <div class="details hidden">
-                    <p><strong>Sample Space:</strong> {1, 2, 3, 4, 5, 6}</p>
-                    <p><strong>Event:</strong> Rolling a 5</p>
-                    <p><strong>Probability:</strong> 1/6</p>
-                </div>
+                <p><strong>Sample Space:</strong> {1, 2, 3, 4, 5, 6}</p>
+                <p><strong>Event:</strong> Rolling a 5</p>
+                <p><strong>Probability:</strong> 1/6</p>
             </div>
 
-            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in" onclick="toggleDetails(this)">
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
                 <h3 class="text-2xl mb-4 text-purple-400">Card Pick Example</h3>
-                <div class="details hidden">
-                    <p><strong>Sample Space:</strong> 52-card deck</p>
-                    <p><strong>Event:</strong> Picking 2 Aces without replacement</p>
-                    <p><strong>Probability:</strong> (4/52) × (3/51) = 1/221</p>
-                </div>
+                <p><strong>Sample Space:</strong> 52-card deck</p>
+                <p><strong>Event:</strong> Picking 2 Aces without replacement</p>
+                <p><strong>Probability:</strong> (4/52) × (3/51) = 1/221</p>
             </div>
         </div>
     </div>
 
     <script>
-        function toggleDetails(element) {
-            const detailsDiv = element.querySelector('.details');
-            detailsDiv.classList.toggle('hidden');
-        }
-
-        // Optional: Add some subtle hover effects
+        // Optional: Add some subtle hover effects (these can stay as they are)
         document.querySelectorAll('.formula-box').forEach(box => {
             box.addEventListener('mouseenter', () => {
                 box.style.transform = 'scale(1.02)';
