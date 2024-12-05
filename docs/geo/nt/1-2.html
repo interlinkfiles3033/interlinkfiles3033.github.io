@@ -81,35 +81,28 @@
         </div>
 
         <div class="mt-8 grid md:grid-cols-2 gap-8">
-            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in" onclick="toggleDetails(this)">
+            <!-- Dice Roll Probability Example (Always Visible) -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
                 <h3 class="text-2xl mb-4 text-purple-400">Dice Roll Probability Example</h3>
-                <div class="details hidden">
-                    <p><strong>Sample Space:</strong> {1, 2, 3, 4, 5, 6}</p>
-                    <p><strong>Event:</strong> Odds against rolling a 5 or 6</p>
-                    <p><strong>Calculation:</strong> (4/6) / (2/6) = 2:1</p>
-                    <p><strong>Interpretation:</strong> 2 to 1 odds against rolling a 5 or 6</p>
-                </div>
+                <p><strong>Sample Space:</strong> {1, 2, 3, 4, 5, 6}</p>
+                <p><strong>Event:</strong> Odds against rolling a 5 or 6</p>
+                <p><strong>Calculation:</strong> (4/6) / (2/6) = 2:1</p>
+                <p><strong>Interpretation:</strong> 2 to 1 odds against rolling a 5 or 6</p>
             </div>
 
-            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in" onclick="toggleDetails(this)">
+            <!-- Probability in Careers (Always Visible) -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
                 <h3 class="text-2xl mb-4 text-purple-400">Probability in Careers</h3>
-                <div class="details hidden">
-                    <p><strong>Banking:</strong> Risk assessment</p>
-                    <p><strong>Music:</strong> Predicting audience preferences</p>
-                    <p><strong>Marketing:</strong> Targeting specific demographics</p>
-                    <p><strong>Sports:</strong> Performance prediction</p>
-                </div>
+                <p><strong>Banking:</strong> Risk assessment</p>
+                <p><strong>Music:</strong> Predicting audience preferences</p>
+                <p><strong>Marketing:</strong> Targeting specific demographics</p>
+                <p><strong>Sports:</strong> Performance prediction</p>
             </div>
         </div>
     </div>
 
     <script>
-        function toggleDetails(element) {
-            const detailsDiv = element.querySelector('.details');
-            detailsDiv.classList.toggle('hidden');
-        }
-
-        // Optional: Add some subtle hover effects
+        // Optional: Add some subtle hover effects (these can stay as they are)
         document.querySelectorAll('.formula-box').forEach(box => {
             box.addEventListener('mouseenter', () => {
                 box.style.transform = 'scale(1.02)';
