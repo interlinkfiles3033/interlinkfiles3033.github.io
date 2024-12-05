@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7.8 Approximating the Binomial Distribution</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #2d3748, #4a5568);
+            color: #f7fafc;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(52, 58, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron">
+            7.8 Approximating the Binomial Distribution
+        </h1>
+
+        <!-- Big Picture Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Big Picture</h2>
+            <p class="text-xl text-cyan-300">
+                **Approximating the Binomial Distribution** involves using the **normal distribution** to estimate probabilities for a binomial distribution under certain conditions. This method is especially useful when dealing with large sample sizes, as computing the exact binomial probability can become complex. 
+                <br><br>
+                When the sample size is large and the probability of success is neither too close to 0 nor 1, the binomial distribution can be approximated by a normal distribution using the **mean** and **standard deviation** of the binomial distribution.
+            </p>
+        </div>
+
+        <!-- Key Terms Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+            <ul class="space-y-3 text-left text-xl text-blue-300">
+                <li><strong>Binomial Distribution:</strong> A distribution produced by an experiment with two possible outcomes, where there is a fixed number of trials, and each trial is independent.</li>
+                <li><strong>Probability:</strong> The chance of a certain outcome occurring, expressed as a fraction, decimal, or percentage.</li>
+                <li><strong>Standard Deviation:</strong> A measure of the spread of a data set. The larger the standard deviation, the more spread out the data is.</li>
+                <li><strong>Combination:</strong> A selection of a specified number of objects from a set, where the order of selection does not matter.</li>
+                <li><strong>Experiment:</strong> The process of taking measurements or making observations under controlled conditions.</li>
+            </ul>
+        </div>
+
+        <!-- Important Info Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Important Info</h2>
+            <p class="text-xl text-cyan-300">
+                To approximate a binomial distribution using the normal distribution, the following conditions should be met:
+                <ul class="list-disc pl-8 text-lg text-blue-300">
+                    <li>The sample size (n) should be large enough.</li>
+                    <li>The probability of success (p) and failure (1 - p) should not be too small (e.g., both np and n(1 - p) should be greater than 5).</li>
+                </ul>
+                <br>
+                The **mean** and **standard deviation** of the binomial distribution can be calculated as:
+                <pre class="bg-gray-700 text-white p-4 mt-4 rounded">
+Mean (μ) = n * p
+Standard Deviation (σ) = √(n * p * (1 - p))
+                </pre>
+                Where:
+                - **n** is the number of trials.
+                - **p** is the probability of success on a single trial.
+            </p>
+        </div>
+
+        <!-- Example Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Example</h2>
+            <p class="text-xl text-cyan-300">
+                Suppose a company has a 60% chance of success (p = 0.6) on each trial, and you are conducting 100 trials (n = 100). The binomial distribution can be approximated by a normal distribution with:
+                <pre class="bg-gray-700 text-white p-4 mt-4 rounded">
+Mean (μ) = n * p = 100 * 0.6 = 60
+Standard Deviation (σ) = √(n * p * (1 - p)) = √(100 * 0.6 * 0.4) ≈ 4.9
+                </pre>
+                Now, to calculate the probability of having exactly 65 successes, we would use the normal distribution to approximate the binomial probability, using the mean and standard deviation calculated above.
+            </p>
+        </div>
+
+        <!-- Application of Binomial Approximation Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Application of Binomial Approximation</h2>
+            <p class="text-xl text-cyan-300">
+                The **binomial approximation** using the normal distribution is especially useful when n is large. For example, if you need to find the probability of getting between 60 and 70 successes in the 100 trials, you would:
+                1. Convert the binomial probability into a normal probability using the **continuity correction** (add 0.5 to the value to make the normal curve fit the discrete nature of the binomial distribution).
+                2. Use the **Z-score formula** to standardize the values:
+                <pre class="bg-gray-700 text-white p-4 mt-4 rounded">
+Z = (X - μ) / σ
+                </pre>
+                Where:
+                - **X** is the number of successes.
+                - **μ** is the mean.
+                - **σ** is the standard deviation.
+            </p>
+        </div>
+
+        <!-- Conclusion Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+            <h2 class="text-3xl mb-4 text-green-400">Conclusion</h2>
+            <p class="text-xl text-cyan-300">
+                Approximating the binomial distribution with a normal distribution is a powerful technique for estimating probabilities, especially when dealing with large sample sizes. By calculating the mean and standard deviation of the binomial distribution and using the normal distribution, you can simplify complex binomial probability problems, provided the necessary conditions are met.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
