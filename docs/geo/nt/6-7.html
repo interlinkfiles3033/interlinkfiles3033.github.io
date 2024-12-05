@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6.7 Expected Value</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #2d3748, #4a5568);
+            color: #f7fafc;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(52, 58, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+        .image-container {
+            max-width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron">
+            6.7 Expected Value
+        </h1>
+
+        <!-- Big Picture Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Big Picture</h2>
+            <p class="text-xl text-cyan-300">
+                **Expected value** (also known as the mean or expectation) is a concept used in probability theory to describe the long-term average or mean value of a random variable. It is calculated by multiplying each possible outcome of a random variable by the probability of that outcome, then summing these values. The expected value represents the central tendency or "average" of a random process.
+            </p>
+        </div>
+
+        <!-- Key Terms Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+            <ul class="space-y-3 text-left text-xl text-blue-300">
+                <li><strong>Value:</strong> A possible outcome or result of a probability experiment.</li>
+                <li><strong>Probability:</strong> The chance or likelihood that a particular outcome will occur, expressed as a fraction, decimal, or percentage.</li>
+                <li><strong>Outcome:</strong> A possible end result of a probability experiment.</li>
+                <li><strong>Experiment:</strong> The process of collecting data or making observations in a random process.</li>
+                <li><strong>Probability Distribution:</strong> A table, graph, or chart showing all possible values of a random variable and their associated probabilities.</li>
+            </ul>
+        </div>
+
+        <!-- Summary Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Summary</h2>
+            <p class="text-xl text-cyan-300">
+                The **expected value** of a random variable \(X\) is calculated as:
+                <span class="font-bold text-white">E(X) = Σ [x * P(x)]</span>
+                where:
+                - \(x\) is each possible outcome of the random variable,
+                - \(P(x)\) is the probability of that outcome occurring,
+                - The sum (Σ) is taken over all possible values of \(x\).
+            </p>
+            <p class="text-xl text-cyan-300 mt-4">
+                The expected value provides an average or mean value that you would expect to observe over many repetitions of an experiment. In many cases, it represents the **center of the distribution** of the random variable.
+            </p>
+        </div>
+
+        <!-- Example Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Example: Rolling a Fair Die</h2>
+            <p class="text-xl text-cyan-300">
+                Consider an experiment where we roll a **fair 6-sided die**. The possible outcomes are the numbers \(1, 2, 3, 4, 5, 6\). The probability of each outcome is equal, with \(P(x) = \frac{1}{6}\) for all \(x\).
+            </p>
+            <p class="text-xl text-cyan-300 mt-4">
+                To find the **expected value** of the roll, we use the formula:
+                <span class="font-bold text-white">E(X) = Σ [x * P(x)]</span>
+                Substituting the values:
+                <pre class="bg-gray-700 text-white p-4 mt-4 rounded">
+E(X) = (1 * 1/6) + (2 * 1/6) + (3 * 1/6) + (4 * 1/6) + (5 * 1/6) + (6 * 1/6)
+E(X) = (1 + 2 + 3 + 4 + 5 + 6) / 6
+E(X) = 21 / 6
+E(X) = 3.5
+                </pre>
+            </p>
+            <p class="text-xl text-cyan-300 mt-4">
+                So, the expected value of a roll of the die is **3.5**. This means that, on average, you would expect to roll a 3.5 over many trials, though it's not possible to roll a 3.5 on a single die roll. The expected value simply gives the average outcome over a large number of trials.
+            </p>
+        </div>
+
+        <!-- Conclusion Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+            <h2 class="text-3xl mb-4 text-green-400">Conclusion</h2>
+            <p class="text-xl text-cyan-300">
+                The **expected value** is a key concept in probability and statistics. It helps to summarize the central tendency of a random variable, and is often used to make decisions in uncertain situations. By understanding how to compute the expected value, you can better understand the long-term average outcomes of random processes and experiments.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
