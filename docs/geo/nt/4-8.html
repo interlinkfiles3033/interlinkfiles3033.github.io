@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4.8 Calculation Standard Deviation</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #0a192f, #112240);
+            color: #e6f1ff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(17, 34, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron" data-tooltip="Standard Deviation">
+            4.8 Calculation Standard Deviation
+        </h1>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Big Picture -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Big Picture</h2>
+                <p class="text-xl text-cyan-300">
+                    Standard deviation is a measure that tells you how spread out the numbers in a data set are. It is calculated as the square root of the variance. The larger the standard deviation, the more spread out the data is. A smaller standard deviation means that the data points are closer to the mean.
+                </p>
+            </div>
+
+            <!-- Key Terms -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+                <ul class="space-y-3 text-left text-xl text-blue-300">
+                    <li><strong>Standard Deviation:</strong> A measure of the spread of a data set. It is the square root of the variance.</li>
+                    <li><strong>Variance (𝝈²):</strong> The mean of the squared deviations of each data point from the mean. The formula is: (x₁ - x̄)² + (x₂ - x̄)² + ... + (xn - x̄)² / n.</li>
+                    <li><strong>Sample:</strong> A specified part of a population, intended to represent the population as a whole.</li>
+                    <li><strong>Population:</strong> The entire group of interest from which a sample is drawn.</li>
+                    <li><strong>Statistics:</strong> A branch of mathematics that involves collecting, analyzing, and displaying data.</li>
+                    <li><strong>Deviation:</strong> A measure of the difference between a data point and the mean.</li>
+                    <li><strong>Units:</strong> The individuals in a population being studied.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-8 grid md:grid-cols-2 gap-8">
+            <!-- Standard Deviation Calculation -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Calculating Standard Deviation</h2>
+                <p class="text-xl text-cyan-300">
+                    The formula to calculate standard deviation (𝝈) is:
+                </p>
+                <pre class="text-lg text-cyan-200">
+𝝈 = √((x₁ - x̄)² + (x₂ - x̄)² + ... + (xn - x̄)² / n)
+                </pre>
+                <p class="text-xl text-cyan-300">
+                    Where:
+                    <ul class="list-disc list-inside text-cyan-200">
+                        <li><strong>x̄:</strong> The mean (average) of the data set.</li>
+                        <li><strong>x₁, x₂, ..., xn:</strong> Each individual data point.</li>
+                        <li><strong>n:</strong> The number of data points in the data set.</li>
+                    </ul>
+                </p>
+            </div>
+
+            <!-- Example Calculation -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Example: Calculate Standard Deviation</h2>
+                <p class="text-xl text-cyan-300">
+                    Consider the following data set: <strong>{4, 8, 6, 5, 3}</strong>
+                </p>
+                <p class="text-xl text-cyan-300">
+                    <strong>Step 1:</strong> Find the mean (x̄):
+                </p>
+                <pre class="text-lg text-cyan-200">
+x̄ = (4 + 8 + 6 + 5 + 3) / 5 = 26 / 5 = 5.2
+                </pre>
+                <p class="text-xl text-cyan-300">
+                    <strong>Step 2:</strong> Calculate the squared deviations from the mean:
+                </p>
+                <pre class="text-lg text-cyan-200">
+(4 - 5.2)² = (-1.2)² = 1.44
+(8 - 5.2)² = (2.8)² = 7.84
+(6 - 5.2)² = (0.8)² = 0.64
+(5 - 5.2)² = (-0.2)² = 0.04
+(3 - 5.2)² = (-2.2)² = 4.84
+                </pre>
+                <p class="text-xl text-cyan-300">
+                    <strong>Step 3:</strong> Sum the squared deviations:
+                </p>
+                <pre class="text-lg text-cyan-200">
+1.44 + 7.84 + 0.64 + 0.04 + 4.84 = 14.8
+                </pre>
+                <p class="text-xl text-cyan-300">
+                    <strong>Step 4:</strong> Divide by the number of data points (n = 5):
+                </p>
+                <pre class="text-lg text-cyan-200">
+Variance = 14.8 / 5 = 2.96
+                </pre>
+                <p class="text-xl text-cyan-300">
+                    <strong>Step 5:</strong> Take the square root of the variance to find the standard deviation:
+                </p>
+                <pre class="text-lg text-cyan-200">
+𝝈 = √(2.96) ≈ 1.72
+                </pre>
+                <p class="text-xl text-cyan-300">
+                    Therefore, the standard deviation of the data set is approximately <strong>1.72</strong>.
+                </p>
+            </div>
+        </div>
+
+        <div class="mt-8 bg-gray-800 p-6 rounded-lg formula-box fade-in">
+            <h2 class="text-3xl mb-4 text-green-400">Key Takeaways</h2>
+            <p class="text-xl text-cyan-300">
+                Standard deviation is a crucial statistic used to quantify the spread or variability of a data set. A larger standard deviation means the data is more spread out, while a smaller standard deviation means the data points are closer to the mean. Understanding standard deviation helps in assessing consistency and predictability within data.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add some subtle hover effects (these can stay as they are)
+        document.querySelectorAll('.formula-box').forEach(box => {
+            box.addEventListener('mouseenter', () => {
+                box.style.transform = 'scale(1.02)';
+            });
+            box.addEventListener('mouseleave', () => {
+                box.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
