@@ -1,1 +1,92 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interlink File Server</title>
+    <link rel="stylesheet" href="https://interlinkfiles3033.github.io/styles.css">
+    <link rel="icon" href="https://interlinkfiles3033.github.io/favicon.png" type="image/png">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .glass-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 10px 20px;
+        }
+        main {
+            padding: 20px;
+        }
+        .period-table {
+            width: 100%;
+            margin-bottom: 20px;
+            border-collapse: collapse;
+        }
+        .period-table th, .period-table td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        .period-table select {
+            padding: 5px;
+            font-size: 1em;
+            width: 100%;
+        }
+        .assignments-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .assignments-row {
+            display: flex;
+            width: 100%;
+            gap: 20px;
+        }
+        .assignment-card {
+            flex: 1;
+            min-width: calc(33.333% - 14px);
+            max-width: calc(33.333% - 14px);
+        }
+        .logo-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 10px;
+        }
+        .logo-container h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+        .logo-container .tagline {
+            font-size: 1.2em;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 300;
+        }
+        @media screen and (max-width: 768px) {
+            .glass-header {
+                padding: 10px;
+            }
+            .logo-container {
+                padding-right: 50px;
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body class="dark-theme">
+    <header class="glass-header">
+        <div class="logo-container">
+            <h1 class="glow-text">Interlink File Server</h1>
+        </div>
+    </header>
+</body>
+</html>
