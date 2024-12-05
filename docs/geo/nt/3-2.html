@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3.2 Implementing Random Sampling</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #0a192f, #112240);
+            color: #e6f1ff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(17, 34, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron" data-tooltip="Implementing Random Sampling">
+            3.2 Implementing Random Sampling
+        </h1>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Summary Statement -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Summary Statement of Topic</h2>
+                <p class="text-xl text-cyan-300">
+                    How you can use random sampling in your daily life to get unbiased data.
+                </p>
+            </div>
+
+            <!-- Key Terms -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+                <ul class="space-y-3 text-left text-xl text-blue-300">
+                    <li><strong>Random Sample:</strong> A subset of a population for which each member of the population has an equal chance of being chosen</li>
+                    <li><strong>Population:</strong> The entire group of interest from which the sample is drawn</li>
+                    <li><strong>Sample:</strong> A specified part of a population, intended to represent the population as a whole</li>
+                    <li><strong>Simple Random Sample:</strong> The process of assigning a number to each member of the population under study, and then using a random number generator to pick the samples</li>
+                    <li><strong>Random:</strong> Everyone or everything in a population has an equal chance of being selected</li>
+                    <li><strong>Systematic Random Sampling:</strong> A type of probability sampling technique where there is an equal chance of selecting each unit from within the population when creating the sample</li>
+                    <li><strong>Cluster Sampling:</strong> Choosing representatives who are close to other representatives based on a particular factor such as location, age, color, size, etc.</li>
+                    <li><strong>Subgroups:</strong> Another name for Stratum</li>
+                    <li><strong>Stratum:</strong> Single category or sub-population out of a larger population</li>
+                    <li><strong>Weighting:</strong> A mathematical device used to give some elements more “weight” or influence on the result than others in the same set</li>
+                    <li><strong>Sample Size:</strong> The number of individuals or objects surveyed or tested in the study</li>
+                    <li><strong>Survey:</strong> A data collection method used to gather information about individuals' opinions, beliefs, or habits</li>
+                    <li><strong>Estimate:</strong> An approximate answer that makes sense given the problem</li>
+                    <li><strong>Average:</strong> Also known as the arithmetic mean</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-8 grid md:grid-cols-2 gap-8">
+            <!-- Example -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Example of Random Sampling in Action</h2>
+                <p class="text-xl text-cyan-300">
+                    Erina’s population is expected to be approximately 4,000, which is the estimated daily number of customers at her WalMart. We can estimate that for a population of 4,000, she will need a sample of 350 people.
+                    <br><br>
+                    To find the step size (n), we divide: <br>
+                    4000 ÷ 350 ≈ 11
+                    <br><br>
+                    Erina should roll a pair of dice, let that number of people go by, then question every 11th person out the door to see if they purchased sporting goods.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add some subtle hover effects (these can stay as they are)
+        document.querySelectorAll('.formula-box').forEach(box => {
+            box.addEventListener('mouseenter', () => {
+                box.style.transform = 'scale(1.02)';
+            });
+            box.addEventListener('mouseleave', () => {
+                box.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
