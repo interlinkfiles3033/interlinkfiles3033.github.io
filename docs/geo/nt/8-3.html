@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8.3 Polygons - Definition, Types, Properties, Interactives and Examples</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #2d3748, #4a5568);
+            color: #f7fafc;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(52, 58, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron">
+            8.3 Polygons - Definition, Types, Properties, Interactives and Examples
+        </h1>
+
+        <!-- Big Picture Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Big Picture</h2>
+            <p class="text-xl text-cyan-300">
+                A **polygon** is a shape bounded by a number of straight lines. Polygons are usually classified by the number of sides they have and their properties. The simplest polygon is a **triangle**, with three sides, while other polygons can have more sides, such as **quadrilaterals**, **pentagons**, and so on.
+                <br><br>
+                Understanding polygons involves knowing their number of sides, angles, and properties, which are important in geometry and real-world applications like architecture, engineering, and design.
+            </p>
+        </div>
+
+        <!-- Key Terms Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+            <ul class="space-y-3 text-left text-xl text-blue-300">
+                <li><strong>Polygon:</strong> A simple closed figure with at least three straight sides.</li>
+                <li><strong>Triangle:</strong> A polygon with three sides and three angles.</li>
+                <li><strong>Quadrilateral:</strong> A polygon with four sides and four vertices.</li>
+                <li><strong>Pentagon:</strong> A polygon with five sides.</li>
+                <li><strong>Hexagon:</strong> A polygon with six sides.</li>
+                <li><strong>Heptagon:</strong> A polygon with seven sides.</li>
+                <li><strong>Octagon:</strong> A polygon with eight sides.</li>
+                <li><strong>Nonagon (Enneagon):</strong> A polygon with nine sides.</li>
+                <li><strong>Decagon:</strong> A polygon with ten sides.</li>
+                <li><strong>Diagonal:</strong> A line segment in a polygon that connects non-consecutive vertices.</li>
+                <li><strong>Line Segment:</strong> A finite part of a line with two endpoints.</li>
+                <li><strong>Vertices:</strong> The points where the sides of a polygon meet.</li>
+                <li><strong>Convex Polygon:</strong> A polygon where no interior angle is greater than 180 degrees.</li>
+                <li><strong>Concave Polygon:</strong> A polygon with at least one interior angle greater than 180 degrees.</li>
+                <li><strong>Interior Angles:</strong> The angles inside a polygon.</li>
+                <li><strong>Exterior Angles:</strong> Angles formed by extending a side of a polygon.</li>
+                <li><strong>Straight Angle:</strong> An angle that measures 180 degrees.</li>
+                <li><strong>Circle:</strong> The set of all points at a fixed distance (radius) from a center point.</li>
+            </ul>
+        </div>
+
+        <!-- Important Info Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Important Info</h2>
+            <p class="text-xl text-cyan-300">
+                - A **polygon** is any closed figure made up of straight line segments, where the line segments are called sides. The points where the sides meet are called **vertices**.
+                <br><br>
+                - The sum of the interior angles of a polygon can be calculated with the formula:
+                <pre class="bg-gray-700 text-white p-4 mt-4 rounded">
+Sum of interior angles = (n - 2) × 180°
+                </pre>
+                where **n** is the number of sides.
+                <br><br>
+                - For **convex polygons**, all interior angles are less than 180°.
+                - **Concave polygons** have at least one angle greater than 180°, often creating a "caved-in" appearance.
+                <br><br>
+                - The sum of the exterior angles of any polygon is always 360°.
+            </p>
+        </div>
+
+        <!-- Example Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Example</h2>
+            <p class="text-xl text-cyan-300">
+                Let's consider a **hexagon** (six-sided polygon). To find the sum of its interior angles, we use the formula for the sum of interior angles:
+                <br><br>
+                <pre class="bg-gray-700 text-white p-4 mt-4 rounded">
+Sum of interior angles = (n - 2) × 180°
+Sum of interior angles = (6 - 2) × 180°
+Sum of interior angles = 4 × 180°
+Sum of interior angles = 720°
+                </pre>
+                Therefore, the sum of the interior angles of a hexagon is **720°**.
+            </p>
+        </div>
+
+        <!-- Interactive Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Interactive Example</h2>
+            <p class="text-xl text-cyan-300">
+                To visualize and understand more about polygons:
+                <ul class="list-disc ml-8 text-xl text-blue-300">
+                    <li>Draw polygons on a grid, starting with triangles, quadrilaterals, and pentagons.</li>
+                    <li>Measure the interior angles using a **protractor** and verify the sum using the formula.</li>
+                    <li>Explore **concave** and **convex** polygons by drawing them and noting the difference in angles.</li>
+                </ul>
+                <br>
+                **Tip**: You can use **diagonal lines** in the polygons to break them into triangles and calculate their area as a sum of triangle areas.
+            </p>
+        </div>
+
+        <!-- Conclusion Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+            <h2 class="text-3xl mb-4 text-green-400">Conclusion</h2>
+            <p class="text-xl text-cyan-300">
+                Understanding **polygons** is essential in geometry as they form the basis of many geometric shapes and designs. By studying their **types**, **properties**, and **angles**, we can solve geometric problems and apply these concepts in real-world scenarios like architecture, design, and art. Using formulas for **interior** and **exterior angles** helps in determining important characteristics of polygons in both 2D and 3D spaces.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
