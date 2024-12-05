@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2.5 Response Rates</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #0a192f, #112240);
+            color: #e6f1ff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(17, 34, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron" data-tooltip="Exploring Response Rates in Surveys">
+            2.5 Response Rates
+        </h1>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Summary Statement -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Summary Statement of Topic</h2>
+                <p class="text-xl text-cyan-300">
+                    How the number of results in a survey, also known as response rates, affects the probability of getting a specific overall response based on responses received from a sample population.
+                </p>
+            </div>
+
+            <!-- Key Terms -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+                <ul class="space-y-3 text-left text-xl text-blue-300">
+                    <li><strong>Survey:</strong> A data collection method used to gather information about individuals’ opinions, beliefs, or habits</li>
+                    <li><strong>Response Rate:</strong> The percentage of total attempts made at data collection divided by the number of successful responses</li>
+                    <li><strong>Sample:</strong> A specified part of a population, intended to represent the population as a whole</li>
+                    <li><strong>Data:</strong> The information that has been collected to represent real life situations, usually in number form</li>
+                    <li><strong>Poll:</strong> Question a group of people regarding a specific topic</li>
+                    <li><strong>Minimum:</strong> The smallest value in a data set</li>
+                    <li><strong>Random Sampling:</strong> Involves choosing representatives by rolling a die (example)</li>
+                    <li><strong>Population:</strong> The entire group of interest from which the sample is drawn</li>
+                    <li><strong>Range:</strong> The difference between the greatest value in the data set</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-8 grid md:grid-cols-2 gap-8">
+            <!-- Important Info Box -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Important Info</h2>
+                <p class="text-xl text-cyan-300">
+                    To calculate the response rate, use the following formula:
+                    <br>
+                    <strong>(Number of Successful Collections) / (Total Attempts at Collection)</strong>
+                </p>
+                <p class="mt-4 text-xl text-cyan-300">
+                    To calculate the required number of responses based on a target response rate:
+                    <br>
+                    Assuming 70% Response Rate Required, with 53 students:
+                    <br>
+                    <strong>Required # of Responses = 0.70 × 53 = 37.1 ≈ 38 people</strong>
+                </p>
+            </div>
+
+            <!-- Example Calculation -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Example Calculation</h2>
+                <p class="text-xl text-cyan-300">
+                    Suppose we are conducting a survey among 53 students. We want a response rate of at least 70%. 
+                    Using the formula:
+                    <br>
+                    <strong>0.70 × 53 = 37.1 ≈ 38 people</strong>
+                    <br>
+                    This means that, to meet the desired response rate, at least 38 students must respond.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add some subtle hover effects (these can stay as they are)
+        document.querySelectorAll('.formula-box').forEach(box => {
+            box.addEventListener('mouseenter', () => {
+                box.style.transform = 'scale(1.02)';
+            });
+            box.addEventListener('mouseleave', () => {
+                box.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
