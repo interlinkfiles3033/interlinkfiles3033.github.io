@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3.3 Stratified Sampling</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #0a192f, #112240);
+            color: #e6f1ff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(17, 34, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron" data-tooltip="Stratified Sampling">
+            3.3 Stratified Sampling
+        </h1>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Summary Statement -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Summary Statement of Topic</h2>
+                <p class="text-xl text-cyan-300">
+                    How might stratified random sampling be used for choosing representatives in a stratum of the population.
+                </p>
+            </div>
+
+            <!-- Key Terms -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+                <ul class="space-y-3 text-left text-xl text-blue-300">
+                    <li><strong>Random Sample:</strong> A subset of a population for which each member of the population has an equal chance of being chosen</li>
+                    <li><strong>Range:</strong> The difference between the smallest value and the greatest value in the data set</li>
+                    <li><strong>Random Sampling:</strong> Choosing representatives by rolling a die, for instance</li>
+                    <li><strong>Sample:</strong> A specified part of a population, intended to represent the population as a whole</li>
+                    <li><strong>Subgroups:</strong> Another name for stratum</li>
+                    <li><strong>Stratum:</strong> A single category or sub-population out of a larger population</li>
+                    <li><strong>Stratified Sampling:</strong> Choosing a proportional number of representatives from each of a number of subgroups of the initial population</li>
+                    <li><strong>Units:</strong> The individuals in the population are called units</li>
+                    <li><strong>Sample Size:</strong> The number of individuals or objects that are surveyed or tested in the study</li>
+                    <li><strong>Skew:</strong> A trend of data favors one end or the other</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-8 grid md:grid-cols-2 gap-8">
+            <!-- Important Info and Formula -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Important Info</h2>
+                <p class="text-xl text-cyan-300">
+                    The formula to calculate the number of members from a given stratum in the sample is:
+                    <br><br>
+                    <code>(# of members in the stratum / total # of members in population) × desired sample size = # of members from stratum</code>
+                </p>
+            </div>
+
+            <!-- Example -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Example of Stratified Sampling</h2>
+                <p class="text-xl text-cyan-300">
+                    Sample Size: 50 dogs<br><br>
+                    Given Info:<br>
+                    - 247 Collies<br>
+                    - 138 Pit Bulls<br>
+                    - 96 English Mastiffs<br>
+                    - 172 Blue Heelers<br>
+                    - 222 Welsh Corgis<br>
+                    - Total Size: 875<br><br>
+                    To calculate the number of Blue Heelers in the desired sample size:
+                    <br><br>
+                    Blue Heelers Proportion = 172 / 875 = 0.197 or 19.7%<br>
+                    <br>
+                    0.197 × 50 = 9.85 → Rounds to 10 Blue Heelers in the sample.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add some subtle hover effects (these can stay as they are)
+        document.querySelectorAll('.formula-box').forEach(box => {
+            box.addEventListener('mouseenter', () => {
+                box.style.transform = 'scale(1.02)';
+            });
+            box.addEventListener('mouseleave', () => {
+                box.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
