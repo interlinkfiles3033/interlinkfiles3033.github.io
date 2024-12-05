@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6.3 Probability Distribution</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #2d3748, #4a5568);
+            color: #f7fafc;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(52, 58, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron">
+            6.3 Probability Distribution
+        </h1>
+
+        <!-- Big Picture Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Big Picture</h2>
+            <p class="text-xl text-cyan-300">
+                A probability distribution is a list of all the possible values that a random variable can take, along with the probability of each value occurring. It provides a complete picture of the distribution of outcomes for a given random variable. There are different types of probability distributions, such as discrete and continuous, depending on whether the variable can take a finite number of values or any value within a continuous range.
+            </p>
+        </div>
+
+        <!-- Key Terms Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+            <ul class="space-y-3 text-left text-xl text-blue-300">
+                <li><strong>Probability:</strong> The chance that something will happen. It can be expressed as a fraction, decimal, or percentage.</li>
+                <li><strong>Event:</strong> A set of one or more possible results of a probability experiment.</li>
+                <li><strong>Outcome:</strong> A single possible result of an experiment or trial.</li>
+                <li><strong>Value:</strong> A specific result that a random variable can take.</li>
+                <li><strong>Probability Distribution:</strong> A table or graph that shows all possible values of a random variable and their associated probabilities.</li>
+            </ul>
+        </div>
+
+        <!-- Summary Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Summary</h2>
+            <p class="text-xl text-cyan-300">
+                Probability distributions can be represented in several ways, such as a list of possible outcomes, a table, or a graph. In discrete probability distributions, the outcomes are countable, and each outcome has a specific probability. In continuous probability distributions, the outcomes form a range of values, and the probability is calculated over intervals rather than for specific values. One common example of a discrete probability distribution is the binomial distribution, where each outcome can either be a success or a failure.
+            </p>
+        </div>
+
+        <!-- Example Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Example: Tossing a Fair Coin</h2>
+            <p class="text-xl text-cyan-300">
+                Suppose we are conducting an experiment where we toss a fair coin. The possible outcomes are either heads (H) or tails (T), and the probability of each outcome is 0.5. In this case, the random variable \(X\) represents the outcome of the coin toss.
+            </p>
+            <p class="text-xl text-cyan-300 mt-6">
+                The probability distribution for this random variable is:
+            </p>
+            <div class="text-center mt-6">
+                <table class="mx-auto bg-gray-700 text-white text-lg border-collapse border-2 border-gray-600">
+                    <thead>
+                        <tr>
+                            <th class="px-4 py-2">Outcome (X)</th>
+                            <th class="px-4 py-2">Probability P(X)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="px-4 py-2">H</td>
+                            <td class="px-4 py-2">0.5</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-2">T</td>
+                            <td class="px-4 py-2">0.5</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-xl text-cyan-300 mt-6">
+                The total probability of all outcomes in a probability distribution must always sum to 1. In this case:
+            </p>
+            <div class="text-center mt-6">
+                <p class="text-3xl text-yellow-300">
+                    P(H) + P(T) = 0.5 + 0.5 = 1
+                </p>
+            </div>
+            <p class="text-xl text-cyan-300 mt-6">
+                This is a simple example of a discrete probability distribution where each possible outcome (heads or tails) has an equal probability of occurring.
+            </p>
+        </div>
+
+        <!-- Conclusion Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+            <h2 class="text-3xl mb-4 text-green-400">Conclusion</h2>
+            <p class="text-xl text-cyan-300">
+                Probability distributions are essential tools for understanding random variables and predicting outcomes. They provide a structured way to represent and calculate probabilities, whether for discrete events (such as coin tosses) or continuous events (such as measuring temperature). By analyzing probability distributions, we can make more informed decisions and understand the likelihood of various outcomes.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
