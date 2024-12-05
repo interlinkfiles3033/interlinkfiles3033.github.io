@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7.1 Understanding Normal Distribution</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #2d3748, #4a5568);
+            color: #f7fafc;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(52, 58, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron">
+            7.1 Understanding Normal Distribution
+        </h1>
+
+        <!-- Big Picture Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Big Picture</h2>
+            <p class="text-xl text-cyan-300">
+                **Normal distribution** is a way to represent a **continuous random variable**. It is symmetric and follows the shape of a bell curve, where most data points cluster around the mean, and the probability of extreme values (either high or low) decreases as we move further from the mean.
+                <br><br>
+                A **normal distribution** is fully described by two parameters:
+                - **Mean (μ)**: the center of the distribution
+                - **Standard Deviation (σ)**: the spread of the distribution
+                <br><br>
+                The **Empirical Rule** states that for a normal distribution:
+                - 68% of the data lies within 1 standard deviation from the mean
+                - 95% lies within 2 standard deviations
+                - 99.7% lies within 3 standard deviations
+            </p>
+        </div>
+
+        <!-- Key Terms Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+            <ul class="space-y-3 text-left text-xl text-blue-300">
+                <li><strong>Standard Deviation:</strong> A measure of the spread of a data set. The larger the standard deviation, the more spread out the data is.</li>
+                <li><strong>Distribution:</strong> A description of the possible values of a random variable and the likelihood of these values.</li>
+                <li><strong>Percentile:</strong> A data value where a specified percentage of the data lies below it.</li>
+                <li><strong>Range:</strong> The difference between the smallest and largest values in a data set.</li>
+                <li><strong>Population:</strong> The entire group of interest from which a sample may be drawn.</li>
+                <li><strong>Maximum:</strong> The largest number in a data set.</li>
+            </ul>
+        </div>
+
+        <!-- Summary Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Summary</h2>
+            <p class="text-xl text-cyan-300">
+                The **normal distribution** is a fundamental concept in statistics. It is symmetric, bell-shaped, and described by the **mean** and **standard deviation**. The **Empirical Rule** provides a quick way to estimate the proportion of values within certain ranges:
+                <br><br>
+                - **68%** of values fall within **1 standard deviation** from the mean
+                - **95%** of values fall within **2 standard deviations**
+                - **99.7%** of values fall within **3 standard deviations**
+                <br><br>
+                This distribution is used widely in various fields such as economics, biology, psychology, and more.
+            </p>
+        </div>
+
+        <!-- Example Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Example: Normal Distribution</h2>
+            <p class="text-xl text-cyan-300">
+                Suppose the heights of adult women in a population are normally distributed with a mean height of 64 inches and a standard deviation of 3 inches. We can use the **Empirical Rule** to answer the following:
+                <br><br>
+                - **68%** of women will have heights between:
+                <pre class="bg-gray-700 text-white p-4 mt-4 rounded">
+64 - 3 = 61 inches
+64 + 3 = 67 inches
+                </pre>
+                So, 68% of women will have heights between **61 inches and 67 inches**.
+                <br><br>
+                - **95%** of women will have heights between:
+                <pre class="bg-gray-700 text-white p-4 mt-4 rounded">
+64 - 6 = 58 inches
+64 + 6 = 70 inches
+                </pre>
+                So, 95% of women will have heights between **58 inches and 70 inches**.
+                <br><br>
+                - **99.7%** of women will have heights between:
+                <pre class="bg-gray-700 text-white p-4 mt-4 rounded">
+64 - 9 = 55 inches
+64 + 9 = 73 inches
+                </pre>
+                So, 99.7% of women will have heights between **55 inches and 73 inches**.
+            </p>
+        </div>
+
+        <!-- Conclusion Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+            <h2 class="text-3xl mb-4 text-green-400">Conclusion</h2>
+            <p class="text-xl text-cyan-300">
+                **Normal distribution** is a key concept in statistics, providing a way to represent continuous random variables. The **Empirical Rule** is an important tool for estimating the spread of data in a normal distribution. By understanding these concepts, we can make more informed decisions and predictions based on statistical data.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
