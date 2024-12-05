@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5.1 Description of Events</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #0a192f, #112240);
+            color: #e6f1ff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(17, 34, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron" data-tooltip="Description of Events">
+            5.1 Description of Events
+        </h1>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Big Picture -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Big Picture</h2>
+                <p class="text-xl text-cyan-300">
+                    In probability theory, understanding events and their relationships is crucial. Events represent possible outcomes or sets of outcomes from a probability experiment. The concept of events helps in defining experiments and calculating probabilities. By analyzing the events and their combinations, we can predict the likelihood of different outcomes.
+                </p>
+            </div>
+
+            <!-- Key Terms -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+                <ul class="space-y-3 text-left text-xl text-blue-300">
+                    <li><strong>Probability:</strong> The likelihood of a particular outcome occurring, expressed as a fraction, decimal, or percentage.</li>
+                    <li><strong>Outcomes:</strong> The possible results of a probability experiment.</li>
+                    <li><strong>Experiment:</strong> The process of making observations or taking measurements in order to identify the outcomes.</li>
+                    <li><strong>Sample Space:</strong> The set of all possible outcomes of a probability experiment.</li>
+                    <li><strong>Event:</strong> A set of one or more outcomes from a probability experiment.</li>
+                    <li><strong>Combination:</strong> A selection of objects where the order does not matter.</li>
+                    <li><strong>Repetitions:</strong> Occurs when objects are repeated in a permutation problem.</li>
+                    <li><strong>Venn Diagram:</strong> A diagram that shows the relationships between different sets using overlapping circles.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-8 grid md:grid-cols-2 gap-8">
+            <!-- Event Example Formula -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Example of Event Description</h2>
+                <p class="text-xl text-cyan-300">
+                    Consider an experiment of tossing two coins. The possible outcomes are:
+                    <strong>{HH, HT, TH, TT}</strong>, where:
+                    - <strong>H</strong> = heads
+                    - <strong>T</strong> = tails
+                </p>
+                <p class="text-xl text-cyan-300">
+                    If we're interested in the event "both coins show heads," the event can be described as:
+                </p>
+                <pre class="text-lg text-cyan-200">
+Event = {HH}
+                </pre>
+                <p class="text-xl text-cyan-300">
+                    If we're interested in the event "at least one coin shows heads," the event would include the outcomes:
+                </p>
+                <pre class="text-lg text-cyan-200">
+Event = {HH, HT, TH}
+                </pre>
+                <p class="text-xl text-cyan-300">
+                    To calculate the probability of each event, we divide the number of favorable outcomes by the total possible outcomes in the sample space.
+                </p>
+            </div>
+
+            <!-- Venn Diagram Example -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Venn Diagram Representation</h2>
+                <p class="text-xl text-cyan-300">
+                    A Venn diagram can be used to show the relationship between different events. Consider two events: <strong>A = {HH, HT}</strong> and <strong>B = {HH, TH}</strong>.
+                </p>
+                <img class="mx-auto mt-4" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Venn_diagram.svg/200px-Venn_diagram.svg.png" alt="Venn Diagram Example">
+                <p class="text-xl text-cyan-300 mt-4">
+                    The intersection of A and B is <strong>{HH}</strong>, which represents the outcome that both events share.
+                </p>
+            </div>
+        </div>
+
+        <div class="mt-8 bg-gray-800 p-6 rounded-lg formula-box fade-in">
+            <h2 class="text-3xl mb-4 text-green-400">Key Takeaways</h2>
+            <p class="text-xl text-cyan-300">
+                Understanding events and their relationships is crucial in probability theory. By using Venn diagrams, combinations, and analyzing different events, we can better understand the likelihood of specific outcomes. Events may overlap, and calculating probabilities often involves identifying favorable outcomes and using set relationships to find the probability.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add some subtle hover effects (these can stay as they are)
+        document.querySelectorAll('.formula-box').forEach(box => {
+            box.addEventListener('mouseenter', () => {
+                box.style.transform = 'scale(1.02)';
+            });
+            box.addEventListener('mouseleave', () => {
+                box.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
