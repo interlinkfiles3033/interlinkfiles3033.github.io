@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7.4 Z-Scores II</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #2d3748, #4a5568);
+            color: #f7fafc;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(52, 58, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron">
+            7.4 Z-Scores II
+        </h1>
+
+        <!-- Big Picture Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Big Picture</h2>
+            <p class="text-xl text-cyan-300">
+                **Z-scores** tell us how many standard deviations a particular value is from the mean of a distribution. This is a crucial concept in statistics for comparing values across different normal distributions.
+                <br><br>
+                **Z-scores** are not just about telling how far a data point is from the mean but also how this distance translates into probabilities, based on the properties of a normal distribution.
+            </p>
+        </div>
+
+        <!-- Key Terms Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+            <ul class="space-y-3 text-left text-xl text-blue-300">
+                <li><strong>Z-Score:</strong> The number of standard deviations a data point is from the mean. Z = (X - μ) / σ</li>
+                <li><strong>Normal Curve:</strong> The bell-shaped curve that represents a normal distribution of data.</li>
+                <li><strong>Empirical Rule:</strong> States that in a normal distribution, approximately 68% of values lie within 1 standard deviation (σ), 95% within 2 standard deviations, and 99.7% within 3 standard deviations.</li>
+                <li><strong>Standard Deviation:</strong> A measure of how much data deviates from the mean.</li>
+                <li><strong>Sample:</strong> A subset of data taken from a larger population intended to represent that population.</li>
+            </ul>
+        </div>
+
+        <!-- Important Info Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Important Info</h2>
+            <p class="text-xl text-cyan-300">
+                The **Empirical Rule** helps you understand the proportion of data within a certain number of standard deviations from the mean in a normal distribution.
+                <br><br>
+                The rule states:
+                <ul class="list-disc pl-8 text-lg text-blue-300">
+                    <li>68% of the data lies within **1 standard deviation** of the mean (±1σ)</li>
+                    <li>95% lies within **2 standard deviations** of the mean (±2σ)</li>
+                    <li>99.7% lies within **3 standard deviations** of the mean (±3σ)</li>
+                </ul>
+                The **Z-score formula** is used to calculate how many standard deviations a value (X) is from the mean (μ):
+                <pre class="bg-gray-700 text-white p-4 mt-4 rounded">
+Z = (X - μ) / σ
+                </pre>
+            </p>
+        </div>
+
+        <!-- Example Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Example</h2>
+            <p class="text-xl text-cyan-300">
+                Suppose you have a **normal distribution** where the mean (μ) of test scores is **75** and the standard deviation (σ) is **10**. If a student scores **85**, you can calculate the Z-score to see how far above the average they scored.
+                <br><br>
+                Using the Z-score formula:
+                <pre class="bg-gray-700 text-white p-4 mt-4 rounded">
+Z = (X - μ) / σ
+Z = (85 - 75) / 10
+Z = 10 / 10
+Z = 1
+                </pre>
+                The Z-score of 1 means that the student's score is **1 standard deviation above** the mean.
+            </p>
+        </div>
+
+        <!-- Application of Z-Scores Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Application of Z-Scores</h2>
+            <p class="text-xl text-cyan-300">
+                Z-scores are often used in hypothesis testing and probability calculations. For instance, you can use the Z-score to determine the probability that a particular value occurs in a normal distribution.
+                <br><br>
+                For example, a Z-score of **2** means that a value lies 2 standard deviations above the mean. Using **Z-tables**, you can determine that this corresponds to roughly **97.72%** of the values being below that point.
+            </p>
+        </div>
+
+        <!-- Conclusion Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+            <h2 class="text-3xl mb-4 text-green-400">Conclusion</h2>
+            <p class="text-xl text-cyan-300">
+                Z-scores are an essential tool for comparing data points within normal distributions. They help determine how likely or unusual a given data point is, based on its position relative to the mean. A Z-score of 0 indicates that the data point is exactly at the mean, while a positive or negative Z-score tells you how far it deviates.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
