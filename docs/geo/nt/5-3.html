@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5.3 Conditional Probability</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #0a192f, #112240);
+            color: #e6f1ff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(17, 34, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron" data-tooltip="Conditional Probability">
+            5.3 Conditional Probability
+        </h1>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Big Picture -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Big Picture</h2>
+                <p class="text-xl text-cyan-300">
+                    Conditional probability helps us determine the likelihood of an event occurring, given that another related event has already occurred. In other words, it answers the question, "What is the probability of Event A, given that Event B has happened?" This concept is fundamental when events are not independent.
+                </p>
+            </div>
+
+            <!-- Key Terms -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+                <ul class="space-y-3 text-left text-xl text-blue-300">
+                    <li><strong>Venn Diagram:</strong> A diagram showing the relationships between sets using overlapping circles.</li>
+                    <li><strong>Probability:</strong> The likelihood of an event occurring, expressed as a fraction, decimal, or percentage.</li>
+                    <li><strong>Sample Space:</strong> The set of all possible outcomes of an experiment.</li>
+                    <li><strong>Event:</strong> A set of one or more possible results of a probability experiment.</li>
+                    <li><strong>Outcomes:</strong> Possible end results of an experiment.</li>
+                    <li><strong>Experiment:</strong> The process of taking a measurement or making an observation.</li>
+                    <li><strong>Independent Events:</strong> The occurrence of one event does not affect the probability of another event.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-8 grid md:grid-cols-2 gap-8">
+            <!-- Conditional Probability Example -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Conditional Probability Example</h2>
+                <p class="text-xl text-cyan-300">
+                    Consider a deck of cards. Suppose we have a deck of 52 cards, and we want to find the probability of drawing an Ace, given that the card drawn is a Spade. This is a conditional probability because we are given that the card is a Spade.
+                </p>
+                <p class="text-xl text-cyan-300 mt-4">
+                    The probability of drawing a Spade (Event B) is: P(B) = 13/52 = 1/4 (since there are 13 Spades in a deck).
+                </p>
+                <p class="text-xl text-cyan-300 mt-4">
+                    There is only 1 Ace of Spades in the deck, so the probability of drawing the Ace of Spades (Event A) given that the card is a Spade is: P(A|B) = 1/13.
+                </p>
+                <p class="text-xl text-cyan-300 mt-4">
+                    This is an example of conditional probability because we are considering the event of drawing an Ace under the condition that we already know the card is a Spade.
+                </p>
+            </div>
+
+            <!-- Conditional Probability Formula -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Conditional Probability Formula</h2>
+                <p class="text-xl text-cyan-300">
+                    The formula for conditional probability is:
+                </p>
+                <p class="text-2xl text-yellow-400 font-mono">
+                    P(A|B) = &nbsp;<span class="font-bold">P(A ∩ B)</span> / P(B)
+                </p>
+                <p class="text-xl text-cyan-300 mt-4">
+                    Where:
+                    <ul class="list-disc list-inside text-cyan-300">
+                        <li><strong>P(A|B):</strong> The probability of Event A occurring given Event B.</li>
+                        <li><strong>P(A ∩ B):</strong> The probability that both events A and B occur.</li>
+                        <li><strong>P(B):</strong> The probability of Event B occurring.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <div class="mt-8 bg-gray-800 p-6 rounded-lg formula-box fade-in">
+            <h2 class="text-3xl mb-4 text-green-400">Key Takeaways</h2>
+            <p class="text-xl text-cyan-300">
+                - **Conditional Probability** helps us understand the likelihood of an event happening, given that another event has occurred.
+                <br>
+                - It is calculated using the formula: P(A|B) = P(A ∩ B) / P(B).
+                <br>
+                - The condition that the event is dependent on must be known beforehand.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add some subtle hover effects (these can stay as they are)
+        document.querySelectorAll('.formula-box').forEach(box => {
+            box.addEventListener('mouseenter', () => {
+                box.style.transform = 'scale(1.02)';
+            });
+            box.addEventListener('mouseleave', () => {
+                box.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
