@@ -87,49 +87,43 @@
         </div>
 
         <div class="mt-8 grid md:grid-cols-2 gap-8">
-            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in" onclick="toggleDetails(this)">
+            <!-- Stratified Sampling Example (Always Visible) -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
                 <h3 class="text-2xl mb-4 text-purple-400">Stratified Sampling Example</h3>
-                <div class="details hidden">
-                    <p><strong>Sample Group Composition:</strong></p>
-                    <ul>
-                        <li>5 yellow members</li>
-                        <li>3 green members</li>
-                        <li>4 red members</li>
-                        <li>6 blue members</li>
-                    </ul>
-                    <p><strong>Total Population:</strong></p>
-                    <ul>
-                        <li>40 yellow members</li>
-                        <li>24 green members</li>
-                        <li>32 red members</li>
-                        <li>48 blue members</li>
-                    </ul>
-                    <p><strong>Proportional Representation:</strong> 1/18th of each color group</p>
-                </div>
+                <p><strong>Sample Group Composition:</strong></p>
+                <ul>
+                    <li>5 yellow members</li>
+                    <li>3 green members</li>
+                    <li>4 red members</li>
+                    <li>6 blue members</li>
+                </ul>
+                <p><strong>Total Population:</strong></p>
+                <ul>
+                    <li>40 yellow members</li>
+                    <li>24 green members</li>
+                    <li>32 red members</li>
+                    <li>48 blue members</li>
+                </ul>
+                <p><strong>Proportional Representation:</strong> 1/18th of each color group</p>
             </div>
 
-            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in" onclick="toggleDetails(this)">
+            <!-- Multi-Stage Sampling Example (Always Visible) -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
                 <h3 class="text-2xl mb-4 text-purple-400">Multi-Stage Sampling</h3>
-                <div class="details hidden">
-                    <p><strong>Scenario:</strong> Estimating Cutthroat Trout Population</p>
-                    <p><strong>Sampling Approach:</strong></p>
-                    <ul>
-                        <li>Stratified Sampling First</li>
-                        <li>Random Sampling of Fish</li>
-                        <li>25-mile River Section</li>
-                    </ul>
-                    <p><strong>Goal:</strong> Approximate Fish Population</p>
-                </div>
+                <p><strong>Scenario:</strong> Estimating Cutthroat Trout Population</p>
+                <p><strong>Sampling Approach:</strong></p>
+                <ul>
+                    <li>Stratified Sampling First</li>
+                    <li>Random Sampling of Fish</li>
+                    <li>25-mile River Section</li>
+                </ul>
+                <p><strong>Goal:</strong> Approximate Fish Population</p>
             </div>
         </div>
     </div>
 
     <script>
-        function toggleDetails(element) {
-            const detailsDiv = element.querySelector('.details');
-            detailsDiv.classList.toggle('hidden');
-        }
-
+        // Optional: Add some subtle hover effects (these can stay as they are)
         document.querySelectorAll('.formula-box').forEach(box => {
             box.addEventListener('mouseenter', () => {
                 box.style.transform = 'scale(1.02)';
