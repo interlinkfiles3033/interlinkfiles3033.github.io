@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6.1 Understanding Discrete Random Variables</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #2d3748, #4a5568);
+            color: #f7fafc;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(52, 58, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron">
+            6.1 Understanding Discrete Random Variables
+        </h1>
+
+        <!-- Big Picture Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Big Picture</h2>
+            <p class="text-xl text-cyan-300">
+                Discrete random variables are variables that can only take on a countable number of distinct values. These values often arise from counting or categorizing items. Discrete random variables are fundamental in probability theory and statistics, where they are used to model scenarios where outcomes are not continuous, but rather distinct and separable.
+            </p>
+        </div>
+
+        <!-- Key Terms Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+            <ul class="space-y-3 text-left text-xl text-blue-300">
+                <li><strong>Random Variables:</strong> Quantities that take on different values depending on chance or probability.</li>
+                <li><strong>Value:</strong> The specific result or outcome that a random variable can take on.</li>
+                <li><strong>Outcome:</strong> One possible result from an experiment.</li>
+                <li><strong>Experiment:</strong> The process of taking a measurement or making an observation.</li>
+                <li><strong>Probability:</strong> The chance that a particular event will happen, written as a fraction, decimal, or percentage.</li>
+                <li><strong>Probability Distribution:</strong> A table, graph, or chart that shows all the possible values of a random variable (X), and the probability of each value (P(X)).</li>
+                <li><strong>Sample Space:</strong> The set of all possible outcomes of an experiment.</li>
+                <li><strong>Expected Value:</strong> The long-term average value you would expect if the experiment were repeated multiple times.</li>
+                <li><strong>Standard Deviation:</strong> A measure of the spread or dispersion of a data set. A larger standard deviation indicates a more spread-out data set.</li>
+            </ul>
+        </div>
+
+        <!-- Summary Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Summary</h2>
+            <p class="text-xl text-cyan-300">
+                Discrete random variables are useful for modeling situations where the outcomes are countable or finite. They play a key role in probability distributions, which show how probabilities are associated with different outcomes. For example, when rolling a die, the random variable could represent the number rolled, and its probability distribution would show the likelihood of rolling each number.
+            </p>
+        </div>
+
+        <!-- Example Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Example: Rolling a Die</h2>
+            <p class="text-xl text-cyan-300">
+                Consider the experiment of rolling a fair six-sided die. The outcome of this experiment is a random variable \(X\), where \(X\) can take one of six values: 1, 2, 3, 4, 5, or 6. Each value has an equal probability of occurring.
+            </p>
+            <p class="text-xl text-cyan-300 mt-6">
+                The probability distribution for this random variable is as follows:
+            </p>
+            <div class="text-center mt-6">
+                <table class="table-auto mx-auto bg-gray-700 text-white p-4 rounded-lg">
+                    <thead>
+                        <tr>
+                            <th class="px-4 py-2">X (Outcome)</th>
+                            <th class="px-4 py-2">P(X) (Probability)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="px-4 py-2">1</td><td class="px-4 py-2">1/6</td></tr>
+                        <tr><td class="px-4 py-2">2</td><td class="px-4 py-2">1/6</td></tr>
+                        <tr><td class="px-4 py-2">3</td><td class="px-4 py-2">1/6</td></tr>
+                        <tr><td class="px-4 py-2">4</td><td class="px-4 py-2">1/6</td></tr>
+                        <tr><td class="px-4 py-2">5</td><td class="px-4 py-2">1/6</td></tr>
+                        <tr><td class="px-4 py-2">6</td><td class="px-4 py-2">1/6</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-xl text-cyan-300 mt-6">
+                Since the die is fair, the probability for each outcome is \( \frac{1}{6} \). The expected value \( E(X) \) of this experiment is the average value you would expect from many rolls:
+            </p>
+            <p class="text-2xl mt-4 text-yellow-300">
+                E(X) = \( \sum_{i=1}^{6} X_i \times P(X_i) \)
+            </p>
+            <p class="text-xl text-cyan-300 mt-6">
+                E(X) = \( (1 \times \frac{1}{6}) + (2 \times \frac{1}{6}) + (3 \times \frac{1}{6}) + (4 \times \frac{1}{6}) + (5 \times \frac{1}{6}) + (6 \times \frac{1}{6}) = 3.5 \)
+            </p>
+            <p class="text-xl text-cyan-300 mt-4">
+                So, the expected value of rolling the die is 3.5, which is the average outcome you would expect over many rolls.
+            </p>
+        </div>
+
+        <!-- Conclusion Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+            <h2 class="text-3xl mb-4 text-green-400">Conclusion</h2>
+            <p class="text-xl text-cyan-300">
+                Discrete random variables are a fundamental part of probability theory. Understanding the concept of a probability distribution helps in calculating the expected value and standard deviation of different outcomes. By modeling real-world scenarios using discrete random variables, you can better understand the underlying chance of different events.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
