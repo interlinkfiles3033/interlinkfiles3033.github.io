@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6.6 Binomial Experiments & Distribution</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #2d3748, #4a5568);
+            color: #f7fafc;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(52, 58, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+        .image-container {
+            max-width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron">
+            6.6 Binomial Experiments & Distribution
+        </h1>
+
+        <!-- Big Picture Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Big Picture</h2>
+            <p class="text-xl text-cyan-300">
+                A **Binomial Experiment** involves only two possible outcomes: success or failure. The binomial distribution is a discrete probability distribution that models the number of successes in a fixed number of independent trials, each with the same probability of success. This distribution is widely used in statistics, especially in situations where there are repeated trials, and the result is either a success or failure, such as in coin flips, quality control tests, or survey responses.
+            </p>
+        </div>
+
+        <!-- Key Terms Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+            <ul class="space-y-3 text-left text-xl text-blue-300">
+                <li><strong>Binomial Experiments:</strong> Experiments with only two possible outcomes: success or failure.</li>
+                <li><strong>Binomial Random Variable:</strong> A random variable that counts the number of successes in a binomial experiment.</li>
+                <li><strong>Trial:</strong> One “run” of an experiment in a binomial distribution.</li>
+                <li><strong>Probability Distribution:</strong> A function that describes the likelihood of different outcomes in a random experiment.</li>
+                <li><strong>Variance (𝝈²):</strong> A measure of the spread of a data set; calculated by taking the mean of the squared deviations from the mean.</li>
+                <li><strong>Standard Deviation:</strong> The square root of the variance; it provides an indication of the spread of the data.</li>
+                <li><strong>Distribution:</strong> A description of the possible values of a random variable and their occurrences.</li>
+            </ul>
+        </div>
+
+        <!-- Summary Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Summary</h2>
+            <p class="text-xl text-cyan-300">
+                In a **Binomial Experiment**, there are four key conditions that must be met:
+                <ul class="list-disc text-left ml-8 text-cyan-300 text-xl">
+                    <li>There must be a fixed number of trials.</li>
+                    <li>Each trial must be independent of the others.</li>
+                    <li>Each trial must have only two possible outcomes: success or failure.</li>
+                    <li>The probability of success must be the same for each trial.</li>
+                </ul>
+                The **Binomial Distribution** describes the probability of having exactly \(x\) successes in a fixed number of trials. The probability of success on each trial is denoted by \(p\), and the probability of failure is \(1 - p\).
+            </p>
+        </div>
+
+        <!-- Example Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Example: Coin Toss</h2>
+            <p class="text-xl text-cyan-300">
+                Consider a **binomial experiment** where we toss a coin 5 times. The probability of getting a "Heads" (success) is \(p = 0.5\), and the probability of getting a "Tails" (failure) is \(1 - p = 0.5\).
+                We are interested in the probability of getting exactly 3 "Heads" out of 5 tosses.
+            </p>
+            <p class="text-xl text-cyan-300">
+                The **binomial distribution formula** for calculating the probability of getting exactly \(k\) successes (heads) in \(n\) trials (coin tosses) is:
+                <span class="font-bold text-white">P(X = k) = (n choose k) * p^k * (1-p)^(n-k)</span>
+                where:
+                - \(n\) is the total number of trials (5 tosses),
+                - \(k\) is the number of successes (3 heads),
+                - \(p\) is the probability of success (0.5 for heads).
+            </p>
+
+            <div class="image-container mt-6">
+                <img src="https://via.placeholder.com/600x300/4C9B91/FFFFFF?text=Binomial+Distribution" alt="Binomial Distribution" class="mx-auto">
+            </div>
+
+            <p class="text-xl text-cyan-300 mt-6">
+                This binomial experiment can be represented on a **binomial probability distribution** chart, where each bar shows the probability of getting \(k\) successes. In this case, the probability of getting exactly 3 heads out of 5 tosses is calculated using the formula, and the bar for 3 heads would show the probability associated with that outcome.
+            </p>
+        </div>
+
+        <!-- Conclusion Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+            <h2 class="text-3xl mb-4 text-green-400">Conclusion</h2>
+            <p class="text-xl text-cyan-300">
+                The **Binomial Distribution** is a powerful tool for modeling experiments with two possible outcomes. It is especially useful in real-world scenarios like quality testing, coin flips, and any situation where you have a fixed number of trials, each with the same probability of success. By understanding how to apply the binomial formula, you can calculate the probability of different outcomes and analyze the distribution of successes in a given set of trials.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
