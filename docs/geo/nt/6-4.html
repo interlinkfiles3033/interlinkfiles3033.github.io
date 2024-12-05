@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6.4 Visualizing Probability Distribution</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #2d3748, #4a5568);
+            color: #f7fafc;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(52, 58, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+        .histogram {
+            max-width: 100%;
+            height: 250px;
+        }
+
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron">
+            6.4 Visualizing Probability Distribution
+        </h1>
+
+        <!-- Big Picture Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Big Picture</h2>
+            <p class="text-xl text-cyan-300">
+                Visualizing probability distributions helps in understanding how likely different outcomes are. Various methods such as histograms, bar charts, or even cumulative distribution plots can be used to represent these distributions. Visual tools provide a clearer understanding of how probabilities are spread across different outcomes, making it easier to interpret and analyze data.
+            </p>
+        </div>
+
+        <!-- Key Terms Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+            <ul class="space-y-3 text-left text-xl text-blue-300">
+                <li><strong>Outcomes:</strong> The possible end results of a probability experiment.</li>
+                <li><strong>Event:</strong> A set of one or more possible results of a probability experiment.</li>
+                <li><strong>Probability:</strong> The chance that something will happen. It can be written as a fraction, decimal, or percent.</li>
+                <li><strong>Histogram:</strong> A bar chart that describes a frequency distribution.</li>
+            </ul>
+        </div>
+
+        <!-- Summary Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Summary</h2>
+            <p class="text-xl text-cyan-300">
+                A probability distribution can be visualized using several methods. The most common method for discrete random variables is the histogram. This graphical representation uses bars to show the frequency (or probability) of each possible outcome. The area of each bar is proportional to the probability of each outcome occurring. By visualizing the probability distribution, you can more easily see which outcomes are most likely and how the probability is spread across the outcomes.
+            </p>
+        </div>
+
+        <!-- Example Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Example: Tossing a Fair Coin</h2>
+            <p class="text-xl text-cyan-300">
+                Suppose we are tossing a fair coin. The two possible outcomes are Heads (H) and Tails (T), each with a probability of 0.5. A histogram can be used to visualize the probability distribution for this experiment.
+            </p>
+            
+            <div class="mt-6">
+                <img src="https://via.placeholder.com/600x250/4C9B91/FFFFFF?text=Probability+Distribution+Histogram" alt="Probability Distribution Histogram" class="histogram mx-auto">
+            </div>
+            
+            <p class="text-xl text-cyan-300 mt-6">
+                In this case, the histogram would have two bars, one for Heads (H) and one for Tails (T), with both bars having an equal height corresponding to a probability of 0.5. The area of each bar represents the probability of each outcome occurring. This is a simple example of a uniform probability distribution.
+            </p>
+        </div>
+
+        <!-- Conclusion Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+            <h2 class="text-3xl mb-4 text-green-400">Conclusion</h2>
+            <p class="text-xl text-cyan-300">
+                Visualizing probability distributions, such as with histograms, allows for an easier interpretation of data and the probability of different outcomes. It gives a more tangible sense of the randomness involved in experiments and can help identify patterns and trends in data. Understanding how to represent probability distributions visually is a key skill in statistics, allowing for more effective communication of statistical results.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
