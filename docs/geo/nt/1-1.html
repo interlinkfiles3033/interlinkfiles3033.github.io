@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1.1 Probability and Statistics</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #0a192f, #112240);
+            color: #e6f1ff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(17, 34, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron" data-tooltip="Mathematical Probability Unveiled!">
+            Probability & Statistics
+        </h1>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Key Concepts</h2>
+                <ul class="space-y-3 text-left">
+                    <li>
+                        <strong class="text-blue-300">Probability:</strong> 
+                        Likelihood of an event occurring
+                    </li>
+                    <li>
+                        <strong class="text-blue-300">Event:</strong> 
+                        Something that can have one or more outcomes
+                    </li>
+                    <li>
+                        <strong class="text-blue-300">Independent Events:</strong> 
+                        Outcomes that don't affect each other
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Probability Formula</h2>
+                <div class="text-2xl font-bold text-cyan-300">
+                    P(A) = Number of ways A can occur / Size of Sample Space
+                </div>
+                <p class="mt-4 text-sm text-gray-400">
+                    Always between 0 (never) and 1 (always)
+                </p>
+            </div>
+        </div>
+
+        <div class="mt-8 grid md:grid-cols-2 gap-8">
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in" onclick="toggleDetails(this)">
+                <h3 class="text-2xl mb-4 text-purple-400">Dice Roll Example</h3>
+                <div class="details hidden">
+                    <p><strong>Sample Space:</strong> {1, 2, 3, 4, 5, 6}</p>
+                    <p><strong>Event:</strong> Rolling a 5</p>
+                    <p><strong>Probability:</strong> 1/6</p>
+                </div>
+            </div>
+
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in" onclick="toggleDetails(this)">
+                <h3 class="text-2xl mb-4 text-purple-400">Card Pick Example</h3>
+                <div class="details hidden">
+                    <p><strong>Sample Space:</strong> 52-card deck</p>
+                    <p><strong>Event:</strong> Picking 2 Aces without replacement</p>
+                    <p><strong>Probability:</strong> (4/52) × (3/51) = 1/221</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleDetails(element) {
+            const detailsDiv = element.querySelector('.details');
+            detailsDiv.classList.toggle('hidden');
+        }
+
+        // Optional: Add some subtle hover effects
+        document.querySelectorAll('.formula-box').forEach(box => {
+            box.addEventListener('mouseenter', () => {
+                box.style.transform = 'scale(1.02)';
+            });
+            box.addEventListener('mouseleave', () => {
+                box.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
