@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8.4 Triangles - Definition, Classification, Interactives, and Examples</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #4A5568, #2D3748);
+            color: #F7FAFC;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(52, 58, 64, 0.8);
+            border: 2px solid #64FFDA;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron">
+            8.4 Triangles - Definition, Classification, Interactives, and Examples
+        </h1>
+
+        <!-- Big Picture Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Big Picture</h2>
+            <p class="text-xl text-cyan-300">
+                A **triangle** is a polygon with three sides and three angles. Triangles are classified in two main ways: by their **sides** (Equilateral, Isosceles, and Scalene) and by their **angles** (Acute, Right, and Obtuse). Understanding these classifications helps to apply triangle properties in real-world geometry problems such as architecture, design, and navigation.
+            </p>
+        </div>
+
+        <!-- Key Terms Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+            <ul class="space-y-3 text-left text-xl text-blue-300">
+                <li><strong>Triangle:</strong> A polygon with three sides and three angles.</li>
+                <li><strong>Parallel Lines:</strong> Two or more lines that lie in the same plane and never intersect. These lines will always have the same slope.</li>
+                <li><strong>Angles:</strong> A geometric figure formed by two rays that connect at a single point or vertex.</li>
+                <li><strong>Corresponding:</strong> The corresponding sides between two triangles are sides in the same relative position.</li>
+                <li><strong>Right Angle:</strong> An angle equal to 90 degrees.</li>
+                <li><strong>Equiangular Triangle:</strong> A triangle with all congruent angles, each measuring 60 degrees.</li>
+                <li><strong>Equilateral Triangle:</strong> A triangle where all three sides are equal in length and it is also equiangular.</li>
+                <li><strong>Congruent:</strong> Identical in size, shape, and measure. Congruence can occur even if a shape is rotated or flipped.</li>
+                <li><strong>Right Triangle:</strong> A triangle with exactly one right angle (90 degrees). The sides adjacent to the right angle are called legs, and the side opposite the right angle is the hypotenuse.</li>
+                <li><strong>Exterior Angle:</strong> An angle formed by extending one side of the triangle.</li>
+                <li><strong>Isosceles Triangle:</strong> A triangle in which exactly two sides are of equal length.</li>
+            </ul>
+        </div>
+
+        <!-- Important Info Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Important Info</h2>
+            <p class="text-xl text-cyan-300">
+                - The **interior angles** of any triangle always sum to 180°.
+                - In a **right triangle**, the Pythagorean theorem holds: <br>
+                <pre class="bg-gray-700 text-white p-4 mt-4 rounded">
+a² + b² = c²
+                </pre>
+                where **a** and **b** are the legs, and **c** is the hypotenuse.
+                <br><br>
+                - **Equilateral triangles** have all sides equal, and all angles measure 60°.
+                - **Isosceles triangles** have two sides of equal length, and two equal angles.
+                - **Scalene triangles** have all sides and all angles of different measures.
+            </p>
+        </div>
+
+        <!-- Example Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Example</h2>
+            <p class="text-xl text-cyan-300">
+                Let's calculate the third side of a **right triangle** using the Pythagorean theorem. If one leg measures **3 cm** and the other leg is **4 cm**, we can find the length of the hypotenuse **c**:
+                <br><br>
+                <pre class="bg-gray-700 text-white p-4 mt-4 rounded">
+a² + b² = c²
+3² + 4² = c²
+9 + 16 = c²
+25 = c²
+c = √25
+c = 5 cm
+                </pre>
+                Therefore, the hypotenuse of the triangle is **5 cm**.
+            </p>
+        </div>
+
+        <!-- Interactive Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Interactive Example</h2>
+            <p class="text-xl text-cyan-300">
+                To better understand the classification of triangles:
+                <ul class="list-disc ml-8 text-xl text-blue-300">
+                    <li>Draw an **Equilateral Triangle** where all sides are the same length and measure all the angles to verify they are each 60°.</li>
+                    <li>Draw an **Isosceles Triangle** and identify the two equal sides and angles.</li>
+                    <li>Use a **protractor** to measure the angles of a **right triangle** and confirm that one angle is exactly 90°.</li>
+                </ul>
+                <br>
+                **Tip**: Using **triangle inequalities** is important: for any triangle, the sum of the lengths of any two sides must always be greater than the length of the third side.
+            </p>
+        </div>
+
+        <!-- Conclusion Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+            <h2 class="text-3xl mb-4 text-green-400">Conclusion</h2>
+            <p class="text-xl text-cyan-300">
+                Triangles are fundamental in geometry and are classified based on their **angles** and **sides**. Understanding the properties of different types of triangles, such as **equilateral**, **isosceles**, and **right triangles**, helps us solve geometric problems and apply them in various fields, including architecture and engineering. The Pythagorean theorem and triangle inequality are important tools for working with triangles.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
