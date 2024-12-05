@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8.6 Area and Perimeter of Triangles and Quadrilaterals</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #2D3748, #4A5568);
+            color: #F7FAFC;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(52, 58, 64, 0.8);
+            border: 2px solid #64FFDA;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron">
+            8.6 Area and Perimeter of Triangles and Quadrilaterals
+        </h1>
+
+        <!-- Big Picture Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Big Picture</h2>
+            <p class="text-xl text-cyan-300">
+                The **area** and **perimeter** of shapes are used in everyday life for measuring spaces and determining the boundaries of various objects. Whether you are building a house, designing a garden, or simply measuring a field, understanding how to calculate the area and perimeter is crucial.
+            </p>
+        </div>
+
+        <!-- Key Terms Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+            <ul class="space-y-3 text-left text-xl text-blue-300">
+                <li><strong>Distance:</strong> The length of the route between two points.</li>
+                <li><strong>Perimeter:</strong> The distance around a shape. The perimeter of any figure must have a unit of measurement attached to it. If no specific units are given, write the numeric value followed by “units”.</li>
+                <li><strong>Area:</strong> The space within the perimeter of a two-dimensional figure.</li>
+                <li><strong>Rectangle:</strong> A parallelogram with four right angles.</li>
+                <li><strong>Parallelogram:</strong> A quadrilateral with two pairs of parallel sides.</li>
+                <li><strong>Height:</strong> The perpendicular distance from the base of a shape to the opposite vertex.</li>
+                <li><strong>Triangle:</strong> A polygon with three sides and three angles.</li>
+                <li><strong>Midpoint:</strong> The midpoint of two vectors is the location in the center of their endpoints.</li>
+                <li><strong>Trapezoid:</strong> A quadrilateral with exactly one pair of parallel opposite sides.</li>
+                <li><strong>Congruent:</strong> Figures are identical in size, shape, and measure.</li>
+                <li><strong>Square:</strong> A parallelogram with four right angles and four congruent sides.</li>
+            </ul>
+        </div>
+
+        <!-- Important Info Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Important Info</h2>
+            <p class="text-xl text-cyan-300">
+                - The **perimeter** of any polygon is found by adding the lengths of its sides. <br>
+                - The **area** of a shape depends on the formula specific to that shape. For example:
+                <ul class="list-disc ml-8 text-xl text-blue-300">
+                    <li>For a **rectangle**: <strong>Area = length × width</strong></li>
+                    <li>For a **parallelogram**: <strong>Area = base × height</strong></li>
+                    <li>For a **triangle**: <strong>Area = (base × height) / 2</strong></li>
+                    <li>For a **trapezoid**: <strong>Area = (b1 + b2) × height / 2</strong></li>
+                    <li>For a **square**: <strong>Area = side²</strong></li>
+                </ul>
+            </p>
+        </div>
+
+        <!-- Formulas Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Formulas</h2>
+            <ul class="space-y-3 text-xl text-blue-300">
+                <li><strong>Rectangle:</strong> A = <span class="font-bold">bh</span></li>
+                <li><strong>Parallelogram:</strong> A = <span class="font-bold">bh</span></li>
+                <li><strong>Triangle:</strong> A = <span class="font-bold">bh / 2</span></li>
+                <li><strong>Trapezoid:</strong> A = <span class="font-bold">((b1 + b2)h) / 2</span></li>
+                <li><strong>Rhombus:</strong> A = <span class="font-bold">bh</span> or A = <span class="font-bold">(d1 × d2) / 2</span></li>
+                <li><strong>Kite:</strong> A = <span class="font-bold">(d1 × d2) / 2</span></li>
+                <li><strong>Square:</strong> A = <span class="font-bold">s²</span></li>
+            </ul>
+        </div>
+
+        <!-- Example Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Example</h2>
+            <p class="text-xl text-cyan-300">
+                Consider a **rectangle** with a length of **8 cm** and a width of **5 cm**. To find the area, we use the formula:
+                <pre class="bg-gray-700 text-white p-4 mt-4 rounded">
+Area = length × width
+Area = 8 cm × 5 cm
+Area = 40 cm²
+                </pre>
+                Therefore, the area of the rectangle is **40 cm²**.
+            </p>
+        </div>
+
+        <!-- Conclusion Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+            <h2 class="text-3xl mb-4 text-green-400">Conclusion</h2>
+            <p class="text-xl text-cyan-300">
+                Understanding the **area** and **perimeter** of various shapes is essential for solving real-world problems. These concepts are used in a wide variety of fields, from construction to art. By practicing the formulas for different shapes, you can become proficient in calculating areas and perimeters in everyday situations.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
