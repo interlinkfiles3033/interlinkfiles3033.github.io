@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7.3 Z-Scores</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #2d3748, #4a5568);
+            color: #f7fafc;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(52, 58, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron">
+            7.3 Z-Scores
+        </h1>
+
+        <!-- Big Picture Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Big Picture</h2>
+            <p class="text-xl text-cyan-300">
+                A **Z-score** tells you how many standard deviations a data point is away from the mean of the data set. Z-scores are essential for understanding how far away a value is from the average, and they can be used to compare scores across different data sets.
+                <br><br>
+                The Z-score formula is helpful to standardize values, making it easier to compare different distributions.
+            </p>
+        </div>
+
+        <!-- Key Terms Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+            <ul class="space-y-3 text-left text-xl text-blue-300">
+                <li><strong>Z-Score:</strong> The number of standard deviations a data point is from the mean. Z = (X - μ) / σ</li>
+                <li><strong>Standard Deviation:</strong> A measure of spread in a data set, showing how much the values deviate from the mean.</li>
+                <li><strong>Empirical Rule:</strong> States that for a normal distribution, 68% of the data lies within 1σ, 95% within 2σ, and 99.7% within 3σ.</li>
+            </ul>
+        </div>
+
+        <!-- Important Info Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Important Info</h2>
+            <p class="text-xl text-cyan-300">
+                The **Empirical Rule** applies to normal distributions and tells you what percentage of data lies within standard deviations from the mean:
+                <br><br>
+                - **68%** of data lies within **1 standard deviation** (±1σ)
+                - **95%** of data lies within **2 standard deviations** (±2σ)
+                - **99.7%** of data lies within **3 standard deviations** (±3σ)
+                <br><br>
+                The **Z-score** formula is as follows:
+                <pre class="bg-gray-700 text-white p-4 mt-4 rounded">
+Z = (X - μ) / σ
+Where:
+Z = Z-score
+X = Data point
+μ = Mean
+σ = Standard deviation
+                </pre>
+            </p>
+        </div>
+
+        <!-- Example Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Example</h2>
+            <p class="text-xl text-cyan-300">
+                Let's say we have a dataset where the **mean** score on a test is **70**, and the **standard deviation** is **10**. If a student scores **85**, we can calculate their Z-score to understand how far above the average they scored.
+                <br><br>
+                Using the Z-score formula:
+                <pre class="bg-gray-700 text-white p-4 mt-4 rounded">
+Z = (X - μ) / σ
+Z = (85 - 70) / 10
+Z = 15 / 10
+Z = 1.5
+                </pre>
+                So, the student’s score is **1.5 standard deviations above** the mean.
+            </p>
+        </div>
+
+        <!-- Conclusion Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+            <h2 class="text-3xl mb-4 text-green-400">Conclusion</h2>
+            <p class="text-xl text-cyan-300">
+                **Z-scores** are valuable for comparing different data points or distributions, as they standardize the data. They allow you to assess how unusual or typical a given value is in comparison to the mean of the data set. A Z-score of 0 means the data point is exactly at the mean, while positive or negative Z-scores indicate how far above or below the mean a point lies.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
