@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8.5 Quadrilaterals - Definition, Types, Properties, Interactives, and Examples</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #2D3748, #4A5568);
+            color: #F7FAFC;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(52, 58, 64, 0.8);
+            border: 2px solid #64FFDA;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron">
+            8.5 Quadrilaterals - Definition, Types, Properties, Interactives, and Examples
+        </h1>
+
+        <!-- Big Picture Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Big Picture</h2>
+            <p class="text-xl text-cyan-300">
+                A **quadrilateral** is a two-dimensional polygon that consists of **four sides** and **four angles**. Quadrilaterals can be classified into several types based on their properties. Examples include **rectangles**, **squares**, **parallelograms**, and **trapezoids**. Quadrilaterals are fundamental in geometry and are often used in architecture, art, and engineering.
+            </p>
+        </div>
+
+        <!-- Key Terms Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+            <ul class="space-y-3 text-left text-xl text-blue-300">
+                <li><strong>Polygon:</strong> A simple closed figure with at least three straight sides.</li>
+                <li><strong>Quadrilateral:</strong> A closed figure with four sides and four vertices.</li>
+                <li><strong>Angles:</strong> A geometric figure formed by two rays that connect at a single point or vertex.</li>
+                <li><strong>Vertices:</strong> Points where line segments intersect.</li>
+                <li><strong>Diagonals:</strong> A line segment in a polygon that connects nonconsecutive or nonadjacent vertices.</li>
+                <li><strong>Convex Polygon:</strong> Contains no interior angles greater than 180 degrees.</li>
+                <li><strong>Congruent:</strong> Figures that are identical in size, shape, and measure.</li>
+                <li><strong>Kite:</strong> A quadrilateral with two pairs of adjacent congruent sides.</li>
+                <li><strong>Angle Bisector:</strong> A ray that splits an angle into two congruent smaller angles.</li>
+                <li><strong>Parallel Lines:</strong> Lines that lie in the same plane and never intersect. These lines always have the same slope.</li>
+                <li><strong>Trapezoid:</strong> A quadrilateral with exactly one pair of parallel opposite sides.</li>
+                <li><strong>Isosceles Trapezoid:</strong> A trapezoid where the non-parallel sides are congruent in length.</li>
+                <li><strong>Parallelogram:</strong> A quadrilateral with two pairs of parallel sides.</li>
+                <li><strong>Rectangle:</strong> A parallelogram with four right angles.</li>
+                <li><strong>Rhombus:</strong> A parallelogram with all sides congruent.</li>
+                <li><strong>Square:</strong> A parallelogram with four right angles and four congruent sides.</li>
+                <li><strong>Adjacent Angles:</strong> Two angles are adjacent if they share a side and vertex.</li>
+            </ul>
+        </div>
+
+        <!-- Important Info Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Important Info</h2>
+            <p class="text-xl text-cyan-300">
+                - The sum of the interior angles of any quadrilateral is **360°**. <br>
+                - In a **parallelogram**, opposite sides are parallel and equal in length. Opposite angles are also congruent. <br>
+                - In a **rectangle**, all angles are 90° and opposite sides are congruent. <br>
+                - In a **square**, all angles are 90°, and all sides are of equal length. <br>
+                - A **trapezoid** has one pair of opposite sides that are parallel. <br>
+                - A **kite** has two pairs of adjacent congruent sides.
+            </p>
+        </div>
+
+        <!-- Example Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Example</h2>
+            <p class="text-xl text-cyan-300">
+                Let's work with a **parallelogram** where the opposite sides are **4 cm** and **6 cm**. If the height of the parallelogram is **3 cm**, the area can be calculated as:
+                <br><br>
+                <pre class="bg-gray-700 text-white p-4 mt-4 rounded">
+Area = base × height
+Area = 6 cm × 3 cm
+Area = 18 cm²
+                </pre>
+                Therefore, the area of the parallelogram is **18 cm²**.
+            </p>
+        </div>
+
+        <!-- Interactive Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in mb-8">
+            <h2 class="text-3xl mb-4 text-green-400">Interactive Example</h2>
+            <p class="text-xl text-cyan-300">
+                Try the following interactive examples:
+                <ul class="list-disc ml-8 text-xl text-blue-300">
+                    <li>Draw a **rectangle** with known side lengths and calculate its area using the formula: <strong>Area = length × width</strong>.</li>
+                    <li>Draw a **square** with a known side length and calculate its area: <strong>Area = side²</strong>.</li>
+                    <li>For a **kite**, draw two pairs of adjacent congruent sides and explore the relationship between its diagonals.</li>
+                </ul>
+                <br>
+                **Tip**: Use a **protractor** to measure the angles and verify properties like perpendicularity or parallelism in your drawings.
+            </p>
+        </div>
+
+        <!-- Conclusion Section -->
+        <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+            <h2 class="text-3xl mb-4 text-green-400">Conclusion</h2>
+            <p class="text-xl text-cyan-300">
+                Quadrilaterals are an essential part of geometry, classified based on their side lengths and angle properties. Understanding the characteristics of different types of quadrilaterals helps in solving real-world problems and constructing geometric designs. Whether it's calculating area, identifying types based on properties, or using quadrilaterals in constructions, their applications are vast and fundamental.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
