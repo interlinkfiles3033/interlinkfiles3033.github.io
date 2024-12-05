@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4.3 Harmonic Mean</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #0a192f, #112240);
+            color: #e6f1ff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(17, 34, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron" data-tooltip="Harmonic Mean">
+            4.3 Harmonic Mean
+        </h1>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Summary Statement -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Summary Statement of Topic</h2>
+                <p class="text-xl text-cyan-300">
+                    The harmonic mean helps find the middle value of a data set regardless of how skewed the set might be by a few large values. This is achieved by using either weighted or unweighted averages, depending on whether the values are of equal importance or not.
+                </p>
+            </div>
+
+            <!-- Key Terms -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+                <ul class="space-y-3 text-left text-xl text-blue-300">
+                    <li><strong>Harmonic Mean:</strong> Calculated by dividing the number of values in the set by the sum of the inverses of the values in the set.</li>
+                    <li><strong>Arithmetic Mean:</strong> Also called the average; Arithmetic Mean = x₁ + x₂ + ... + xn.</li>
+                    <li><strong>Skewed/Skew:</strong> A given set means to cause the trend of data to favor one end or the other.</li>
+                    <li><strong>Weighted:</strong> A value or set of values takes into account varying levels of importance among members of the set.</li>
+                    <li><strong>Geometric Mean:</strong> A method of finding the “middle” value in a set that contains some values that are intrinsically more influential than others.</li>
+                    <li><strong>Data Set:</strong> A collection of these observations of the variable.</li>
+                    <li><strong>Weighted Harmonic Mean:</strong> A harmonic mean of values with varying frequencies or weights.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-8 grid md:grid-cols-2 gap-8">
+            <!-- Example of Basic Harmonic Mean -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Example (Unweighted Harmonic Mean)</h2>
+                <p class="text-xl text-cyan-300">
+                    Basic/Unweighted Harmonic Mean Calculation:  
+                    <br>Segment #1: 18 mph, 4.2 mi
+                    <br>Segment #2: 21 mph, 4.2 mi
+                    <br>Segment #3: 24 mph, 4.2 mi
+                    <br>Segment #4: 17 mph, 4.2 mi
+                </p>
+                <p class="text-xl text-cyan-300">
+                    To calculate the harmonic mean, we use the following formula:  
+                    <br> Harmonic Mean = n / (1/x₁ + 1/x₂ + 1/x₃ + ... + 1/xn) 
+                </p>
+                <p class="text-lg text-cyan-200 mb-4">
+                    Where n is the number of segments, and x represents the values (speeds in this case).  
+                    <br>1/18 + 1/21 + 1/24 + 1/17 = 0.0556 + 0.0476 + 0.0417 + 0.0588 = 0.2037
+                    <br> Harmonic Mean = 4 / 0.2037 = 19.64 mph (rounded)
+                </p>
+            </div>
+
+            <!-- Example of Weighted Harmonic Mean -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Example (Weighted Harmonic Mean)</h2>
+                <p class="text-xl text-cyan-300">
+                    Weighted Harmonic Mean Calculation:  
+                    <br>Segment #1: 21.1 km, 23 kph  
+                    <br>Segment #2: 32.0 km, 15.6 kph  
+                    <br>Segment #3: 29.5 km, 14.2 kph  
+                    <br>Segment #4: 30.5 km, 10.2 kph
+                </p>
+                <p class="text-xl text-cyan-300">
+                    For weighted harmonic mean, we use:  
+                    <br> Weighted Harmonic Mean = (w₁ * a₁ + w₂ * a₂ + w₃ * a₃ + ...) / (w₁/a₁ + w₂/a₂ + w₃/a₃ + ...)
+                </p>
+                <p class="text-lg text-cyan-200 mb-4">
+                    Where w represents the distance (weights), and a represents speed/velocity (values).  
+                    <br> (21.1 * 23 + 32.0 * 15.6 + 29.5 * 14.2 + 30.5 * 10.2) / (21.1/23 + 32.0/15.6 + 29.5/14.2 + 30.5/10.2)
+                    <br> = (484.3 + 499.2 + 418.9 + 311.1) / (0.915 + 2.051 + 2.078 + 2.988)
+                    <br> = 1713.5 / 8.032 = 14.07 kph (rounded)
+                </p>
+            </div>
+        </div>
+
+        <div class="mt-8 bg-gray-800 p-6 rounded-lg formula-box fade-in">
+            <h2 class="text-3xl mb-4 text-green-400">Important Notes</h2>
+            <p class="text-xl text-cyan-300">
+                **Use the Unweighted Harmonic Mean when velocity is the same across segments, otherwise use the Weighted Harmonic Mean when velocities (or other measures) differ across segments. This distinction ensures that each value is appropriately represented in the mean.**
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add some subtle hover effects (these can stay as they are)
+        document.querySelectorAll('.formula-box').forEach(box => {
+            box.addEventListener('mouseenter', () => {
+                box.style.transform = 'scale(1.02)';
+            });
+            box.addEventListener('mouseleave', () => {
+                box.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
