@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4.4 Median</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #0a192f, #112240);
+            color: #e6f1ff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(17, 34, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron" data-tooltip="Median">
+            4.4 Median
+        </h1>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Summary Statement -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Summary Statement of Topic</h2>
+                <p class="text-xl text-cyan-300">
+                    The median helps find the “middle number” in a data set, where exactly ½ of the data is greater, and exactly ½ is less. It provides a measure of central tendency that is not influenced by extreme values (outliers) as much as the mean.
+                </p>
+            </div>
+
+            <!-- Key Terms -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+                <ul class="space-y-3 text-left text-xl text-blue-300">
+                    <li><strong>Data Set:</strong> A collection of these observations of the variable.</li>
+                    <li><strong>Data:</strong> Information that has been collected to represent real-life situations, usually in number form.</li>
+                    <li><strong>Outlines:</strong> An observation that lies an abnormal distance from other values in a random sample from a population.</li>
+                    <li><strong>Extremes:</strong> The minimum and maximum value in a dataset.</li>
+                    <li><strong>Arithmetic Mean:</strong> Also called the average; Arithmetic Mean = x₁ + x₂ + ... + xn.</li>
+                    <li><strong>Histogram:</strong> A bar chart that describes a frequency distribution.</li>
+                    <li><strong>Interval:</strong> A specific and limited part of a function.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-8 grid md:grid-cols-2 gap-8">
+            <!-- Example of Median Calculation -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Example of Median Calculation</h2>
+                <p class="text-xl text-cyan-300">
+                    Consider the following data set:  
+                    {22, 22, 33, 35, 35, 36, 39, 39, 39, 41, 42, 42, 43, 43, 44, 44, 48, 52, 54, 55, 55, 57, 57, 57}
+                </p>
+                <p class="text-xl text-cyan-300 mb-4">
+                    To calculate the median, we need to order the data and then find the middle number:
+                </p>
+                <p class="text-lg text-cyan-200 mb-4">
+                    Ordered data set: {22, 22, 33, 35, 35, 36, 39, 39, 39, 41, 42, 42, 43, 43, 44, 44, 48, 52, 54, 55, 55, 57, 57, 57}
+                </p>
+                <p class="text-xl text-cyan-300">
+                    Since there are 24 data points (an even number), we calculate the median as the average of the two middle numbers:  
+                    <br> (42 + 43) / 2 = 85 / 2 = 42.5
+                </p>
+                <p class="text-xl text-cyan-300">
+                    Therefore, the median of this data set is 42.5.
+                </p>
+            </div>
+
+            <!-- Example with Odd Number of Data Points -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Example (Odd Number of Data Points)</h2>
+                <p class="text-xl text-cyan-300">
+                    Now consider the data set: {22, 24, 25, 26, 27, 28, 30, 31, 35}.  
+                    In this case, we have 9 values (an odd number).
+                </p>
+                <p class="text-xl text-cyan-300">
+                    To find the median, we simply locate the middle value:
+                    <br> {22, 24, 25, 26, 27, 28, 30, 31, 35}
+                </p>
+                <p class="text-xl text-cyan-300">
+                    The middle value is 27, so the median of this data set is 27.
+                </p>
+            </div>
+        </div>
+
+        <div class="mt-8 bg-gray-800 p-6 rounded-lg formula-box fade-in">
+            <h2 class="text-3xl mb-4 text-green-400">Important Notes</h2>
+            <p class="text-xl text-cyan-300">
+                When the data set has an even number of observations, the median is found by averaging the two middle values. This makes the median less sensitive to extreme values (outliers) compared to the arithmetic mean, which can be skewed by very high or low values.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add some subtle hover effects (these can stay as they are)
+        document.querySelectorAll('.formula-box').forEach(box => {
+            box.addEventListener('mouseenter', () => {
+                box.style.transform = 'scale(1.02)';
+            });
+            box.addEventListener('mouseleave', () => {
+                box.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
