@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2.3 Distribution</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #0a192f, #112240);
+            color: #e6f1ff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(17, 34, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron" data-tooltip="Exploring Distribution Models">
+            2.3 Distribution
+        </h1>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Summary Statement -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Summary Statement of Topic</h2>
+                <p class="text-xl text-cyan-300">
+                    Using statistics can help you find the overall distribution of a specific topic, like demographics, 
+                    using different types of distribution models.
+                </p>
+            </div>
+
+            <!-- Key Terms -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+                <ul class="space-y-3 text-left text-xl text-blue-300">
+                    <li><strong>Statistics:</strong> Branch of mathematics that involves collecting, analyzing, and displaying data</li>
+                    <li><strong>Distribution:</strong> A description of the possible values of a random variable and the possible occurrences of these values</li>
+                    <li><strong>Data:</strong> Information that has been collected to represent real life situations, usually in number form</li>
+                    <li><strong>Range:</strong> The difference between the smallest value and the greatest value in a data set</li>
+                    <li><strong>Arithmetic Mean:</strong> Also called the average; Arithmetic Mean = x₁ + x₂ + ... + xn</li>
+                    <li><strong>Standard Deviation:</strong> A measure of spread of a data set. The larger the standard deviation, the more spread out the data is.</li>
+                    <li><strong>Average:</strong> Also called the arithmetic mean</li>
+                    <li><strong>Sample:</strong> A specified part of a population, intended to represent the population as a whole</li>
+                    <li><strong>Population:</strong> The entire group of interest from which the sample is drawn</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-8 grid md:grid-cols-2 gap-8">
+            <!-- Important Info to Remember -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Important Info to Remember</h2>
+                <div class="text-xl text-cyan-300">
+                    <p><strong>X~N(μ, 𝝈);</strong> - Notation for Graph</p>
+                    <p><strong>(y - μ) / 𝝈</strong> - Finds Z-Score</p>
+                    <p><strong>μ</strong> - Mean (Mu)</p>
+                    <p><strong>𝝈</strong> - Standard Deviation (Small Sigma)</p>
+                </div>
+            </div>
+
+            <!-- Examples -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Examples</h2>
+                <div class="text-xl text-cyan-300">
+                    <p><strong>X~N(5,6)</strong></p>
+                    <p>If x = 17, then z-score = 2</p>
+                    <p><strong>Y~N(2,1)</strong></p>
+                    <p>If y = 4, then z-score = 2</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-8 grid md:grid-cols-2 gap-8">
+            <!-- Empirical Rule -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Empirical Rule</h2>
+                <div class="text-xl text-cyan-300">
+                    <ul class="list-disc pl-5 text-left">
+                        <li>68% for the x values between -1𝝈 and +1𝝈 (within one standard deviation)</li>
+                        <li>95% for the x values between -2𝝈 and +2𝝈 (within two standard deviations)</li>
+                        <li>99.7% for the x values between -3𝝈 and +3𝝈 (within three standard deviations)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Conclusion Box (Optional) -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Conclusion</h2>
+                <p class="text-xl text-cyan-300">
+                    Understanding distributions and the empirical rule is essential for interpreting data sets and making informed statistical conclusions.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add some subtle hover effects (these can stay as they are)
+        document.querySelectorAll('.formula-box').forEach(box => {
+            box.addEventListener('mouseenter', () => {
+                box.style.transform = 'scale(1.02)';
+            });
+            box.addEventListener('mouseleave', () => {
+                box.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
