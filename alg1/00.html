@@ -1,1 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interlink Files - Algebra 1</title>
+    <link rel="stylesheet" href="https://interlinkfiles3033.github.io/styles.css">
+    <link rel="icon" href="https://interlinkfiles3033.github.io/favicon2.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Orbitron', sans-serif;
+        }
 
+        .search-container {
+            margin: 20px auto;
+            max-width: 600px;
+            text-align: center;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .search-input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #4a90e2;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 20px;
+            color: white;
+            font-size: 18px;
+            margin-top: 20px;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 20px auto;
+            max-width: 1200px;
+            padding: 0 20px;
+        }
+
+        .resource-card {
+            cursor: pointer;
+            transition: transform 0.2s;
+            text-decoration: none;
+            color: inherit;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            margin: 0;
+        }
+
+        .resource-card:hover {
+            transform: scale(1.05);
+        }
+
+        .resource-title {
+            margin: 0;
+            font-size: 1.2em;
+            font-weight: 500;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        @media (max-width: 768px) {
+            .resources-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .resources-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="glass-header">
+        <div class="logo-container">
+            <h1 class="glow-text">Algebra 1</h1>
+        </div>
+    </header>
+
+    <main class="fade-in">
+        <div class="games-container">            
+            <a href="https://interlinkfiles3033.github.io/alg1/1-1.html"><h3 class="resource-title">1.1 Probability and Statistics</h3></a>
+        </div>
+    </main>
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('courseSearch');
+            const resourceCards = document.getElementsByClassName('resource-card');
+            const container = document.getElementById('resourcesContainer');
+
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                let hasResults = false;
+
+                Array.from(resourceCards).forEach(card => {
+                    const title = card.querySelector('.resource-title').textContent.toLowerCase();
+                    if (title.includes(searchTerm)) {
+                        card.classList.remove('hidden');
+                        hasResults = true;
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+
+                // Show/hide no results message
+                let noResultsMsg = document.querySelector('.no-results');
+                if (!hasResults) {
+                    if (!noResultsMsg) {
+                        noResultsMsg = document.createElement('div');
+                        noResultsMsg.className = 'no-results';
+                        noResultsMsg.textContent = 'No search results.';
+                        container.appendChild(noResultsMsg);
+                    }
+                } else if (noResultsMsg) {
+                    noResultsMsg.remove();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
