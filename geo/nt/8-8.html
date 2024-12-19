@@ -1,1 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>8.8 Circles</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #0a192f, #112240);
+            color: #e6f1ff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(17, 34, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron" data-tooltip="Circles">
+            8.8 Circles
+        </h1>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Summary Statement -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Summary Statement of Topic</h2>
+                <p class="text-xl text-cyan-300">
+                    A circle is a shape where all points are equidistant from a central point. The circumference is calculated using the formula C = 2𝜋r, and the area is calculated using A = 𝜋r². Circles are fundamental shapes in geometry, appearing in numerous real-world applications.
+                </p>
+            </div>
+
+            <!-- Key Terms -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+                <ul class="space-y-3 text-left text-xl text-blue-300">
+                    <li><strong>Circle:</strong> The set of all points that are equidistant from a specific point called the center.</li>
+                    <li><strong>Circumference:</strong> The distance around the edge of a circle, calculated by C = 2𝜋r.</li>
+                    <li><strong>Area:</strong> The space enclosed within the perimeter of a circle, calculated by A = 𝜋r².</li>
+                    <li><strong>Radius:</strong> The distance from the center of a circle to any point on its edge.</li>
+                    <li><strong>Diameter:</strong> A chord that passes through the center of a circle, equal to twice the length of the radius.</li>
+                    <li><strong>Sector:</strong> A portion of a circle bounded by two radii and an arc, measured in degrees.</li>
+                    <li><strong>Distance:</strong> The length of the path between two points.</li>
+                    <li><strong>Point:</strong> A location in space that has no size, often represented by a coordinate on a grid.</li>
+                    <li><strong>Plane:</strong> A flat, two-dimensional surface, such as a sheet of paper extending infinitely.</li>
+                    <li><strong>Center:</strong> The point that defines the location of a circle, equidistant from all points on the circle.</li>
+                    <li><strong>Line Segment:</strong> A part of a line with two endpoints.</li>
+                    <li><strong>Perimeter:</strong> The total distance around a figure, often referred to as the circumference for circles.</li>
+                    <li><strong>Ratio:</strong> A comparison of two quantities.</li>
+                    <li><strong>Pi (𝜋):</strong> The ratio of the circumference of a circle to its diameter, approximately 3.14.</li>
+                    <li><strong>Parallelogram:</strong> A quadrilateral with two pairs of parallel sides.</li>
+                    <li><strong>Rectangle:</strong> A parallelogram with four right angles.</li>
+                    <li><strong>Arc:</strong> A section of the circumference of a circle.</li>
+                    <li><strong>Semicircle:</strong> An arc measuring 180 degrees, representing half of a circle.</li>
+                    <li><strong>Minor Arc:</strong> An arc of a circle that measures less than 180 degrees.</li>
+                    <li><strong>Line:</strong> A straight one-dimensional figure extending infinitely in both directions.</li>
+                    <li><strong>Major Arc:</strong> An arc of a circle that measures more than 180 degrees.</li>
+                    <li><strong>Proportion:</strong> A statement that two ratios or fractions are equal.</li>
+                    <li><strong>Arc Length:</strong> The length of the curved part of a circle between two points on the circumference.</li>
+                    <li><strong>Measure:</strong> The process of determining how far apart two geometric objects are.</li>
+                    <li><strong>Angle:</strong> A figure formed by two rays that meet at a point, known as the vertex.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-8 grid md:grid-cols-2 gap-8">
+            <!-- Example of Circle Calculations -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Example of Circle Calculations</h2>
+                <p class="text-xl text-cyan-300">
+                    Consider a circle with a radius of 5 units. To find the circumference and area:
+                </p>
+                <p class="text-lg text-cyan-200 mb-4">
+                    <strong>Circumference (C) = 2𝜋r</strong>
+                    <br> C = 2𝜋(5) = 10𝜋 ≈ 31.42 units
+                </p>
+                <p class="text-lg text-cyan-200 mb-4">
+                    <strong>Area (A) = 𝜋r²</strong>
+                    <br> A = 𝜋(5)² = 25𝜋 ≈ 78.54 square units
+                </p>
+                <p class="text-xl text-cyan-300">
+                    Therefore, the circumference of the circle is approximately 31.42 units, and the area is approximately 78.54 square units.
+                </p>
+            </div>
+
+            <!-- Example with Larger Circle -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Example (Larger Circle)</h2>
+                <p class="text-xl text-cyan-300">
+                    Consider a circle with a radius of 12 units. To find the circumference and area:
+                </p>
+                <p class="text-lg text-cyan-200 mb-4">
+                    <strong>Circumference (C) = 2𝜋r</strong>
+                    <br> C = 2𝜋(12) = 24𝜋 ≈ 75.4 units
+                </p>
+                <p class="text-lg text-cyan-200 mb-4">
+                    <strong>Area (A) = 𝜋r²</strong>
+                    <br> A = 𝜋(12)² = 144𝜋 ≈ 452.4 square units
+                </p>
+                <p class="text-xl text-cyan-300">
+                    Therefore, the circumference of the larger circle is approximately 75.4 units, and the area is approximately 452.4 square units.
+                </p>
+            </div>
+        </div>
+
+        <div class="mt-8 bg-gray-800 p-6 rounded-lg formula-box fade-in">
+            <h2 class="text-3xl mb-4 text-green-400">Important Notes</h2>
+            <p class="text-xl text-cyan-300">
+                The circle is one of the most fundamental shapes in geometry. Its properties, such as the relationship between the radius, diameter, and circumference, are crucial for understanding various geometric and physical phenomena. Understanding circles is vital for topics like trigonometry, physics, and engineering.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add some subtle hover effects (these can stay as they are)
+        document.querySelectorAll('.formula-box').forEach(box => {
+            box.addEventListener('mouseenter', () => {
+                box.style.transform = 'scale(1.02)';
+            });
+            box.addEventListener('mouseleave', () => {
+                box.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
 
