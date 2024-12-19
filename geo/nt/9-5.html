@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9.5 Software for Reflections</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #2c3e50, #4ca1af);
+            color: #e6f1ff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .box-shadow-hover {
+            transition: all 0.3s ease;
+        }
+
+        .box-shadow-hover:hover {
+            box-shadow: 0 10px 20px rgba(0, 255, 255, 0.3), 0 15px 30px rgba(0, 255, 255, 0.5);
+            transform: translateY(-5px);
+        }
+
+        .formula-box {
+            background: rgba(17, 34, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+        /* Custom scrolling effect */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #64ffda;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #1f3b47;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron" data-tooltip="Software for Reflections">
+            9.5 Software for Reflections
+        </h1>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Summary Section -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in box-shadow-hover">
+                <h2 class="text-3xl mb-4 text-green-400">Summary Statement of Topic</h2>
+                <p class="text-xl text-cyan-300">
+                    "Software for Reflections" refers to programs or tools used to create or analyze reflections in geometry, graphic design, or computer programming. These software tools help visualize and perform reflections of various geometric objects, aiding in the study and application of symmetry, transformations, and congruence in both mathematics and design.
+                </p>
+            </div>
+
+            <!-- Key Terms Section -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in box-shadow-hover">
+                <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+                <ul class="space-y-3 text-left text-xl text-blue-300">
+                    <li><strong>Reflections:</strong> Transformations that result in a "mirror image" of a parent function, caused by differing signs between parent and child functions.</li>
+                    <li><strong>Angles:</strong> A geometric figure formed by two rays that connect at a single point or vertex.</li>
+                    <li><strong>Parallel Lines:</strong> Two or more lines that lie in the same plane and never intersect. They always have the same slope.</li>
+                    <li><strong>Plane:</strong> A flat, two-dimensional surface that extends infinitely in all directions.</li>
+                    <li><strong>Point:</strong> A location in space that does not have size or shape, often represented as coordinates.</li>
+                    <li><strong>Rigid Transformation:</strong> A transformation that does not change the size or shape of a figure, also called isometry or congruence transformation.</li>
+                    <li><strong>Line:</strong> A straight, one-dimensional figure made up of infinitely many points extending in both directions.</li>
+                    <li><strong>Distance:</strong> The length of the route between two points.</li>
+                    <li><strong>Opposite:</strong> The opposite of a number x is -x. A number and its opposite always sum to zero.</li>
+                    <li><strong>Perpendicular Bisector:</strong> A line that bisects a segment and intersects it at a right angle.</li>
+                    <li><strong>Line Segment:</strong> A finite part of a line, with two endpoints.</li>
+                    <li><strong>Quadrilateral:</strong> A closed figure with four sides and four vertices.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Interactive Reflection Section -->
+        <div class="mt-8 bg-gray-800 p-6 rounded-lg formula-box fade-in box-shadow-hover">
+            <h2 class="text-3xl mb-4 text-green-400">Interactive Reflection Example</h2>
+            <p class="text-xl text-cyan-300 mb-4">
+                Explore how reflections work with this interactive tool! Move the points of the shape, and see how the reflection changes across the line of reflection.
+            </p>
+            <div class="relative">
+                <div class="flex justify-center items-center w-full h-64 bg-gray-700 rounded-lg">
+                    <span class="text-white text-2xl">Interactive Geometry Tool Coming Soon!</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add subtle hover effects on formula boxes
+        document.querySelectorAll('.formula-box').forEach(box => {
+            box.addEventListener('mouseenter', () => {
+                box.style.transform = 'scale(1.02)';
+            });
+            box.addEventListener('mouseleave', () => {
+                box.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
