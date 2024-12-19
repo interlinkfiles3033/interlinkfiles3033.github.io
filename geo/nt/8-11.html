@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>8.11 Surface Area - Nets</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #0a192f, #112240);
+            color: #e6f1ff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(17, 34, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron" data-tooltip="Surface Area - Nets">
+            8.11 Surface Area - Nets
+        </h1>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Summary Statement -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Summary Statement of Topic</h2>
+                <p class="text-xl text-cyan-300">
+                    Surface area is the total area that covers the outside of a three-dimensional object. It can be calculated by using specific formulas based on the shape of the object. Nets provide a way to visualize the surface area by "unfolding" the solid into a 2D shape.
+                </p>
+            </div>
+
+            <!-- Key Terms -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+                <ul class="space-y-3 text-left text-xl text-blue-300">
+                    <li><strong>Surface Area:</strong> The combined total area of all faces of a 3D object.</li>
+                    <li><strong>Face:</strong> A flat surface on a solid figure.</li>
+                    <li><strong>Prism:</strong> A 3D figure with 2 congruent bases in parallel planes and rectangular faces.</li>
+                    <li><strong>Pyramid:</strong> A 3D object with a polygonal base and triangular faces meeting at a single vertex.</li>
+                    <li><strong>Net:</strong> A diagram showing a “flattened” representation of a solid, including all its faces and dimensions.</li>
+                    <li><strong>Edge:</strong> A line segment where two faces of a solid intersect.</li>
+                    <li><strong>Corresponding:</strong> Sides or angles that are in the same relative position in similar geometric figures.</li>
+                    <li><strong>Triangular Prism:</strong> A prism with two triangular bases and three rectangular faces.</li>
+                    <li><strong>Lateral Faces:</strong> Non-base faces of a prism or pyramid.</li>
+                    <li><strong>Rectangular Prism:</strong> A prism with rectangular bases and rectangular faces.</li>
+                    <li><strong>Cone:</strong> A 3D figure with a circular base and one vertex.</li>
+                    <li><strong>Proportion:</strong> A statement that two fractions are equal.</li>
+                    <li><strong>Circle:</strong> A set of points equidistant from a center point.</li>
+                    <li><strong>Radius:</strong> The distance from the center to the outer rim of a circle.</li>
+                    <li><strong>Equilateral Triangle:</strong> A triangle with all sides equal in length.</li>
+                    <li><strong>Triangle:</strong> A polygon with three sides and three angles.</li>
+                    <li><strong>Height:</strong> The perpendicular distance from the base to the opposite vertex of a triangle.</li>
+                    <li><strong>Right Triangle:</strong> A triangle with a 90-degree angle.</li>
+                    <li><strong>Hypotenuse:</strong> The longest side of a right triangle, opposite the right angle.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-8 grid md:grid-cols-2 gap-8">
+            <!-- Example of Surface Area Calculation -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Example of Surface Area Calculation</h2>
+                <p class="text-xl text-cyan-300">
+                    Let's calculate the surface area of a rectangular prism. The surface area of a rectangular prism is calculated using the formula:
+                </p>
+                <p class="text-xl text-cyan-200 mb-4">
+                    <strong>Surface Area of a Rectangular Prism:</strong> A = 2lw + 2lh + 2wh
+                </p>
+                <p class="text-lg text-cyan-200 mb-4">
+                    Suppose the length (l) is 4 units, the width (w) is 3 units, and the height (h) is 5 units.
+                </p>
+                <p class="text-lg text-cyan-200 mb-4">
+                    A = 2(4)(3) + 2(4)(5) + 2(3)(5) = 24 + 40 + 30 = 94 square units.
+                </p>
+            </div>
+
+            <!-- Example of Surface Area for a Pyramid -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Example of Surface Area of a Pyramid</h2>
+                <p class="text-xl text-cyan-300">
+                    Now, let's calculate the surface area of a square pyramid. The surface area is calculated as the area of the square base plus the area of the triangular faces.
+                </p>
+                <p class="text-xl text-cyan-200 mb-4">
+                    <strong>Surface Area of a Square Pyramid:</strong> A = Base Area + 4 × (1/2 × base × slant height)
+                </p>
+                <p class="text-lg text-cyan-200 mb-4">
+                    Suppose the base side (s) is 6 units, and the slant height (l) is 8 units.
+                </p>
+                <p class="text-lg text-cyan-200 mb-4">
+                    Base Area = s² = (6)² = 36 square units.
+                </p>
+                <p class="text-lg text-cyan-200 mb-4">
+                    Lateral Surface Area = 4 × (1/2 × 6 × 8) = 4 × 24 = 96 square units.
+                </p>
+                <p class="text-xl text-cyan-300">
+                    Total Surface Area = 36 + 96 = 132 square units.
+                </p>
+            </div>
+        </div>
+
+        <div class="mt-8 bg-gray-800 p-6 rounded-lg formula-box fade-in">
+            <h2 class="text-3xl mb-4 text-green-400">Important Notes</h2>
+            <p class="text-xl text-cyan-300">
+                Understanding surface area is vital in many real-world applications, such as material design and packaging. Using nets helps visualize the surface area, making it easier to understand how each part of a solid contributes to its total surface area.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add some subtle hover effects (these can stay as they are)
+        document.querySelectorAll('.formula-box').forEach(box => {
+            box.addEventListener('mouseenter', () => {
+                box.style.transform = 'scale(1.02)';
+            });
+            box.addEventListener('mouseleave', () => {
+                box.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
