@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9.2 Translations</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #1c2b36, #1f3b47);
+            color: #e6f1ff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(17, 34, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron" data-tooltip="Translations in Geometry">
+            9.2 Translations
+        </h1>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Summary Section -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Summary Statement of Topic</h2>
+                <p class="text-xl text-cyan-300">
+                    Translation is a type of transformation in geometry where a figure is moved along a straight line to a new position. The size, shape, and orientation of the figure remain unchanged during the transformation. This operation is also known as a slide, as the figure moves in a uniform direction without rotation or reflection.
+                </p>
+            </div>
+
+            <!-- Key Terms Section -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+                <ul class="space-y-3 text-left text-xl text-blue-300">
+                    <li><strong>Angles:</strong> A geometric figure formed by two rays that connect at a single point or vertex.</li>
+                    <li><strong>Parallel Lines:</strong> Two or more lines that lie in the same plane and never intersect, always having the same slope.</li>
+                    <li><strong>Plane:</strong> A flat, two-dimensional surface that can be visualized as an infinitely large sheet of paper.</li>
+                    <li><strong>Congruent:</strong> Figures that are identical in size, shape, and measure, even if rotated or reflected.</li>
+                    <li><strong>Distance:</strong> The length of the route between two points, often measured in units.</li>
+                    <li><strong>Rigid Transformation:</strong> A transformation that does not change the size or shape of a figure, maintaining congruence.</li>
+                    <li><strong>Preimage:</strong> The original position or appearance of a figure before any transformation occurs.</li>
+                    <li><strong>Corresponding:</strong> Refers to sides or angles that are in the same relative position in different figures, such as corresponding sides in two congruent triangles.</li>
+                    <li><strong>Line:</strong> A straight, one-dimensional figure made up of infinitely many points extending in opposite directions.</li>
+                    <li><strong>Point:</strong> A specific location in space with no size or shape, typically identified by coordinates on a grid.</li>
+                    <li><strong>Parallelogram:</strong> A quadrilateral with two pairs of parallel sides, which could also be a rectangle, rhombus, or square.</li>
+                    <li><strong>Quadrilateral:</strong> A closed figure with four sides and four vertices.</li>
+                    <li><strong>Vertices:</strong> The points where two or more line segments meet, forming the corners of a polygon.</li>
+                    <li><strong>Triangle:</strong> A polygon with three sides and three angles, one of the basic shapes in geometry.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-8 bg-gray-800 p-6 rounded-lg formula-box fade-in">
+            <h2 class="text-3xl mb-4 text-green-400">Important Notes</h2>
+            <p class="text-xl text-cyan-300">
+                Translations preserve the size, shape, and orientation of figures. They are one of the basic rigid transformations in geometry, meaning that the figure remains congruent to its original position. Understanding translations is crucial in various geometric concepts, such as symmetry, pattern recognition, and coordinate geometry.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add some subtle hover effects (these can stay as they are)
+        document.querySelectorAll('.formula-box').forEach(box => {
+            box.addEventListener('mouseenter', () => {
+                box.style.transform = 'scale(1.02)';
+            });
+            box.addEventListener('mouseleave', () => {
+                box.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
