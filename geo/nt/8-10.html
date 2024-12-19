@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>8.10 Volume of Solids</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #0a192f, #112240);
+            color: #e6f1ff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(17, 34, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron" data-tooltip="Volume of Solids">
+            8.10 Volume of Solids
+        </h1>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Summary Statement -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Summary Statement of Topic</h2>
+                <p class="text-xl text-cyan-300">
+                    The volume of a solid represents the amount of space it occupies. Each type of solid has a unique formula to calculate its volume, depending on its shape. For instance, cubes, rectangular prisms, cylinders, spheres, cones, and pyramids each have specific volume formulas.
+                </p>
+            </div>
+
+            <!-- Key Terms -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+                <ul class="space-y-3 text-left text-xl text-blue-300">
+                    <li><strong>Prism:</strong> A 3D figure with 2 congruent bases in parallel planes, and other faces are rectangles.</li>
+                    <li><strong>Pyramid:</strong> A 3D shape with a polygonal base and triangular faces meeting at a vertex.</li>
+                    <li><strong>Cylinder:</strong> A 3D solid with congruent circular bases in parallel planes, often with a radius and height.</li>
+                    <li><strong>Cone:</strong> A 3D figure with a circular base and a single vertex.</li>
+                    <li><strong>Sphere:</strong> A round 3D solid where all points on the surface are equidistant from the center.</li>
+                    <li><strong>Composite Solid:</strong> A solid formed by combining two or more different solids.</li>
+                    <li><strong>Dimensions:</strong> Measurements defining the size and shape of a solid figure.</li>
+                    <li><strong>Measure:</strong> The distance or length between two points in space.</li>
+                    <li><strong>Space:</strong> The set of all points extending in three dimensions.</li>
+                    <li><strong>Cubic Units:</strong> Units used to measure the volume of three-dimensional solids.</li>
+                    <li><strong>Congruent:</strong> Figures that are identical in size, shape, and measure.</li>
+                    <li><strong>Parallel:</strong> Lines that never intersect and always maintain the same slope.</li>
+                    <li><strong>Area:</strong> The space inside the perimeter of a two-dimensional figure.</li>
+                    <li><strong>Height:</strong> The perpendicular distance from the base to the top of a solid or object.</li>
+                    <li><strong>Three-Dimensional:</strong> A figure that has length, width, and height or depth.</li>
+                    <li><strong>Polygon:</strong> A simple closed figure with at least three straight sides.</li>
+                    <li><strong>Vertex:</strong> The point of intersection of two lines or the corner of a polygon or solid.</li>
+                    <li><strong>Edge:</strong> A line segment that is the intersection of two faces in a solid figure.</li>
+                    <li><strong>Point:</strong> A specific location in space, often represented as a coordinate.</li>
+                    <li><strong>Radius:</strong> The distance from the center to any point on the surface of a circle or sphere.</li>
+                    <li><strong>Ratio:</strong> A comparison of two quantities.</li>
+                    <li><strong>Set:</strong> A collection of objects, such as numbers, points, or geometric shapes.</li>
+                    <li><strong>Distance:</strong> The length between two points in space.</li>
+                    <li><strong>Center:</strong> The point in the middle of a circle or sphere, equidistant from all points on the surface.</li>
+                    <li><strong>Rectangular Prism:</strong> A prism with rectangular bases and rectangular faces.</li>
+                    <li><strong>Face:</strong> A flat surface on a solid figure.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-8 grid md:grid-cols-2 gap-8">
+            <!-- Example of Volume Calculation -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Example of Volume Calculation</h2>
+                <p class="text-xl text-cyan-300">
+                    Let's calculate the volume of a cylinder. The formula for the volume of a cylinder is:
+                </p>
+                <p class="text-xl text-cyan-200 mb-4">
+                    <strong>Volume of a Cylinder:</strong> V = πr²h
+                </p>
+                <p class="text-lg text-cyan-200 mb-4">
+                    Suppose the radius (r) of the base is 3 units and the height (h) is 5 units.
+                </p>
+                <p class="text-lg text-cyan-200 mb-4">
+                    Volume = π × (3)² × 5 = π × 9 × 5 = 45π ≈ 141.37 cubic units.
+                </p>
+            </div>
+
+            <!-- Example of Composite Solid Volume Calculation -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Example of Composite Solid Volume</h2>
+                <p class="text-xl text-cyan-300">
+                    Consider a composite solid formed by a cone and a cylinder. To calculate the total volume, we calculate the volume of each shape separately and then add them together.
+                </p>
+                <p class="text-lg text-cyan-200 mb-4">
+                    For the cylinder, use the formula V = πr²h. Suppose the radius (r) is 4 units, and the height (h) is 10 units.
+                </p>
+                <p class="text-lg text-cyan-200 mb-4">
+                    Volume of Cylinder = π × (4)² × 10 = π × 16 × 10 = 160π ≈ 502.65 cubic units.
+                </p>
+                <p class="text-lg text-cyan-200 mb-4">
+                    For the cone, use the formula V = (1/3)πr²h. The radius is 4 units, and the height is 6 units.
+                </p>
+                <p class="text-lg text-cyan-200 mb-4">
+                    Volume of Cone = (1/3)π × (4)² × 6 = (1/3)π × 16 × 6 = 32π ≈ 100.53 cubic units.
+                </p>
+                <p class="text-xl text-cyan-300">
+                    Total Volume = Volume of Cylinder + Volume of Cone = 502.65 + 100.53 = 603.18 cubic units.
+                </p>
+            </div>
+        </div>
+
+        <div class="mt-8 bg-gray-800 p-6 rounded-lg formula-box fade-in">
+            <h2 class="text-3xl mb-4 text-green-400">Important Notes</h2>
+            <p class="text-xl text-cyan-300">
+                The volume of solids plays a critical role in various applications such as architecture, engineering, and design. Understanding how to calculate the volume of different solids is essential for determining the space they occupy, which can impact everything from construction to packaging.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add some subtle hover effects (these can stay as they are)
+        document.querySelectorAll('.formula-box').forEach(box => {
+            box.addEventListener('mouseenter', () => {
+                box.style.transform = 'scale(1.02)';
+            });
+            box.addEventListener('mouseleave', () => {
+                box.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
