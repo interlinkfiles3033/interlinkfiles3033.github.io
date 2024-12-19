@@ -1,1 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>8.7 The Pythagoras Theorem</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
 
+        body {
+            background: linear-gradient(135deg, #0a192f, #112240);
+            color: #e6f1ff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(17, 34, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron" data-tooltip="Pythagoras Theorem">
+            8.7 The Pythagoras Theorem
+        </h1>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Summary Statement -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Summary Statement of Topic</h2>
+                <p class="text-xl text-cyan-300">
+                    The Pythagorean Theorem states that in a right-angled triangle, the square of the hypotenuse's length is equal to the sum of the squares of the other two sides' lengths. This fundamental theorem is essential in geometry and trigonometry.
+                </p>
+            </div>
+
+            <!-- Key Terms -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+                <ul class="space-y-3 text-left text-xl text-blue-300">
+                    <li><strong>Theorem:</strong> A statement that has been proven to be true based on previously established statements.</li>
+                    <li><strong>Right Triangles:</strong> A triangle with exactly one right angle (90°), where the two sides adjacent to the right angle are called legs, and the side opposite the right angle is called the hypotenuse.</li>
+                    <li><strong>Distance:</strong> The length of the route between two points.</li>
+                    <li><strong>Triangle:</strong> A polygon with three sides and three angles.</li>
+                    <li><strong>Angles:</strong> A geometric figure formed by two rays that connect at a single point (vertex).</li>
+                    <li><strong>Opposite:</strong> The opposite of a number x is -x; a number and its opposite always sum to zero.</li>
+                    <li><strong>Hypotenuse:</strong> The side opposite the right angle in a right triangle, always the longest side.</li>
+                    <li><strong>Right angle:</strong> An angle equal to 90 degrees.</li>
+                    <li><strong>Legs:</strong> The two sides adjacent to the right angle in a right triangle.</li>
+                    <li><strong>Area:</strong> The space within the perimeter of a two-dimensional figure.</li>
+                    <li><strong>Square:</strong> A parallelogram with four equal sides and four right angles.</li>
+                    <li><strong>Diagram:</strong> A drawing used to represent a mathematical problem.</li>
+                    <li><strong>Quadrilateral:</strong> A closed figure with four sides and four vertices.</li>
+                    <li><strong>Center:</strong> The central point of a circle, equidistant from all points on the circle.</li>
+                    <li><strong>Straight angle:</strong> An angle measuring 180 degrees, appearing as a straight line.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-8 grid md:grid-cols-2 gap-8">
+            <!-- Example of Pythagorean Theorem Calculation -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Example of Pythagorean Theorem Calculation</h2>
+                <p class="text-xl text-cyan-300">
+                    Consider a right-angled triangle with legs of lengths 3 and 4 units. To find the length of the hypotenuse (c), we use the Pythagorean Theorem:
+                </p>
+                <p class="text-lg text-cyan-200 mb-4">
+                    <strong>a² + b² = c²</strong>
+                    <br> 3² + 4² = c²
+                    <br> 9 + 16 = c²
+                    <br> 25 = c²
+                    <br> c = √25 = 5
+                </p>
+                <p class="text-xl text-cyan-300">
+                    Therefore, the length of the hypotenuse is 5 units.
+                </p>
+            </div>
+
+            <!-- Example with Larger Values -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Example (Larger Values)</h2>
+                <p class="text-xl text-cyan-300">
+                    Consider another right-angled triangle with legs of lengths 7 and 24 units. To find the hypotenuse:
+                </p>
+                <p class="text-lg text-cyan-200 mb-4">
+                    <strong>a² + b² = c²</strong>
+                    <br> 7² + 24² = c²
+                    <br> 49 + 576 = c²
+                    <br> 625 = c²
+                    <br> c = √625 = 25
+                </p>
+                <p class="text-xl text-cyan-300">
+                    Therefore, the length of the hypotenuse is 25 units.
+                </p>
+            </div>
+        </div>
+
+        <div class="mt-8 bg-gray-800 p-6 rounded-lg formula-box fade-in">
+            <h2 class="text-3xl mb-4 text-green-400">Important Notes</h2>
+            <p class="text-xl text-cyan-300">
+                The Pythagorean Theorem only applies to right-angled triangles. It's a fundamental result in geometry that helps solve problems involving distances and triangle properties. Pythagorean triples (sets of whole numbers) are integer solutions to the theorem, such as (3, 4, 5) or (5, 12, 13).
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add some subtle hover effects (these can stay as they are)
+        document.querySelectorAll('.formula-box').forEach(box => {
+            box.addEventListener('mouseenter', () => {
+                box.style.transform = 'scale(1.02)';
+            });
+            box.addEventListener('mouseleave', () => {
+                box.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
