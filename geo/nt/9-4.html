@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9.4 Reflections</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #2c3e50, #4ca1af);
+            color: #e6f1ff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(17, 34, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        .interactive-canvas {
+            border: 2px solid #64ffda;
+            background: #1c2530;
+            margin-top: 20px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .interactive-canvas .reflection-line {
+            stroke: #ff6347;
+            stroke-width: 2;
+        }
+
+        .interactive-canvas .point {
+            fill: #00bcd4;
+            cursor: pointer;
+        }
+
+        .interactive-canvas .reflected-point {
+            fill: #ff9800;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron" data-tooltip="Reflections Transformation">
+            9.4 Reflections
+        </h1>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Summary Section -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Summary Statement of Topic</h2>
+                <p class="text-xl text-cyan-300">
+                    A reflection is a rigid transformation where each point of a figure is mirrored across a line, maintaining the same size and shape but appearing on the opposite side of the line. It is essentially a "mirror image" of the original figure. Reflections play a key role in geometry as they help establish symmetry and can be used to understand various geometric properties and relationships.
+                </p>
+            </div>
+
+            <!-- Key Terms Section -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+                <ul class="space-y-3 text-left text-xl text-blue-300">
+                    <li><strong>Reflections:</strong> Transformations that result in a "mirror image" of a parent function, caused by differing signs between parent and child functions.</li>
+                    <li><strong>Angles:</strong> A geometric figure formed by two rays that connect at a single point or vertex.</li>
+                    <li><strong>Parallel Lines:</strong> Two or more lines that lie in the same plane and never intersect. They always have the same slope.</li>
+                    <li><strong>Plane:</strong> A flat, two-dimensional surface that extends infinitely in all directions.</li>
+                    <li><strong>Point:</strong> A location in space that does not have size or shape, often represented as coordinates.</li>
+                    <li><strong>Rigid Transformation:</strong> A transformation that does not change the size or shape of a figure, also called isometry or congruence transformation.</li>
+                    <li><strong>Line:</strong> A straight, one-dimensional figure made up of infinitely many points extending in both directions.</li>
+                    <li><strong>Distance:</strong> The length of the route between two points.</li>
+                    <li><strong>Opposite:</strong> The opposite of a number x is -x. A number and its opposite always sum to zero.</li>
+                    <li><strong>Perpendicular Bisector:</strong> A line that bisects a segment and intersects it at a right angle.</li>
+                    <li><strong>Line Segment:</strong> A finite part of a line, with two endpoints.</li>
+                    <li><strong>Quadrilateral:</strong> A closed figure with four sides and four vertices.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Interactive Reflection Section -->
+        <div class="mt-8 bg-gray-800 p-6 rounded-lg formula-box fade-in">
+            <h2 class="text-3xl mb-4 text-green-400">Interactive Reflection Tool</h2>
+            <p class="text-xl text-cyan-300 mb-4">
+                Explore how reflections work with this interactive tool! Move the points of the triangle, and see how the reflection changes across the red line of reflection.
+            </p>
+
+            <!-- Canvas for interactive tool -->
+            <svg id="reflectionCanvas" class="interactive-canvas w-full h-64" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                <line class="reflection-line" x1="200" y1="0" x2="200" y2="400"></line>
+                <circle id="point1" class="point" cx="50" cy="50" r="10"></circle>
+                <circle id="point2" class="point" cx="100" cy="100" r="10"></circle>
+                <circle id="point3" class="point" cx="150" cy="150" r="10"></circle>
+                <circle id="reflectedPoint1" class="reflected-point" cx="350" cy="50" r="10"></circle>
+                <circle id="reflectedPoint2" class="reflected-point" cx="300" cy="100" r="10"></circle>
+                <circle id="reflectedPoint3" class="reflected-point" cx="250" cy="150" r="10"></circle>
+            </svg>
+        </div>
+    </div>
+
+    <script>
+        // Interactive tool: Dragging points and reflecting them across the line
+        const points = ['point1', 'point2', 'point3'];
+        const reflectedPoints = ['reflectedPoint1', 'reflectedPoint2', 'reflectedPoint3'];
+        const reflectionLineX = 200; // X position of reflection line
+        const svgCanvas = document.getElementById('reflectionCanvas');
+
+        points.forEach((pointId, index) => {
+            const point = document.getElementById(pointId);
+            point.addEventListener('mousedown', (e) => {
+                const offsetX = e.clientX - point.getBoundingClientRect().left;
+                const offsetY = e.clientY - point.getBoundingClientRect().top;
+                function movePoint(event) {
+                    let x = event.clientX - offsetX;
+                    let y = event.clientY - offsetY;
+                    if (x < 0) x = 0;
+                    if (x > svgCanvas.clientWidth) x = svgCanvas.clientWidth;
+                    if (y < 0) y = 0;
+                    if (y > svgCanvas.clientHeight) y = svgCanvas.clientHeight;
+
+                    point.setAttribute('cx', x);
+                    point.setAttribute('cy', y);
+
+                    // Update reflected points
+                    const reflectedX = reflectionLineX * 2 - x;
+                    const reflectedPoint = document.getElementById(reflectedPoints[index]);
+                    reflectedPoint.setAttribute('cx', reflectedX);
+                    reflectedPoint.setAttribute('cy', y);
+                }
+
+                function stopMoving() {
+                    svgCanvas.removeEventListener('mousemove', movePoint);
+                    svgCanvas.removeEventListener('mouseup', stopMoving);
+                }
+
+                svgCanvas.addEventListener('mousemove', movePoint);
+                svgCanvas.addEventListener('mouseup', stopMoving);
+            });
+        });
+    </script>
+</body>
+</html>
