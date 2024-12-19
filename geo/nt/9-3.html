@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9.3 Software for Transformations</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #1c2b36, #1f3b47);
+            color: #e6f1ff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(17, 34, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron" data-tooltip="Software for Transformations">
+            9.3 Software for Transformations
+        </h1>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Summary Section -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Summary Statement of Topic</h2>
+                <p class="text-xl text-cyan-300">
+                    "Software for Transformations" refers to computer programs that help visualize and perform geometric transformations, such as translations, rotations, reflections, and dilations. These software tools are invaluable in aiding students and professionals in understanding and manipulating geometric figures. By providing a visual representation of transformations, software allows for a deeper understanding of how these operations affect the position, shape, and orientation of figures in a plane.
+                </p>
+            </div>
+
+            <!-- Key Terms Section -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+                <ul class="space-y-3 text-left text-xl text-blue-300">
+                    <li><strong>Angles:</strong> A geometric figure formed by two rays that connect at a single point or vertex.</li>
+                    <li><strong>Parallel Lines:</strong> Two or more lines that lie in the same plane and never intersect, always having the same slope.</li>
+                    <li><strong>Plane:</strong> A flat, two-dimensional surface that can be visualized as an infinitely large sheet of paper.</li>
+                    <li><strong>Congruent:</strong> Figures that are identical in size, shape, and measure, even if rotated or reflected.</li>
+                    <li><strong>Rigid Transformation:</strong> A transformation that does not change the size or shape of a figure, maintaining congruence.</li>
+                    <li><strong>Point:</strong> A specific location in space with no size or shape, typically identified by coordinates on a grid.</li>
+                    <li><strong>Distance:</strong> The length of the route between two points, often measured in units.</li>
+                    <li><strong>Parallelogram:</strong> A quadrilateral with two pairs of parallel sides, which could also be a rectangle, rhombus, or square.</li>
+                    <li><strong>Line:</strong> A straight, one-dimensional figure made up of infinitely many points extending in opposite directions.</li>
+                    <li><strong>Polygon:</strong> A simple closed figure with at least three straight sides, such as triangles, squares, and hexagons.</li>
+                    <li><strong>Quadrilateral:</strong> A closed figure with four sides and four vertices.</li>
+                    <li><strong>Line Segment:</strong> A finite "part" of a line with two distinct endpoints.</li>
+                    <li><strong>Vertices:</strong> Points where line segments intersect, forming the corners of polygons.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-8 bg-gray-800 p-6 rounded-lg formula-box fade-in">
+            <h2 class="text-3xl mb-4 text-green-400">Important Notes</h2>
+            <p class="text-xl text-cyan-300">
+                Software tools are highly beneficial in both educational and professional settings for studying transformations in geometry. They provide an interactive platform where users can visualize changes made to figures and immediately see the effects of different transformations. These tools enhance understanding by allowing users to experiment with various operations like translations, rotations, reflections, and dilations in a dynamic and intuitive manner.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add some subtle hover effects (these can stay as they are)
+        document.querySelectorAll('.formula-box').forEach(box => {
+            box.addEventListener('mouseenter', () => {
+                box.style.transform = 'scale(1.02)';
+            });
+            box.addEventListener('mouseleave', () => {
+                box.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
