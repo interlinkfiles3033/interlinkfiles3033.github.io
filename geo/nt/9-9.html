@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9.9 Rotation Symmetry</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #28313b, #0d1b2a);
+            color: #f5f8fd;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(34, 49, 63, 0.8);
+            border: 2px solid #64ffda;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes rotateAnimation {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .rotate-box {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+            transition: transform 1s ease-in-out;
+            animation: rotateAnimation 4s infinite linear;
+        }
+
+        .rotate-effect {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .rotate-box img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Custom Buttons */
+        .button-hover:hover {
+            transform: scale(1.1);
+            background-color: #ff5151;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        /* Glow on hover for key terms */
+        .highlight-term {
+            color: #64ffda;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .highlight-term:hover {
+            text-decoration: none;
+            color: #00ffe1;
+            transition: color 0.3s ease;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron">
+            9.9 Rotation Symmetry
+        </h1>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Big Picture -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box">
+                <h2 class="text-3xl mb-4 text-green-400">Big Picture</h2>
+                <p class="text-xl text-cyan-300">
+                    <span class="highlight-term">Rotation Symmetry</span> is a type of symmetry where an object can fit onto itself multiple times while being rotated through 360 degrees. It is sometimes called radial symmetry.
+                </p>
+                <p class="text-lg text-cyan-200 mt-4">
+                    If a figure can be rotated about a central point and still match its original shape after a certain number of degrees, it has rotational symmetry. For example, a square has rotational symmetry of 90°, 180°, 270°, and 360°.
+                </p>
+            </div>
+
+            <!-- Key Terms -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box">
+                <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+                <ul class="space-y-3 text-left text-xl text-blue-300">
+                    <li><strong><span class="highlight-term">Rotational Symmetry</span>:</strong> A figure has rotational symmetry when it can be rotated less than 360° and still look the same.</li>
+                    <li><strong><span class="highlight-term">Angle</span>:</strong> A geometric figure formed by two rays that connect at a single point or vertex.</li>
+                    <li><strong><span class="highlight-term">Rotation</span>:</strong> A transformation that turns a figure around a fixed point, creating an image.</li>
+                    <li><strong><span class="highlight-term">Center</span>:</strong> The fixed point around which a figure rotates.</li>
+                    <li><strong><span class="highlight-term">Rectangle</span>:</strong> A parallelogram with four right angles.</li>
+                    <li><strong><span class="highlight-term">Square</span>:</strong> A parallelogram with four right angles and four congruent sides.</li>
+                    <li><strong><span class="highlight-term">Trapezoid</span>:</strong> A quadrilateral with exactly one pair of parallel opposite sides.</li>
+                    <li><strong><span class="highlight-term">Circle</span>:</strong> The set of all points that are equidistant from a center point.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-8">
+            <h2 class="text-3xl mb-4 text-green-400">Examples of Rotation Symmetry</h2>
+            <p class="text-xl text-cyan-300">
+                Click "Rotate" for each figure to see how the shape maintains its appearance after a rotation.
+            </p>
+
+            <div class="mt-8 grid grid-cols-1 gap-8">
+                <!-- Square Example -->
+                <div class="bg-gray-800 p-6 rounded-lg formula-box">
+                    <h3 class="text-2xl text-green-400">Square</h3>
+                    <p class="text-lg text-cyan-200 mb-4">
+                        A square has rotational symmetry of 90°, 180°, 270°, and 360°. Each of these rotations brings the square back to its original position.
+                    </p>
+                    <div class="rotate-effect">
+                        <img src="https://via.placeholder.com/150/64ffda/000000?text=Square" id="square" class="rotate-box" />
+                    </div>
+                    <button onclick="rotateShape('square')" class="button-hover px-6 py-3 mt-4 bg-blue-500 rounded-full text-white text-xl">
+                        Rotate Square
+                    </button>
+                </div>
+
+                <!-- Rectangle Example -->
+                <div class="bg-gray-800 p-6 rounded-lg formula-box">
+                    <h3 class="text-2xl text-green-400">Rectangle</h3>
+                    <p class="text-lg text-cyan-200 mb-4">
+                        A rectangle has rotational symmetry of 180°, meaning that after a 180° rotation, it still appears the same.
+                    </p>
+                    <div class="rotate-effect">
+                        <img src="https://via.placeholder.com/150/64ffda/000000?text=Rectangle" id="rectangle" class="rotate-box" />
+                    </div>
+                    <button onclick="rotateShape('rectangle')" class="button-hover px-6 py-3 mt-4 bg-blue-500 rounded-full text-white text-xl">
+                        Rotate Rectangle
+                    </button>
+                </div>
+
+                <!-- Pentagon Example -->
+                <div class="bg-gray-800 p-6 rounded-lg formula-box">
+                    <h3 class="text-2xl text-green-400">Pentagon</h3>
+                    <p class="text-lg text-cyan-200 mb-4">
+                        A pentagon has rotational symmetry of 72°, 144°, 216°, and 288°, allowing it to fit onto itself multiple times during a full rotation.
+                    </p>
+                    <div class="rotate-effect">
+                        <img src="https://via.placeholder.com/150/64ffda/000000?text=Pentagon" id="pentagon" class="rotate-box" />
+                    </div>
+                    <button onclick="rotateShape('pentagon')" class="button-hover px-6 py-3 mt-4 bg-blue-500 rounded-full text-white text-xl">
+                        Rotate Pentagon
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Function to rotate the shapes when the button is clicked
+        function rotateShape(shape) {
+            const element = document.getElementById(shape);
+            element.style.animation = 'rotateAnimation 4s infinite linear';
+        }
+    </script>
+</body>
+</html>
