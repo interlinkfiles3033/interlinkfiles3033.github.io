@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>9.7 Rotation</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #0a192f, #112240);
+            color: #e6f1ff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(17, 34, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+        /* Hover animations */
+        .hover-scale:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+
+        /* Rotate effect */
+        .rotate-effect:hover {
+            transform: rotate(360deg);
+            transition: transform 1s ease;
+        }
+
+        /* Add glow effect for key terms */
+        .highlight-term {
+            text-decoration: underline;
+            color: #64ffda;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron" data-tooltip="Rotation">
+            9.7 Rotation
+        </h1>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Big Picture -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in hover-scale">
+                <h2 class="text-3xl mb-4 text-green-400">Big Picture</h2>
+                <p class="text-xl text-cyan-300">
+                    A <span class="highlight-term">rotation</span> is a transformation by which a figure is turned around a fixed point to create an image.
+                </p>
+            </div>
+
+            <!-- Key Terms -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in hover-scale">
+                <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+                <ul class="space-y-3 text-left text-xl text-blue-300">
+                    <li><strong><span class="highlight-term">Rotation</span>:</strong> A transformation that turns a figure on the coordinate plane a certain number of degrees about a given point without changing the shape or size of the figure.</li>
+                    <li><strong><span class="highlight-term">Angles</span>:</strong> A geometric figure formed by two rays that connect at a single point or vertex.</li>
+                    <li><strong><span class="highlight-term">Parallel Lines</span>:</strong> Two or more lines that lie in the same plane and never intersect. Parallel lines will always have the same slope.</li>
+                    <li><strong><span class="highlight-term">Plane</span>:</strong> A flat, two-dimensional surface. It can be conceptualized as a sheet of paper of infinite area.</li>
+                    <li><strong><span class="highlight-term">Point</span>:</strong> A location in space that does not have size or shape. A point is often identified as a coordinate on a grid.</li>
+                    <li><strong><span class="highlight-term">Rigid Transformation</span>:</strong> A transformation that does not change the size or shape of a figure, also known as an isometry or congruence transformation.</li>
+                    <li><strong><span class="highlight-term">Circle</span>:</strong> The set of all points that are the same distance away from a specific point, called the center.</li>
+                    <li><strong><span class="highlight-term">Center</span>:</strong> The point that defines the location of a circle. All points on the circle are equidistant from the center of the circle.</li>
+                    <li><strong><span class="highlight-term">Radius</span>:</strong> The distance from the center to the outer rim of a circle.</li>
+                    <li><strong><span class="highlight-term">Distance</span>:</strong> The length of the route between two points.</li>
+                    <li><strong><span class="highlight-term">Corresponding</span>:</strong> The corresponding sides between two triangles are sides in the same relative position.</li>
+                    <li><strong><span class="highlight-term">Parallelogram</span>:</strong> A quadrilateral with two pairs of parallel sides. A parallelogram may be a rectangle, a rhombus, or a square.</li>
+                    <li><strong><span class="highlight-term">Measure</span>:</strong> Determines how far apart two geometric objects are by using a number line or ruler.</li>
+                    <li><strong><span class="highlight-term">Center of Rotation</span>:</strong> The fixed point around which the rest of the plane rotates.</li>
+                    <li><strong><span class="highlight-term">Origin</span>:</strong> The point of intersection of the x and y axes on the Cartesian plane, with coordinates (0,0).</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-8 grid md:grid-cols-2 gap-8">
+            <!-- Example of Rotation -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in hover-scale">
+                <h2 class="text-3xl mb-4 text-green-400">Example of Rotation</h2>
+                <p class="text-xl text-cyan-300">
+                    Let's rotate a triangle around the origin by 90 degrees counterclockwise. The triangle with vertices at (1, 1), (3, 1), and (2, 3) will have new coordinates after the rotation.
+                </p>
+                <p class="text-lg text-cyan-200 mb-4">
+                    For a 90-degree counterclockwise rotation, the new coordinates of a point (x, y) will be (-y, x).
+                </p>
+                <p class="text-lg text-cyan-200 mb-4">
+                    After rotating the vertices, the new coordinates will be (-1, 1), (-1, 3), and (-3, 2).
+                </p>
+                <div class="mt-4 rotate-effect">
+                    <img src="https://via.placeholder.com/200x200/64ffda/000000?text=Triangle" alt="Triangle Rotation Example" class="mx-auto" />
+                    <p class="text-xl text-cyan-300 mt-4">This triangle shows an example of rotation around the origin.</p>
+                </div>
+            </div>
+
+            <!-- Rotation on the Coordinate Plane -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in hover-scale">
+                <h2 class="text-3xl mb-4 text-green-400">Rotation on the Coordinate Plane</h2>
+                <p class="text-xl text-cyan-300">
+                    When performing a rotation on the coordinate plane, the center of rotation remains fixed, and all points of the figure rotate a specified number of degrees around that point.
+                </p>
+                <p class="text-lg text-cyan-200 mb-4">
+                    For example, rotating a square around the origin by 90 degrees would result in a new orientation, but the size of the square stays the same.
+                </p>
+                <div class="mt-4 rotate-effect">
+                    <img src="https://via.placeholder.com/200x200/64ffda/000000?text=Square" alt="Square Rotation" class="mx-auto" />
+                    <p class="text-xl text-cyan-300 mt-4">This square demonstrates rotation around the origin.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-8 bg-gray-800 p-6 rounded-lg formula-box fade-in hover-scale">
+            <h2 class="text-3xl mb-4 text-green-400">Important Notes</h2>
+            <p class="text-xl text-cyan-300">
+                Rotation transformations are widely used in geometry, art, and design. Understanding how to rotate figures is essential for visualizing patterns and creating symmetrical structures.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add some subtle hover effects (these can stay as they are)
+        document.querySelectorAll('.formula-box').forEach(box => {
+            box.addEventListener('mouseenter', () => {
+                box.style.transform = 'scale(1.02)';
+            });
+            box.addEventListener('mouseleave', () => {
+                box.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
