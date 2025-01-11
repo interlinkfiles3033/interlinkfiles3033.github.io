@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>9.8 Geometry Software for Rotations</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #2e2e52, #121212);
+            color: #f5f8fd;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(34, 49, 63, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+            border-radius: 10px;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+        /* Hover animations */
+        .hover-scale:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+
+        /* Rotate effect */
+        .rotate-effect:hover {
+            transform: rotate(360deg);
+            transition: transform 1s ease;
+        }
+
+        /* Cool glowing effect for key terms */
+        .highlight-term {
+            text-decoration: underline;
+            color: #64ffda;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .highlight-term:hover {
+            text-decoration: none;
+            color: #00ffe1;
+            transition: color 0.3s ease;
+        }
+
+        /* Animation for buttons */
+        .button-hover:hover {
+            transform: scale(1.1);
+            background-color: #ff5151;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        /* Adding glow effect to examples */
+        .example-img {
+            width: 100%;
+            max-width: 350px;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+            border-radius: 15px;
+        }
+
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron" data-tooltip="Geometry Software for Rotations">
+            9.8 Geometry Software for Rotations
+        </h1>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Big Picture -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in hover-scale">
+                <h2 class="text-3xl mb-4 text-green-400">Big Picture</h2>
+                <p class="text-xl text-cyan-300">
+                    Geometry software is a powerful tool used for <span class="highlight-term">rotations</span>, a transformation by which a figure is turned around a fixed point to create an image.
+                </p>
+                <p class="text-lg text-cyan-200 mt-4">
+                    These tools allow for precise rotations and visualizations, making it easier to understand how shapes and figures behave when rotated.
+                </p>
+            </div>
+
+            <!-- Key Terms -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in hover-scale">
+                <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+                <ul class="space-y-3 text-left text-xl text-blue-300">
+                    <li><strong><span class="highlight-term">Plane</span>:</strong> A flat, two-dimensional surface, conceptualized as infinite.</li>
+                    <li><strong><span class="highlight-term">Point</span>:</strong> A location in space with no size, identified by coordinates.</li>
+                    <li><strong><span class="highlight-term">Rotation</span>:</strong> A transformation turning a figure around a fixed point.</li>
+                    <li><strong><span class="highlight-term">Rigid Transformation</span>:</strong> A transformation preserving the figure's size and shape, also called isometry.</li>
+                    <li><strong><span class="highlight-term">Circle</span>:</strong> The set of all points equidistant from a center point.</li>
+                    <li><strong><span class="highlight-term">Center</span>:</strong> The fixed point that defines the location of a circle.</li>
+                    <li><strong><span class="highlight-term">Radius</span>:</strong> The distance from the center of a circle to any point on the circle.</li>
+                    <li><strong><span class="highlight-term">Quadrilateral</span>:</strong> A polygon with four sides and four vertices.</li>
+                    <li><strong><span class="highlight-term">Perpendicular Lines</span>:</strong> Two lines that form a right angle (90°).</li>
+                    <li><strong><span class="highlight-term">Angle</span>:</strong> A geometric figure formed by two rays sharing a common vertex.</li>
+                    <li><strong><span class="highlight-term">Protractor</span>:</strong> A tool for measuring angles in degrees.</li>
+                    <li><strong><span class="highlight-term">Polygon</span>:</strong> A simple closed figure with at least three straight sides.</li>
+                    <li><strong><span class="highlight-term">Vertex</span>:</strong> The point where two or more lines meet in a figure.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-8 grid md:grid-cols-2 gap-8">
+            <!-- Example of Geometry Software Rotation -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in hover-scale">
+                <h2 class="text-3xl mb-4 text-green-400">Example of Geometry Software Rotation</h2>
+                <p class="text-xl text-cyan-300">
+                    Let's visualize how rotation works using geometry software. Imagine rotating a triangle around a fixed point. 
+                </p>
+                <p class="text-lg text-cyan-200 mb-4">
+                    The triangle is rotated 90 degrees around the origin, changing its position but maintaining its shape and size.
+                </p>
+                <div class="mt-4 rotate-effect">
+                    <img src="https://via.placeholder.com/350x350/64ffda/000000?text=Rotated+Triangle" alt="Triangle Rotation" class="example-img mx-auto" />
+                    <p class="text-xl text-cyan-300 mt-4">This triangle demonstrates rotation using geometry software.</p>
+                </div>
+            </div>
+
+            <!-- Tool Demonstration -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in hover-scale">
+                <h2 class="text-3xl mb-4 text-green-400">Rotating with Geometry Software</h2>
+                <p class="text-xl text-cyan-300">
+                    Many geometry software platforms allow users to input figures and rotate them at specified angles. This helps visualize how rotation affects shapes, lines, and angles.
+                </p>
+                <p class="text-lg text-cyan-200 mb-4">
+                    With these tools, users can rotate objects by any angle, and some tools allow for step-by-step transformations, making the learning process intuitive.
+                </p>
+                <div class="mt-4 rotate-effect">
+                    <img src="https://via.placeholder.com/350x350/64ffda/000000?text=Rotation+Tool" alt="Geometry Software Tool" class="example-img mx-auto" />
+                    <p class="text-xl text-cyan-300 mt-4">Example of a geometry software tool used for rotations.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-8 bg-gray-800 p-6 rounded-lg formula-box fade-in hover-scale">
+            <h2 class="text-3xl mb-4 text-green-400">Important Notes</h2>
+            <p class="text-xl text-cyan-300">
+                Geometry software is essential for understanding complex transformations, including rotations, and is widely used in education and professional design. With the ability to manipulate and rotate geometric objects easily, these tools help users develop a deeper understanding of spatial relationships and symmetry.
+            </p>
+            <div class="mt-6">
+                <button class="button-hover px-6 py-3 bg-blue-500 rounded-full text-white text-xl">
+                    Try Geometry Software
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add some subtle hover effects (these can stay as they are)
+        document.querySelectorAll('.formula-box').forEach(box => {
+            box.addEventListener('mouseenter', () => {
+                box.style.transform = 'scale(1.02)';
+            });
+            box.addEventListener('mouseleave', () => {
+                box.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
