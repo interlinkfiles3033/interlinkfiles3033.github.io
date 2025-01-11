@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>9.6 Reflection Symmetry</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #0a192f, #112240);
+            color: #e6f1ff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(17, 34, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+        /* Hover animations */
+        .hover-scale:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+
+        /* Rotate effect */
+        .rotate-effect:hover {
+            transform: rotate(360deg);
+            transition: transform 1s ease;
+        }
+
+        /* Add glow effect for key terms */
+        .highlight-term {
+            text-decoration: underline;
+            color: #64ffda;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron" data-tooltip="Reflection Symmetry">
+            9.6 Reflection Symmetry
+        </h1>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Big Picture -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in hover-scale">
+                <h2 class="text-3xl mb-4 text-green-400">Big Picture</h2>
+                <p class="text-xl text-cyan-300">
+                    A figure has <span class="highlight-term">reflection symmetry</span> if it can be reflected across a line and look exactly the same as before the reflection.
+                </p>
+            </div>
+
+            <!-- Key Terms -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in hover-scale">
+                <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+                <ul class="space-y-3 text-left text-xl text-blue-300">
+                    <li><strong><span class="highlight-term">Line</span>:</strong> A straight one-dimensional figure made up of infinitely many points that extends forever in opposite directions.</li>
+                    <li><strong><span class="highlight-term">Center</span>:</strong> The point that defines the location of a circle. All points on the circle are equidistant from the center.</li>
+                    <li><strong><span class="highlight-term">Rectangle</span>:</strong> A parallelogram is a rectangle if and only if it has four right angles.</li>
+                    <li><strong><span class="highlight-term">Opposite</span>:</strong> The opposite of a number x is -x. A number and its opposite always sum to zero.</li>
+                    <li><strong><span class="highlight-term">Hexagon</span>:</strong> A six-sided polygon.</li>
+                    <li><strong><span class="highlight-term">Congruent</span>:</strong> Congruent figures are identical in size, shape, and measure. Shapes can still be congruent if they are rotated.</li>
+                    <li><strong><span class="highlight-term">Angles</span>:</strong> A geometric figure formed by two rays that connect at a single point or vertex.</li>
+                    <li><strong><span class="highlight-term">Square</span>:</strong> A parallelogram is a square if and only if it has four right angles and four congruent sides.</li>
+                    <li><strong><span class="highlight-term">Right Angle</span>:</strong> An angle equal to 90 degrees.</li>
+                    <li><strong><span class="highlight-term">Trapezoid</span>:</strong> A quadrilateral with exactly one pair of parallel opposite sides.</li>
+                    <li><strong><span class="highlight-term">Triangle</span>:</strong> A polygon with three sides and three angles.</li>
+                    <li><strong><span class="highlight-term">Pentagon</span>:</strong> A five-sided polygon.</li>
+                    <li><strong><span class="highlight-term">Circle</span>:</strong> The set of all points that are the same distance away from a specific point, called the center.</li>
+                    <li><strong><span class="highlight-term">Reflection</span>:</strong> A transformation that results in a "mirror image" of a parent function. Caused by differing signs between parent and child functions.</li>
+                    <li><strong><span class="highlight-term">Line of Symmetry</span>:</strong> A line that divides a figure into equal halves.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-8 grid md:grid-cols-2 gap-8">
+            <!-- Example of Reflection Symmetry -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in hover-scale">
+                <h2 class="text-3xl mb-4 text-green-400">Example of Reflection Symmetry</h2>
+                <p class="text-xl text-cyan-300">
+                    Consider the letter "A". It has reflection symmetry about a vertical line passing through its center. If we reflect the letter over this line, it will look identical to its original form.
+                </p>
+                <div class="mt-4 rotate-effect">
+                    <img src="https://via.placeholder.com/150x150/64ffda/000000?text=A" alt="A with Reflection Symmetry" class="mx-auto" />
+                    <p class="text-xl text-cyan-300 mt-4">The letter "A" exhibits reflection symmetry.</p>
+                </div>
+            </div>
+
+            <!-- More Complex Example -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in hover-scale">
+                <h2 class="text-3xl mb-4 text-green-400">Reflection Symmetry of a Polygon</h2>
+                <p class="text-xl text-cyan-300">
+                    Let's consider a regular hexagon. It has multiple lines of symmetry—one through each pair of opposite vertices and one through the midpoints of opposite sides.
+                </p>
+                <div class="mt-4 rotate-effect">
+                    <img src="https://via.placeholder.com/200x200/64ffda/000000?text=Hexagon" alt="Hexagon with Reflection Symmetry" class="mx-auto" />
+                    <p class="text-xl text-cyan-300 mt-4">This hexagon has several lines of reflection symmetry.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-8 bg-gray-800 p-6 rounded-lg formula-box fade-in hover-scale">
+            <h2 class="text-3xl mb-4 text-green-400">Important Notes</h2>
+            <p class="text-xl text-cyan-300">
+                Reflection symmetry is important in various fields, including design, architecture, and art. Recognizing symmetrical patterns helps in understanding geometric properties and creating visually appealing structures and designs.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add some subtle hover effects (these can stay as they are)
+        document.querySelectorAll('.formula-box').forEach(box => {
+            box.addEventListener('mouseenter', () => {
+                box.style.transform = 'scale(1.02)';
+            });
+            box.addEventListener('mouseleave', () => {
+                box.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
