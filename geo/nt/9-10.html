@@ -1,1 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>9.10 Composite Transformations and Reflections</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #0a192f, #112240);
+            color: #e6f1ff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(17, 34, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron" data-tooltip="Composite Transformations & Reflections">
+            9.10 Composite Transformations and Reflection over y = ax and y = ax + b
+        </h1>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Big Picture -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Big Picture</h2>
+                <p class="text-xl text-cyan-300">
+                    Composite transformations involve applying multiple transformations in sequence, such as reflections, rotations, and translations. Reflection over lines like <strong>y = ax</strong> or <strong>y = ax + b</strong> flips a figure over a line with a given slope (a) and intercept (b). This process preserves the shape and size of the figure.
+                </p>
+            </div>
+
+            <!-- Key Terms -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+                <ul class="space-y-3 text-left text-xl text-blue-300">
+                    <li><strong>Rigid Transformation:</strong> A transformation that does not change the size or shape of a figure, also known as an isometry or congruence transformation.</li>
+                    <li><strong>Congruent:</strong> Figures that are identical in size, shape, and measure, even if rotated or reflected.</li>
+                    <li><strong>Plane:</strong> A flat, two-dimensional surface with infinite area.</li>
+                    <li><strong>Reflection:</strong> A transformation that flips a figure over a line, creating a mirror image.</li>
+                    <li><strong>Rotation:</strong> A transformation that turns a figure around a point without changing its shape or size.</li>
+                    <li><strong>Line:</strong> A straight one-dimensional figure made up of infinitely many points extending in opposite directions.</li>
+                    <li><strong>Parallel:</strong> Two lines that never intersect and always have the same slope.</li>
+                    <li><strong>Perpendicular:</strong> Lines that intersect at a 90-degree angle, with slopes that are opposite reciprocals of each other.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-8 grid md:grid-cols-2 gap-8">
+            <!-- Example of Reflection -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Example of Reflection over y = ax</h2>
+                <p class="text-xl text-cyan-300">
+                    Consider a triangle with vertices A(1, 2), B(3, 4), and C(5, 6). If we reflect this triangle over the line y = x, the reflected coordinates of A, B, and C would be:
+                </p>
+                <pre class="text-lg text-cyan-200">
+A'(2, 1), B'(4, 3), C'(6, 5)
+                </pre>
+                <p class="text-xl text-cyan-300">
+                    This transformation preserves the shape and size of the triangle, but flips it across the line y = x.
+                </p>
+            </div>
+
+            <!-- Composite Transformation Example -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Example of Composite Transformation</h2>
+                <p class="text-xl text-cyan-300">
+                    Let's perform a composite transformation: first, a reflection over the line y = x, followed by a rotation of 90 degrees around the origin. For a point P(x, y):
+                </p>
+                <pre class="text-lg text-cyan-200">
+Step 1: Reflect over y = x → P'(y, x)
+Step 2: Rotate 90 degrees around the origin → P''(-x, y)
+                </pre>
+                <p class="text-xl text-cyan-300">
+                    After applying both transformations, we get the final coordinates of the point P''.
+                </p>
+            </div>
+        </div>
+
+        <div class="mt-8 bg-gray-800 p-6 rounded-lg formula-box fade-in">
+            <h2 class="text-3xl mb-4 text-green-400">Key Takeaways</h2>
+            <p class="text-xl text-cyan-300">
+                Understanding composite transformations and reflections allows us to manipulate figures in space without altering their size or shape. By applying multiple transformations in sequence, we can obtain new positions and orientations for figures. Reflections over lines such as y = ax or y = ax + b provide powerful tools to flip figures across different lines, preserving their congruency.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add some subtle hover effects (these can stay as they are)
+        document.querySelectorAll('.formula-box').forEach(box => {
+            box.addEventListener('mouseenter', () => {
+                box.style.transform = 'scale(1.02)';
+            });
+            box.addEventListener('mouseleave', () => {
+                box.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
 
