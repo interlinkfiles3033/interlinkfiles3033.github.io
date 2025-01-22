@@ -1,1 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>9.11 Tessellations</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #0a192f, #112240);
+            color: #e6f1ff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(17, 34, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron" data-tooltip="Tessellations">
+            9.11 Tessellations
+        </h1>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Big Picture -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Big Picture</h2>
+                <p class="text-xl text-cyan-300">
+                    A tessellation is a tiling over a plane with one or more figures that fill the plane without any overlaps or gaps. Tessellations can be made using geometric shapes such as hexagons, squares, or triangles. These tilings have been used in art, architecture, and even nature to create visually appealing patterns that repeat endlessly.
+                </p>
+            </div>
+
+            <!-- Key Terms -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+                <ul class="space-y-3 text-left text-xl text-blue-300">
+                    <li><strong>Plane:</strong> A flat, two-dimensional surface that extends infinitely in all directions.</li>
+                    <li><strong>Hexagon:</strong> A polygon with six sides.</li>
+                    <li><strong>Point:</strong> A location in space with no size or shape, usually represented as a coordinate on a grid.</li>
+                    <li><strong>Angles:</strong> The geometric figure formed by two rays meeting at a common point (vertex).</li>
+                    <li><strong>Equilateral Triangles:</strong> A triangle where all three sides are of equal length, and all angles are 60 degrees.</li>
+                    <li><strong>Circle:</strong> A set of points in a plane that are all at the same distance from a fixed point, called the center.</li>
+                    <li><strong>Interior Angle:</strong> The angles inside a polygon formed by two adjacent sides.</li>
+                    <li><strong>Octagon:</strong> A polygon with eight sides.</li>
+                    <li><strong>Pentagon:</strong> A polygon with five sides.</li>
+                    <li><strong>Square:</strong> A quadrilateral with four equal sides and four right angles.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-8 grid md:grid-cols-2 gap-8">
+            <!-- Tessellation Example -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Example of Tessellation</h2>
+                <p class="text-xl text-cyan-300">
+                    Consider the tessellation of equilateral triangles. When repeated, these triangles fit together perfectly to cover the entire plane without gaps or overlaps. This creates a visually appealing pattern, and the process can be applied to other shapes like squares and hexagons.
+                </p>
+                <p class="text-xl text-cyan-300 mt-4">
+                    In the image below, we can see a tessellation using hexagons. The hexagons fit together seamlessly and fill the entire plane.
+                </p>
+                <!-- You can add an image here if desired -->
+                <div class="mt-4">
+                    <img src="https://via.placeholder.com/400x400.png?text=Hexagonal+Tessellation" alt="Hexagonal Tessellation" class="rounded-lg shadow-xl">
+                </div>
+            </div>
+
+            <!-- Tessellation in Art and Architecture -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Tessellation in Art and Architecture</h2>
+                <p class="text-xl text-cyan-300">
+                    Tessellations have been used in art and architecture for centuries. A famous example is the works of Dutch artist <strong>M.C. Escher</strong>, who created intricate tessellations that feature repeated patterns with mathematical precision. Tessellations also appear in architectural designs, especially in tiled floors and mosaics, where geometric patterns cover entire surfaces.
+                </p>
+                <p class="text-xl text-cyan-300 mt-4">
+                    One common tessellation in architecture is the use of square tiles, which are arranged to fill an area completely with no gaps or overlaps.
+                </p>
+            </div>
+        </div>
+
+        <div class="mt-8 bg-gray-800 p-6 rounded-lg formula-box fade-in">
+            <h2 class="text-3xl mb-4 text-green-400">Key Takeaways</h2>
+            <p class="text-xl text-cyan-300">
+                Tessellations are a powerful way to explore geometric shapes and their properties. By using shapes such as triangles, squares, and hexagons, we can create intricate patterns that fill the entire plane. These patterns are seen everywhere in nature, art, and architecture, demonstrating the beauty and utility of tessellation in mathematics and design.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add some subtle hover effects (these can stay as they are)
+        document.querySelectorAll('.formula-box').forEach(box => {
+            box.addEventListener('mouseenter', () => {
+                box.style.transform = 'scale(1.02)';
+            });
+            box.addEventListener('mouseleave', () => {
+                box.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
 
