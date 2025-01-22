@@ -1,1 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10.1 Definition of Congruence</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #0a192f, #112240);
+            color: #e6f1ff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(17, 34, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron" data-tooltip="Definition of Congruence">
+            10.1 Definition of Congruence
+        </h1>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Big Picture -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Big Picture</h2>
+                <p class="text-xl text-cyan-300">
+                    Congruence refers to the concept of two figures having exactly the same shape and size. The figures are congruent if one can be obtained from the other through rigid transformations such as translation, rotation, or reflection. Congruence is fundamental in geometry as it allows us to compare shapes and study their properties.
+                </p>
+            </div>
+
+            <!-- Key Terms -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+                <ul class="space-y-3 text-left text-xl text-blue-300">
+                    <li><strong>Congruent:</strong> Figures that are identical in shape, size, and measure. They may be rotated, reflected, or translated.</li>
+                    <li><strong>Corresponding Angles:</strong> Angles in the same position relative to a transversal and parallel lines.</li>
+                    <li><strong>Plane:</strong> A flat, two-dimensional surface extending infinitely in all directions.</li>
+                    <li><strong>Rigid Transformations:</strong> Transformations that do not change the size or shape of a figure (e.g., translation, rotation, reflection).</li>
+                    <li><strong>Trapezoid:</strong> A quadrilateral with exactly one pair of parallel sides.</li>
+                    <li><strong>Distance:</strong> The length of the route between two points.</li>
+                    <li><strong>Angles:</strong> A geometric figure formed by two rays meeting at a common point (vertex).</li>
+                    <li><strong>Corresponding Sides:</strong> Sides in the same relative position between two congruent figures.</li>
+                    <li><strong>Polygon:</strong> A closed figure with at least three straight sides.</li>
+                    <li><strong>Rectangle:</strong> A parallelogram with four right angles.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-8 grid md:grid-cols-2 gap-8">
+            <!-- Congruence Example -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Example of Congruence</h2>
+                <p class="text-xl text-cyan-300">
+                    Consider two congruent triangles that have been rotated. Despite being rotated, these triangles are still congruent because they have the same size, shape, and corresponding sides and angles. The following diagram illustrates this:
+                </p>
+                <div class="mt-4">
+                    <img src="https://via.placeholder.com/400x400.png?text=Congruent+Triangles" alt="Congruent Triangles" class="rounded-lg shadow-xl">
+                </div>
+                <p class="text-xl text-cyan-300 mt-4">
+                    Even though the triangles are oriented differently, the corresponding angles and sides remain the same, demonstrating that they are congruent.
+                </p>
+            </div>
+
+            <!-- Congruence in Geometry -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Congruence in Geometry</h2>
+                <p class="text-xl text-cyan-300">
+                    Congruence is a key concept in geometry as it allows us to determine when two figures are identical in all aspects except for their position or orientation. In congruent triangles, for example, the corresponding sides are equal in length, and the corresponding angles are equal in measure. Rigid transformations (such as rotations and reflections) preserve congruence because they do not alter the shape or size of a figure.
+                </p>
+            </div>
+        </div>
+
+        <div class="mt-8 bg-gray-800 p-6 rounded-lg formula-box fade-in">
+            <h2 class="text-3xl mb-4 text-green-400">Key Takeaways</h2>
+            <p class="text-xl text-cyan-300">
+                Congruence is a foundational concept in geometry that ensures two figures are identical in shape and size. Through rigid transformations, we can determine if figures are congruent, regardless of their position or orientation. Understanding congruence helps in comparing shapes, proving theorems, and solving geometric problems.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add some subtle hover effects (these can stay as they are)
+        document.querySelectorAll('.formula-box').forEach(box => {
+            box.addEventListener('mouseenter', () => {
+                box.style.transform = 'scale(1.02)';
+            });
+            box.addEventListener('mouseleave', () => {
+                box.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
 
