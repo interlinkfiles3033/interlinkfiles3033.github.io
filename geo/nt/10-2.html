@@ -1,1 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10.2 ASA and AAS Triangle Congruence</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #0a192f, #112240);
+            color: #e6f1ff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7),
+                         0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 30px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1),
+                         0 0 40px rgba(0, 255, 255, 0.8),
+                         0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .formula-box {
+            background: rgba(17, 34, 64, 0.8);
+            border: 2px solid #64ffda;
+            transition: all 0.3s ease;
+        }
+
+        .formula-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(100, 255, 210, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="container mx-auto text-center">
+        <h1 class="text-6xl font-bold mb-8 glowing-text font-orbitron" data-tooltip="ASA and AAS Triangle Congruence">
+            10.2 ASA and AAS Triangle Congruence
+        </h1>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Big Picture -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Big Picture</h2>
+                <p class="text-xl text-cyan-300">
+                    The Angle-Side-Angle (ASA) and Angle-Angle-Side (AAS) criteria are used to prove the congruence of two triangles. The ASA criterion states that if two triangles have two pairs of congruent angles and the common side of those angles is congruent in both triangles, the triangles are congruent. Similarly, the AAS criterion asserts that if two triangles have two pairs of congruent angles and the opposite side of the angles is congruent, the triangles are congruent as well. These criteria help us establish when triangles are identical in size and shape.
+                </p>
+            </div>
+
+            <!-- Key Terms -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Key Terms</h2>
+                <ul class="space-y-3 text-left text-xl text-blue-300">
+                    <li><strong>ASA:</strong> Angle-Side-Angle, a criterion for triangle congruence where two angles and the included side are congruent in both triangles.</li>
+                    <li><strong>Triangle Congruence:</strong> The condition where two triangles have identical size and shape, meaning their corresponding sides and angles are congruent.</li>
+                    <li><strong>Congruent:</strong> Figures that are identical in size, shape, and measure, even if one is rotated or reflected.</li>
+                    <li><strong>Corresponding Angle Pairs:</strong> Pairs of angles that are in the same relative position in two different triangles.</li>
+                    <li><strong>Angles:</strong> A geometric figure formed by two rays (sides) meeting at a single point (vertex).</li>
+                    <li><strong>Triangle:</strong> A polygon with three sides and three angles.</li>
+                    <li><strong>Vertices:</strong> The points where two or more sides of a polygon meet.</li>
+                    <li><strong>Rigid Transformation:</strong> A transformation that preserves the size and shape of a figure, including translation, rotation, and reflection.</li>
+                    <li><strong>Distance:</strong> The length between two points in space.</li>
+                    <li><strong>SAS:</strong> Side-Angle-Side, another triangle congruence criterion where two sides and the included angle are congruent in both triangles.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-8 grid md:grid-cols-2 gap-8">
+            <!-- ASA and AAS Example -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Example of ASA and AAS Congruence</h2>
+                <p class="text-xl text-cyan-300">
+                    Consider two triangles with the following properties:
+                </p>
+                <ul class="text-xl text-cyan-300 mt-4">
+                    <li>Triangle 1: <strong>Angle A = Angle B = 40°</strong>, <strong>Side AB = Side BC = 5 units</strong></li>
+                    <li>Triangle 2: <strong>Angle A' = Angle B' = 40°</strong>, <strong>Side A'B' = Side B'C' = 5 units</strong></li>
+                </ul>
+                <p class="text-xl text-cyan-300 mt-4">
+                    In this case, both triangles have two pairs of congruent angles (Angle A = Angle A' and Angle B = Angle B') and the included sides AB and A'B' are congruent. Therefore, by the ASA criterion, the two triangles are congruent.
+                </p>
+            </div>
+
+            <!-- Visual Representation of Congruent Triangles -->
+            <div class="bg-gray-800 p-6 rounded-lg formula-box fade-in">
+                <h2 class="text-3xl mb-4 text-green-400">Visual Example</h2>
+                <p class="text-xl text-cyan-300">
+                    Below is a visual representation of two congruent triangles satisfying the ASA criterion:
+                </p>
+                <div class="mt-4">
+                    <img src="https://via.placeholder.com/400x400.png?text=ASA+Congruence" alt="ASA Congruent Triangles" class="rounded-lg shadow-xl">
+                </div>
+                <p class="text-xl text-cyan-300 mt-4">
+                    As shown, the triangles have two congruent angles and the included side is also congruent, proving that the two triangles are congruent.
+                </p>
+            </div>
+        </div>
+
+        <div class="mt-8 bg-gray-800 p-6 rounded-lg formula-box fade-in">
+            <h2 class="text-3xl mb-4 text-green-400">Key Takeaways</h2>
+            <p class="text-xl text-cyan-300">
+                Understanding the ASA and AAS criteria for triangle congruence is essential for proving that two triangles are identical in size and shape. These criteria rely on the relationships between angles and sides within the triangles. The ASA criterion uses two congruent angles and the included side, while the AAS criterion uses two congruent angles and the opposite side. Mastery of these concepts allows for precise geometric proofs and applications.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add some subtle hover effects (these can stay as they are)
+        document.querySelectorAll('.formula-box').forEach(box => {
+            box.addEventListener('mouseenter', () => {
+                box.style.transform = 'scale(1.02)';
+            });
+            box.addEventListener('mouseleave', () => {
+                box.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
 
